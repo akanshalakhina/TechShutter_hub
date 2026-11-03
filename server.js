@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,20 @@ const INQUIRIES_FILE = path.join(__dirname, 'data', 'inquiries.json');
 // Ensure inquiries file exists
 if (!fs.existsSync(INQUIRIES_FILE)) {
   fs.writeFileSync(INQUIRIES_FILE, JSON.stringify([], null, 2));
+}
+
+// Admin Authentication Setup
+const ADMIN_USER = process.env.ADMIN_USER || 'admin';
+const ADMIN_PASS = process.env.ADMIN_PASS || 'techshutter2026';
+const activeTokens = new Set();
+
+function authMiddleware(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : authHeader;
+  if (!token || !activeTokens.has(token)) {
+    return res.status(401).json({ success: false, message: 'Unauthorized. Admin login and password required.' });
+  }
+  next();
 }
 
 // Helpers
@@ -67,9 +82,47 @@ function saveInquiries(inquiries) {
   }
 }
 
-// REST API Endpoints
+// ==========================================
+// AUTHENTICATION ENDPOINTS
+// ==========================================
 
-// 1. Get projects (filterable by category, weddingRitual, and search)
+app.post('/api/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  if (username === ADMIN_USER && password === ADMIN_PASS) {
+    const token = crypto.randomBytes(32).toString('hex');
+    activeTokens.add(token);
+    console.log(`[AUTH] Admin successfully logged in from ${req.ip}`);
+    return res.json({
+      success: true,
+      message: 'Login successful. Welcome back, Studio Director.',
+      token,
+      user: { username: ADMIN_USER, role: 'Administrator' }
+    });
+  }
+  return res.status(401).json({ success: false, message: 'Invalid admin credentials. Access denied.' });
+});
+
+app.get('/api/admin/verify', (req, res) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : authHeader;
+  if (token && activeTokens.has(token)) {
+    return res.json({ success: true, authenticated: true });
+  }
+  return res.status(401).json({ success: false, authenticated: false, message: 'Session expired or invalid.' });
+});
+
+app.post('/api/admin/logout', (req, res) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.slice(7) : authHeader;
+  if (token) activeTokens.delete(token);
+  res.json({ success: true, message: 'Logged out successfully.' });
+});
+
+// ==========================================
+// REST API ENDPOINTS
+// ==========================================
+
+// 1. Get projects (Public - filterable by category, weddingRitual, and search)
 app.get('/api/projects', (req, res) => {
   let list = getProjects();
   const { category, weddingRitual, search } = req.query;
@@ -96,7 +149,7 @@ app.get('/api/projects', (req, res) => {
   res.json({ success: true, count: list.length, data: list });
 });
 
-// 2. Get single project
+// 2. Get single project (Public)
 app.get('/api/projects/:id', (req, res) => {
   const list = getProjects();
   const project = list.find(p => p.id === req.params.id);
@@ -104,8 +157,8 @@ app.get('/api/projects/:id', (req, res) => {
   res.json({ success: true, data: project });
 });
 
-// 3. Create project (Admin capability)
-app.post('/api/projects', (req, res) => {
+// 3. Create project (Admin protected)
+app.post('/api/projects', authMiddleware, (req, res) => {
   const { title, category, weddingRitual, description, video, image, thumbImage, photos, client, year, tags, orientation } = req.body;
   if (!title || !category) {
     return res.status(400).json({ success: false, message: 'Title and Category are required.' });
@@ -137,8 +190,8 @@ app.post('/api/projects', (req, res) => {
   res.status(201).json({ success: true, message: 'Project created successfully', data: newProject });
 });
 
-// 4. Update project
-app.put('/api/projects/:id', (req, res) => {
+// 4. Update project (Admin protected)
+app.put('/api/projects/:id', authMiddleware, (req, res) => {
   const list = getProjects();
   const idx = list.findIndex(p => p.id === req.params.id);
   if (idx === -1) return res.status(404).json({ success: false, message: 'Project not found' });
@@ -155,8 +208,8 @@ app.put('/api/projects/:id', (req, res) => {
   res.json({ success: true, message: 'Project updated successfully', data: updated });
 });
 
-// 5. Delete project
-app.delete('/api/projects/:id', (req, res) => {
+// 5. Delete project (Admin protected)
+app.delete('/api/projects/:id', authMiddleware, (req, res) => {
   let list = getProjects();
   const initialLength = list.length;
   list = list.filter(p => p.id !== req.params.id);
@@ -167,8 +220,8 @@ app.delete('/api/projects/:id', (req, res) => {
   res.json({ success: true, message: 'Project removed successfully' });
 });
 
-// 6. Direct Photo Upload API for Admin (supports base64 image data from file picker)
-app.post('/api/upload', async (req, res) => {
+// 6. Direct Photo Upload API (Admin protected)
+app.post('/api/upload', authMiddleware, async (req, res) => {
   try {
     const { filename, data } = req.body;
     if (!data) {
@@ -239,7 +292,7 @@ app.post('/api/upload', async (req, res) => {
   }
 });
 
-// 7. Submit Client Inquiry / Project Booking
+// 7. Submit Client Inquiry / Project Booking (Public)
 app.post('/api/inquire', (req, res) => {
   const { name, email, phone, projectType, date, budget, message } = req.body;
   if (!name || !email) {
@@ -271,7 +324,7 @@ app.post('/api/inquire', (req, res) => {
   });
 });
 
-// 8. Career application submission
+// 8. Career application submission (Public)
 app.post('/api/careers', (req, res) => {
   const { name, email, phone, role, portfolioUrl, experience, message } = req.body;
   if (!name || !email || !role) {
@@ -303,8 +356,8 @@ app.post('/api/careers', (req, res) => {
   });
 });
 
-// 9. Get all inquiries (for admin review)
-app.get('/api/inquiries', (req, res) => {
+// 9. Get all inquiries (Admin protected - NO mock data)
+app.get('/api/inquiries', authMiddleware, (req, res) => {
   const inquiries = getInquiries();
   res.json({ success: true, count: inquiries.length, data: inquiries });
 });
@@ -325,6 +378,14 @@ app.get('/api/stats', (req, res) => {
   });
 });
 
+// Clean route aliases for dedicated pages
+app.get('/wedding', (req, res) => res.sendFile(path.join(__dirname, 'public', 'wedding.html')));
+app.get('/services', (req, res) => res.sendFile(path.join(__dirname, 'public', 'services.html')));
+app.get('/career', (req, res) => res.sendFile(path.join(__dirname, 'public', 'career.html')));
+app.get('/work', (req, res) => res.sendFile(path.join(__dirname, 'public', 'work.html')));
+app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public', 'contact.html')));
+app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'public', 'admin.html')));
+
 // Fallback routing to index.html for SPA feel
 app.use((req, res, next) => {
   if (req.path.startsWith('/api/')) return next();
@@ -335,5 +396,6 @@ app.listen(PORT, () => {
   console.log(`=======================================================`);
   console.log(`🚀 TECH SHUTTER HUB Immersive Platform Live!`);
   console.log(`🌐 Server running at: http://localhost:${PORT}`);
+  console.log(`🔑 Admin credentials configured (login via /admin.html)`);
   console.log(`=======================================================`);
 });
