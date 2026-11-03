@@ -16,8 +16,8 @@
   <!-- Floating Navigation Bar -->
   <header class="tsh-nav" role="banner">
     <div class="tsh-nav-left">
-      <a href="/" class="brand-badge" title="Back to 3D Immersive View">
-        <img class="brand-logo-img" src="/assets/logos/logo-dark-transparent.png" alt="Tech Shutter Hub Logo" />
+      <a href="/" class="brand-badge" title="Back to Home">
+        <img class="brand-logo-img" src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
         <div class="brand-text">
           <span class="brand-name">Tech Shutter Hub</span>
           <span class="brand-sub">Visual Productions</span>
@@ -26,44 +26,30 @@
     </div>
 
     <div class="tsh-nav-right">
-      <!-- Search button -->
-      <button class="nav-btn btn-icon-only" id="searchBtn" title="Search Projects (Press /)">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-
+      <a href="/#wedding" class="nav-btn">Wedding</a>
+      <a href="/#services" class="nav-btn">Services</a>
+      <a href="/#career" class="nav-btn">Career</a>
+      <a href="/#work" class="nav-btn">Work</a>
+      
       <!-- Theme Switcher -->
       <button class="nav-btn theme-toggle-btn" title="Toggle Theme">
         <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <span class="lbl theme-text">Light</span>
+        <span class="lbl theme-text">Theme</span>
       </button>
 
       <!-- 3D View Switch Button -->
-      <a href="/" class="nav-btn btn-cta" title="Switch to 3D Cylinder View">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"></circle>
-          <path d="M3.6 9h16.8M3.6 15h16.8"></path>
-          <path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18"></path>
-        </svg>
-        <span>3D Cylinder View</span>
+      <a href="/#work" class="nav-btn" title="Switch to 3D Cylinder View">
+        <span>3D Cylinder</span>
       </a>
 
       <!-- Start Project CTA -->
-      <button class="nav-btn open-inquire-btn" title="Start a Project">
-        <span>Inquire</span>
-      </button>
+      <a href="/#contact" class="nav-btn btn-cta" title="Start a Project">
+        <span>Start a Project</span>
+      </a>
     </div>
   </header>
 

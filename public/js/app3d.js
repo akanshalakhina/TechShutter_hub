@@ -11,15 +11,11 @@ let portfolioData = [];
 
 async function loadProjects() {
   try {
-    const cached = JSON.parse(localStorage.getItem('tsh_portfolio'));
-    if (Array.isArray(cached) && cached.length) return cached;
-  } catch (e) {}
-
-  try {
     const res = await fetch('/api/projects');
     if (res.ok) {
       const json = await res.json();
       if (json.success && Array.isArray(json.data) && json.data.length) {
+        localStorage.setItem('tsh_portfolio', JSON.stringify(json.data));
         return json.data;
       }
     }
@@ -31,6 +27,11 @@ async function loadProjects() {
       const data = await res.json();
       if (Array.isArray(data) && data.length) return data;
     }
+  } catch (e) {}
+
+  try {
+    const cached = JSON.parse(localStorage.getItem('tsh_portfolio'));
+    if (Array.isArray(cached) && cached.length) return cached;
   } catch (e) {}
 
   // Built-in emergency fallback
@@ -590,39 +591,41 @@ function updateHover() {
 
     if (TMP.z < 1) {
       const p = hovered.userData.p;
-      tipEl.textContent = p.title;
+      if (tipEl) {
+        tipEl.textContent = p.title;
 
-      EA.set(-eX, topY, eZ);
-      hovered.localToWorld(EA).project(camera);
-      EB.set(eX, topY, eZ);
-      hovered.localToWorld(EB).project(camera);
+        EA.set(-eX, topY, eZ);
+        hovered.localToWorld(EA).project(camera);
+        EB.set(eX, topY, eZ);
+        hovered.localToWorld(EB).project(camera);
 
-      const ax = (EA.x * 0.5 + 0.5) * window.innerWidth;
-      const ay = (-EA.y * 0.5 + 0.5) * window.innerHeight;
-      const bx = (EB.x * 0.5 + 0.5) * window.innerWidth;
-      const by = (-EB.y * 0.5 + 0.5) * window.innerHeight;
+        const ax = (EA.x * 0.5 + 0.5) * window.innerWidth;
+        const ay = (-EA.y * 0.5 + 0.5) * window.innerHeight;
+        const bx = (EB.x * 0.5 + 0.5) * window.innerWidth;
+        const by = (-EB.y * 0.5 + 0.5) * window.innerHeight;
 
-      let ang = (Math.atan2(ay - by, ax - bx) * 180) / Math.PI;
-      ang = Math.max(-24, Math.min(24, ang)); // Clamp
+        let ang = (Math.atan2(ay - by, ax - bx) * 180) / Math.PI;
+        ang = Math.max(-24, Math.min(24, ang)); // Clamp
 
-      const PAD = 14;
-      const hw = tipEl.offsetWidth / 2 + PAD;
-      const hh = tipEl.offsetHeight / 2 + PAD;
+        const PAD = 14;
+        const hw = tipEl.offsetWidth / 2 + PAD;
+        const hh = tipEl.offsetHeight / 2 + PAD;
 
-      const lx = Math.max(hw, Math.min(window.innerWidth - hw, (TMP.x * 0.5 + 0.5) * window.innerWidth));
-      const ly = Math.max(hh, Math.min(window.innerHeight - hh, (-TMP.y * 0.5 + 0.5) * window.innerHeight));
+        const lx = Math.max(hw, Math.min(window.innerWidth - hw, (TMP.x * 0.5 + 0.5) * window.innerWidth));
+        const ly = Math.max(hh, Math.min(window.innerHeight - hh, (-TMP.y * 0.5 + 0.5) * window.innerHeight));
 
-      tipEl.style.left = lx + 'px';
-      tipEl.style.top = ly + 'px';
-      tipEl.style.transform = `translate(-50%, -50%) rotate(${ang.toFixed(1)}deg)`;
-      tipEl.style.opacity = '1';
+        tipEl.style.left = lx + 'px';
+        tipEl.style.top = ly + 'px';
+        tipEl.style.transform = `translate(-50%, -50%) rotate(${ang.toFixed(1)}deg)`;
+        tipEl.style.opacity = '1';
+      }
     } else {
-      tipEl.style.opacity = '0';
+      if (tipEl) tipEl.style.opacity = '0';
     }
     dom.style.cursor = dragging ? 'grabbing' : 'pointer';
   } else {
     glow.visible = outline.visible = false;
-    tipEl.style.opacity = '0';
+    if (tipEl) tipEl.style.opacity = '0';
     if (!dragging) dom.style.cursor = 'grab';
   }
 }

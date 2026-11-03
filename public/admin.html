@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Portal &amp; Content Manager | TECH SHUTTER HUB</title>
+  <title>Studio Content Manager &amp; Wedding Curator | TECH SHUTTER HUB</title>
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="stylesheet" href="/css/theme.css" />
   <link rel="stylesheet" href="/css/style.css" />
@@ -11,19 +11,29 @@
     body {
       overflow-y: auto !important;
       height: auto !important;
-      background: var(--bg-canvas);
+      min-height: 100vh;
+      background: var(--bg-canvas, #05070a);
       padding: 100px 24px 60px;
     }
     .admin-container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
+    }
+    .admin-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
     }
     .admin-tabs {
       display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 28px;
       border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 12px;
+      padding-bottom: 14px;
+      flex-wrap: wrap;
     }
     .admin-tab {
       background: var(--bg-surface);
@@ -42,6 +52,7 @@
       color: var(--text-inverse);
       background: linear-gradient(135deg, var(--brand-gold-bright), var(--brand-gold));
       border-color: var(--brand-gold-bright);
+      box-shadow: 0 4px 16px rgba(229, 192, 88, 0.35);
     }
     .admin-panel {
       display: none;
@@ -56,7 +67,7 @@
     }
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 18px;
       margin-bottom: 30px;
     }
@@ -80,22 +91,35 @@
       color: var(--text-muted);
       margin-top: 4px;
     }
+    .table-responsive {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 18px;
     }
     th, td {
       padding: 14px 16px;
       text-align: left;
       border-bottom: 1px solid var(--border-subtle);
       font-size: 13px;
+      vertical-align: middle;
     }
     th {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--brand-gold);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .table-thumb {
+      width: 54px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-right: 10px;
     }
     .badge {
       display: inline-block;
@@ -107,6 +131,12 @@
       background: var(--brand-gold-subtle);
       color: var(--brand-gold);
       border: 1px solid var(--brand-gold);
+    }
+    .badge.ritual-badge {
+      background: rgba(140, 174, 130, 0.2);
+      color: #A5C99B;
+      border-color: #8CAE82;
+      margin-left: 4px;
     }
     .btn-action {
       background: transparent;
@@ -124,6 +154,58 @@
       border-color: #ef4444;
       color: #fff;
     }
+    /* Upload Drop Zone */
+    .dropzone {
+      border: 2px dashed rgba(229, 192, 88, 0.4);
+      background: rgba(22, 28, 39, 0.5);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 24px;
+    }
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--brand-gold);
+      background: rgba(229, 192, 88, 0.08);
+    }
+    .dropzone-icon {
+      font-size: 32px;
+      color: var(--brand-gold);
+      margin-bottom: 10px;
+    }
+    .upload-preview-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .preview-thumb-box {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 192, 88, 0.5);
+    }
+    .preview-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .preview-thumb-box .remove-btn {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -131,11 +213,11 @@
   <!-- Floating Nav -->
   <header class="tsh-nav" role="banner">
     <div class="tsh-nav-left">
-      <a href="/" class="brand-badge">
-        <img class="brand-logo-img" src="/assets/logos/logo-dark-transparent.png" alt="Logo" />
+      <a href="/" class="brand-badge" title="Go to Website">
+        <img class="brand-logo-img" src="/assets/logos/techshutter-logo.png" alt="Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
         <div class="brand-text">
           <span class="brand-name">Tech Shutter Hub</span>
-          <span class="brand-sub">Admin Portal</span>
+          <span class="brand-sub">Admin &amp; Wedding Curator</span>
         </div>
       </a>
     </div>
@@ -145,123 +227,211 @@
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
         </svg>
         <span class="lbl theme-text">Theme</span>
       </button>
-      <a href="/" class="nav-btn btn-cta">Back to 3D Wall</a>
+      <a href="/" class="nav-btn btn-cta">Live Website &rarr;</a>
     </div>
   </header>
 
   <div class="admin-container">
+    <div class="admin-header-bar">
+      <div>
+        <h1 style="font-family: var(--font-serif); font-size: 28px; color: #fff;">Studio Content Management</h1>
+        <p style="color: var(--text-muted); font-size: 13px;">Manage Wedding Ritual Tabs, Gallery Collections, Client Bookings &amp; Applications.</p>
+      </div>
+    </div>
+
+    <!-- Stats Dashboard -->
     <div class="stats-row" id="statsRow">
       <div class="stat-card">
         <div class="stat-num" id="statProjects">-</div>
-        <div class="stat-lbl">Active Projects</div>
+        <div class="stat-lbl">Active Media Items</div>
       </div>
       <div class="stat-card">
         <div class="stat-num" id="statCategories">-</div>
-        <div class="stat-lbl">Categories</div>
+        <div class="stat-lbl">Service Categories</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="statRituals">-</div>
+        <div class="stat-lbl">Wedding Ritual Tabs</div>
       </div>
       <div class="stat-card">
         <div class="stat-num" id="statInquiries">-</div>
-        <div class="stat-lbl">Client Inquiries</div>
+        <div class="stat-lbl">Client Bookings</div>
       </div>
     </div>
 
+    <!-- Main Navigation Tabs -->
     <div class="admin-tabs">
-      <button class="admin-tab active" data-tab="tabProjects">Portfolio Projects</button>
-      <button class="admin-tab" data-tab="tabAdd">Add New Project</button>
+      <button class="admin-tab active" data-tab="tabProjects">Portfolio &amp; Galleries</button>
+      <button class="admin-tab" data-tab="tabAdd">Add Photos to Wedding Tabs / Galleries</button>
       <button class="admin-tab" data-tab="tabInquiries">Inquiries Received</button>
     </div>
 
-    <!-- Panel 1: Projects Table -->
+    <!-- Panel 1: Projects & Wedding Photos Table -->
     <div class="admin-panel active" id="tabProjects">
-      <h3>Portfolio Projects</h3>
-      <table id="projectsTable">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Media</th>
-            <th>Year</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:18px;">
+        <h3 style="font-size:18px;">Curated Portfolio &amp; Wedding Items</h3>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <label style="font-size:12px; color:var(--text-muted);">Filter by:</label>
+          <select id="filterCategory" class="form-control" style="width:auto; padding:6px 12px; font-size:12px;">
+            <option value="All">All Categories &amp; Rituals</option>
+            <option value="Full-Spectrum Wedding">Full-Spectrum Wedding</option>
+            <option value="Gaye Holud">Gaye Holud (Ritual)</option>
+            <option value="Ashirbad">Ashirbad (Ritual)</option>
+            <option value="Main Wedding">Main Wedding (Ritual)</option>
+            <option value="Boubhat">Boubhat (Ritual)</option>
+            <option value="Pre-Wedding Escapes">Pre-Wedding Escapes</option>
+            <option value="Cinematic Reels &amp; Teasers">Cinematic Reels &amp; Teasers</option>
+            <option value="Product &amp; E-commerce">Product &amp; E-commerce</option>
+            <option value="F&amp;B / Restaurant">F&amp;B / Restaurant</option>
+            <option value="Corporate Photography">Corporate Photography</option>
+            <option value="Annaprashan &amp; Maternity">Annaprashan &amp; Maternity</option>
+            <option value="Durga Puja &amp; Festive">Durga Puja &amp; Festive</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table id="projectsTable">
+          <thead>
+            <tr>
+              <th>Media</th>
+              <th>Title</th>
+              <th>Category &amp; Ritual</th>
+              <th>Client</th>
+              <th>Year</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- Panel 2: Add Project Form -->
+    <!-- Panel 2: Add Photograph to Wedding Tabs / Galleries -->
     <div class="admin-panel" id="tabAdd">
-      <h3>Add New Portfolio Project</h3>
-      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">
-        Add a photo, video link, category, and description. It will immediately appear on the 3D Wall and Grid View.
+      <h3 style="font-size: 20px; color: #fff; margin-bottom: 8px;">Upload &amp; Add Photographs</h3>
+      <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">
+        Upload photos directly from your device. Choose whether to add them into a specific <strong>Wedding Tab</strong> (Gaye Holud, Ashirbad, Main Wedding, Boubhat, Pre-Wedding) or into a <strong>Service Gallery</strong>.
       </p>
+
       <form id="addProjectForm">
+        <!-- Direct File Upload Drop Zone -->
+        <div class="dropzone" id="uploadDropzone">
+          <div class="dropzone-icon">&#128247;</div>
+          <strong style="color: #fff; font-size: 15px;">Click to Select or Drag &amp; Drop Photos</strong>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: 6px;">
+            Supports JPG, PNG, WEBP, and MP4 videos. Multiple files can be selected.
+          </p>
+          <input type="file" id="filePicker" accept="image/*,video/*" multiple style="display:none;" />
+          <div class="upload-preview-strip" id="previewStrip"></div>
+        </div>
+
         <div class="form-row">
           <div class="form-group">
-            <label>Project Title *</label>
-            <input type="text" id="newTitle" class="form-control" placeholder="e.g. ARRI Alexa 35 Short Film" required />
+            <label>Project / Photograph Title *</label>
+            <input type="text" id="newTitle" class="form-control" placeholder="e.g. Gaye Holud Floral Tiara Moments" required />
           </div>
           <div class="form-group">
-            <label>Category *</label>
-            <input type="text" id="newCategory" class="form-control" placeholder="e.g. Cinematography" required />
+            <label>Primary Service Category *</label>
+            <select id="newCategory" class="form-control" required>
+              <option value="Full-Spectrum Wedding">Full-Spectrum Wedding Coverage</option>
+              <option value="Pre-Wedding Escapes">Pre-Wedding Escapes</option>
+              <option value="Cinematic Reels &amp; Teasers">Cinematic Reels &amp; Teasers</option>
+              <option value="Product &amp; E-commerce">Product &amp; E-commerce Photography</option>
+              <option value="F&amp;B / Restaurant">F&amp;B / Restaurant Photography</option>
+              <option value="Corporate Photography">Corporate Photography</option>
+              <option value="Annaprashan &amp; Maternity">Annaprashan &amp; Maternity</option>
+              <option value="Durga Puja &amp; Festive">Durga Puja &amp; Festive Portfolios</option>
+            </select>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Video Stream / MP4 URL</label>
-            <input type="url" id="newVideo" class="form-control" placeholder="https://...mp4 or iframe embed" />
+            <label>Wedding Ritual Tab (For Wedding Category)</label>
+            <select id="newWeddingRitual" class="form-control">
+              <option value="">None / Not Specific to a Ritual</option>
+              <option value="Gaye Holud">Gaye Holud (Turmeric Ritual)</option>
+              <option value="Ashirbad">Ashirbad (Blessings Ceremony)</option>
+              <option value="Main Wedding">Main Wedding (Saat Paake Ghaura, Sindoor Daan)</option>
+              <option value="Boubhat">Boubhat &amp; Reception</option>
+              <option value="Pre-Wedding">Pre-Wedding Escapes</option>
+            </select>
           </div>
           <div class="form-group">
-            <label>Cover Photo URL *</label>
-            <input type="url" id="newImage" class="form-control" placeholder="https://images.unsplash.com/..." required />
+            <label>Client / Couple Name</label>
+            <input type="text" id="newClient" class="form-control" placeholder="e.g. Riya &amp; Rohan" />
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Client / Brand</label>
-            <input type="text" id="newClient" class="form-control" placeholder="e.g. Sony Cine" />
+            <label>Cover Photo URL (Auto-filled on upload or enter URL) *</label>
+            <input type="text" id="newImage" class="form-control" placeholder="/assets/optimized/... or https://..." required />
           </div>
           <div class="form-group">
-            <label>Tags (comma separated)</label>
-            <input type="text" id="newTags" class="form-control" placeholder="Cinema, 4K, Anamorphic" />
+            <label>Optional Video / Reel URL</label>
+            <input type="text" id="newVideo" class="form-control" placeholder="/assets/videos/video-1.mp4 or YouTube / Vimeo link" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Year</label>
+            <input type="text" id="newYear" class="form-control" value="2026" />
+          </div>
+          <div class="form-group">
+            <label>Tags (Comma separated)</label>
+            <input type="text" id="newTags" class="form-control" placeholder="Gaye Holud, Haldi, Candid, Banarasi" />
           </div>
         </div>
 
         <div class="form-group">
-          <label>Description</label>
-          <textarea id="newDesc" class="form-control" placeholder="Technical breakdown or production notes..."></textarea>
+          <label>Description / Story Notes</label>
+          <textarea id="newDesc" class="form-control" placeholder="Brief story notes or description..."></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Publish Project &rarr;</button>
-        <div class="form-status" id="addStatus"></div>
+        <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, var(--brand-gold-bright), var(--brand-gold)); color: #000; font-weight: 700; padding: 14px 28px; border-radius: 9999px; border:none; cursor:pointer;">
+          Publish Photograph to Gallery &rarr;
+        </button>
+        <div class="form-status" id="addStatus" style="margin-top: 14px;"></div>
       </form>
     </div>
 
-    <!-- Panel 3: Inquiries -->
+    <!-- Panel 3: Inquiries & Bookings -->
     <div class="admin-panel" id="tabInquiries">
-      <h3>Incoming Client Booking Requests</h3>
-      <table id="inquiriesTable">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Client Name</th>
-            <th>Email</th>
-            <th>Service</th>
-            <th>Budget</th>
-            <th>Message</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <h3 style="font-size: 18px; margin-bottom: 14px;">Incoming Client Booking Requests &amp; Applications</h3>
+      <div class="table-responsive">
+        <table id="inquiriesTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Client / Applicant</th>
+              <th>Contact</th>
+              <th>Type / Service</th>
+              <th>Budget / Exp</th>
+              <th>Details / Message</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
+
   </div>
 
   <script src="/js/theme.js"></script>
   <script>
+    let uploadedUrls = [];
+    let currentProjects = [];
+
     // Tab switching
     document.querySelectorAll('.admin-tab').forEach(tab => {
       tab.addEventListener('click', () => {
@@ -272,38 +442,75 @@
       });
     });
 
+    // File Upload handling
+    const dropzone = document.getElementById('uploadDropzone');
+    const filePicker = document.getElementById('filePicker');
+    const previewStrip = document.getElementById('previewStrip');
+
+    dropzone.addEventListener('click', () => filePicker.click());
+    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('dragover'); });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
+    });
+    filePicker.addEventListener('change', (e) => {
+      if (e.target.files.length) handleFiles(e.target.files);
+    });
+
+    async function handleFiles(files) {
+      for (const file of files) {
+        const reader = new FileReader();
+        reader.onload = async () => {
+          const base64Data = reader.result;
+          try {
+            const res = await fetch('/api/upload', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ filename: file.name, data: base64Data })
+            });
+            const json = await res.json();
+            if (json.success) {
+              uploadedUrls.push(json.url);
+              document.getElementById('newImage').value = json.url;
+
+              const box = document.createElement('div');
+              box.className = 'preview-thumb-box';
+              box.innerHTML = `
+                <img src="${json.thumbUrl || json.url}" alt="Preview" />
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove()">&times;</button>
+              `;
+              previewStrip.appendChild(box);
+            }
+          } catch (err) {
+            console.error('Upload failed:', err);
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Load admin data
     async function loadAdminData() {
-      // Stats
       try {
         const res = await fetch('/api/stats');
         const data = await res.json();
-        document.getElementById('statProjects').textContent = data.totalProjects;
-        document.getElementById('statCategories').textContent = data.totalCategories;
-        document.getElementById('statInquiries').textContent = data.totalInquiries;
+        document.getElementById('statProjects').textContent = data.totalProjects || 0;
+        document.getElementById('statCategories').textContent = data.totalCategories || 0;
+        document.getElementById('statRituals').textContent = (data.weddingRituals && data.weddingRituals.length) || 5;
+        document.getElementById('statInquiries').textContent = data.totalInquiries || 0;
       } catch (e) {}
 
-      // Projects
       try {
         const res = await fetch('/api/projects');
         const json = await res.json();
-        const tbody = document.querySelector('#projectsTable tbody');
-        tbody.innerHTML = '';
-        (json.data || []).forEach(p => {
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td><strong>${p.title}</strong></td>
-            <td><span class="badge">${p.category}</span></td>
-            <td>${p.video ? '🎬 Video + Photo' : '📷 Photo Album'}</td>
-            <td>${p.year || ''}</td>
-            <td>
-              <button class="btn-action delete" onclick="deleteProject('${p.id}')">Delete</button>
-            </td>
-          `;
-          tbody.appendChild(tr);
-        });
+        if (json.success && Array.isArray(json.data)) {
+          currentProjects = json.data;
+          renderProjectsTable();
+        }
       } catch (e) {}
 
-      // Inquiries
       try {
         const res = await fetch('/api/inquiries');
         const json = await res.json();
@@ -315,43 +522,89 @@
           tr.innerHTML = `
             <td>${dt}</td>
             <td><strong>${inq.name}</strong></td>
-            <td><a href="mailto:${inq.email}" style="color:var(--brand-gold);">${inq.email}</a></td>
+            <td>
+              <a href="mailto:${inq.email}" style="color:var(--brand-gold);">${inq.email}</a>
+              ${inq.phone ? `<div style="font-size:11px;color:var(--text-muted);">${inq.phone}</div>` : ''}
+            </td>
             <td><span class="badge">${inq.projectType}</span></td>
             <td>${inq.budget || '-'}</td>
-            <td>${inq.message || '-'}</td>
+            <td style="max-width:320px; font-size:12px; color:var(--text-muted);">${inq.message || '-'}</td>
           `;
           tbody.appendChild(tr);
         });
       } catch (e) {}
     }
 
+    function renderProjectsTable() {
+      const tbody = document.querySelector('#projectsTable tbody');
+      tbody.innerHTML = '';
+      const filter = document.getElementById('filterCategory').value;
+
+      let filtered = currentProjects;
+      if (filter !== 'All') {
+        filtered = currentProjects.filter(p => {
+          return (p.category === filter) || (p.weddingRitual === filter);
+        });
+      }
+
+      filtered.forEach(p => {
+        const tr = document.createElement('tr');
+        const thumb = p.thumbImage || p.image || (p.photos && p.photos[0]) || '/assets/logos/logo-dark-bg.jpg';
+        tr.innerHTML = `
+          <td>
+            <img src="${thumb}" class="table-thumb" alt="${p.title}" />
+          </td>
+          <td><strong>${p.title}</strong></td>
+          <td>
+            <span class="badge">${p.category}</span>
+            ${p.weddingRitual ? `<span class="badge ritual-badge">${p.weddingRitual}</span>` : ''}
+          </td>
+          <td>${p.client || '-'}</td>
+          <td>${p.year || '2026'}</td>
+          <td>
+            <button class="btn-action delete" onclick="deleteProject('${p.id}')">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('filterCategory').addEventListener('change', renderProjectsTable);
+
     async function deleteProject(id) {
-      if (!confirm('Are you sure you want to remove this project?')) return;
+      if (!confirm('Are you sure you want to delete this project from the database?')) return;
       try {
         const res = await fetch('/api/projects/' + id, { method: 'DELETE' });
-        const data = await res.json();
-        if (data.success) {
+        const json = await res.json();
+        if (json.success) {
+          currentProjects = currentProjects.filter(p => p.id !== id);
+          renderProjectsTable();
           loadAdminData();
         }
       } catch (e) {
-        alert('Failed to delete project');
+        alert('Delete failed.');
       }
     }
 
-    // Add project form submission
+    // Add project form
     document.getElementById('addProjectForm').addEventListener('submit', async (e) => {
       e.preventDefault();
+      const status = document.getElementById('addStatus');
+      status.innerHTML = '<span style="color:var(--brand-gold);">Publishing...</span>';
+
       const payload = {
         title: document.getElementById('newTitle').value,
         category: document.getElementById('newCategory').value,
-        video: document.getElementById('newVideo').value,
-        image: document.getElementById('newImage').value,
+        weddingRitual: document.getElementById('newWeddingRitual').value,
         client: document.getElementById('newClient').value,
+        image: document.getElementById('newImage').value,
+        photos: uploadedUrls.length ? uploadedUrls : [document.getElementById('newImage').value],
+        video: document.getElementById('newVideo').value,
+        year: document.getElementById('newYear').value,
         tags: document.getElementById('newTags').value,
         description: document.getElementById('newDesc').value
       };
 
-      const status = document.getElementById('addStatus');
       try {
         const res = await fetch('/api/projects', {
           method: 'POST',
@@ -360,18 +613,16 @@
         });
         const data = await res.json();
         if (data.success) {
-          status.className = 'form-status success';
-          status.textContent = '✓ Project published successfully!';
-          status.style.display = 'block';
+          status.innerHTML = '<span style="color:#4ade80;font-weight:600;">&#10003; Published successfully to galleries &amp; wedding tabs!</span>';
           document.getElementById('addProjectForm').reset();
+          uploadedUrls = [];
+          previewStrip.innerHTML = '';
           loadAdminData();
         } else {
-          throw new Error(data.message);
+          status.innerHTML = `<span style="color:#ef4444;">${data.message}</span>`;
         }
       } catch (err) {
-        status.className = 'form-status error';
-        status.textContent = '✕ ' + err.message;
-        status.style.display = 'block';
+        status.innerHTML = `<span style="color:#ef4444;">Error: ${err.message}</span>`;
       }
     });
 

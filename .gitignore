@@ -1,3 +1,8 @@
+# Large raw media (optimized versions in public/assets/optimized/ are tracked)
+public/assets/drive_media/
+WhatsApp Video*.mp4
+WhatsApp Image*.jpeg
+
 # Dependencies
 node_modules/
 

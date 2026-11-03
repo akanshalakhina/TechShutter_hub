@@ -7,8 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -69,13 +69,17 @@ function saveInquiries(inquiries) {
 
 // REST API Endpoints
 
-// 1. Get projects
+// 1. Get projects (filterable by category, weddingRitual, and search)
 app.get('/api/projects', (req, res) => {
   let list = getProjects();
-  const { category, search } = req.query;
+  const { category, weddingRitual, search } = req.query;
 
   if (category && category !== 'All') {
     list = list.filter(p => (p.category || '').toLowerCase() === category.toLowerCase());
+  }
+
+  if (weddingRitual && weddingRitual !== 'All') {
+    list = list.filter(p => (p.weddingRitual || '').toLowerCase() === weddingRitual.toLowerCase());
   }
 
   if (search) {
@@ -83,6 +87,7 @@ app.get('/api/projects', (req, res) => {
     list = list.filter(p =>
       (p.title || '').toLowerCase().includes(q) ||
       (p.category || '').toLowerCase().includes(q) ||
+      (p.weddingRitual || '').toLowerCase().includes(q) ||
       (p.description || '').toLowerCase().includes(q) ||
       (p.tags || []).some(t => t.toLowerCase().includes(q))
     );
@@ -99,22 +104,28 @@ app.get('/api/projects/:id', (req, res) => {
   res.json({ success: true, data: project });
 });
 
-// 3. Create project
+// 3. Create project (Admin capability)
 app.post('/api/projects', (req, res) => {
-  const { title, category, description, video, image, photos, client, year, tags } = req.body;
+  const { title, category, weddingRitual, description, video, image, thumbImage, photos, client, year, tags, orientation } = req.body;
   if (!title || !category) {
     return res.status(400).json({ success: false, message: 'Title and Category are required.' });
   }
 
   const list = getProjects();
+  const photoList = Array.isArray(photos) ? photos : (image ? [image] : []);
+  const mainImage = image || (photoList.length > 0 ? photoList[0] : '');
+
   const newProject = {
     id: 'tsh-' + Date.now().toString(36),
     title: title.trim(),
     category: category.trim(),
+    weddingRitual: (weddingRitual || '').trim(),
     description: description || '',
     video: video || '',
-    image: image || (photos && photos[0]) || '',
-    photos: Array.isArray(photos) ? photos : (image ? [image] : []),
+    image: mainImage,
+    thumbImage: thumbImage || mainImage,
+    photos: photoList,
+    orientation: orientation || 'landscape',
     client: client || 'Tech Shutter Hub Client',
     year: year || new Date().getFullYear().toString(),
     tags: Array.isArray(tags) ? tags : (tags ? tags.split(',').map(s => s.trim()) : [])
@@ -122,6 +133,7 @@ app.post('/api/projects', (req, res) => {
 
   list.unshift(newProject);
   saveProjects(list);
+  console.log(`[PROJECT ADDED] "${newProject.title}" in category "${newProject.category}" (Ritual: "${newProject.weddingRitual}")`);
   res.status(201).json({ success: true, message: 'Project created successfully', data: newProject });
 });
 
@@ -155,7 +167,79 @@ app.delete('/api/projects/:id', (req, res) => {
   res.json({ success: true, message: 'Project removed successfully' });
 });
 
-// 6. Submit Client Inquiry / Project Booking
+// 6. Direct Photo Upload API for Admin (supports base64 image data from file picker)
+app.post('/api/upload', async (req, res) => {
+  try {
+    const { filename, data } = req.body;
+    if (!data) {
+      return res.status(400).json({ success: false, message: 'No file data provided.' });
+    }
+
+    const matches = data.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    if (!matches || matches.length !== 3) {
+      return res.status(400).json({ success: false, message: 'Invalid image data format. Expecting base64.' });
+    }
+
+    const mime = matches[1];
+    let ext = mime.split('/')[1] || 'jpg';
+    if (ext === 'jpeg') ext = 'jpg';
+
+    const baseName = (filename || 'upload').replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
+    const safeName = `${baseName}_${Date.now()}.${ext}`;
+
+    const uploadDir = path.join(__dirname, 'public', 'assets', 'uploads');
+    const optDir = path.join(__dirname, 'public', 'assets', 'optimized');
+    const thumbDir = path.join(__dirname, 'public', 'assets', 'thumbs');
+
+    fs.mkdirSync(uploadDir, { recursive: true });
+    fs.mkdirSync(optDir, { recursive: true });
+    fs.mkdirSync(thumbDir, { recursive: true });
+
+    const buffer = Buffer.from(matches[2], 'base64');
+    const fullPath = path.join(uploadDir, safeName);
+    fs.writeFileSync(fullPath, buffer);
+
+    let optUrl = `/assets/uploads/${safeName}`;
+    let thumbUrl = `/assets/uploads/${safeName}`;
+    let orientation = 'landscape';
+    let width = 1600;
+    let height = 1200;
+
+    try {
+      const sharp = require('sharp');
+      const meta = await sharp(fullPath).metadata();
+      width = meta.width;
+      height = meta.height;
+      orientation = height > width ? 'portrait' : 'landscape';
+
+      const optFile = `opt_${safeName}`;
+      const thumbFile = `thumb_${safeName}`;
+      await sharp(fullPath).resize(1600, 1600, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 85 }).toFile(path.join(optDir, optFile));
+      await sharp(fullPath).resize(600, 600, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 80 }).toFile(path.join(thumbDir, thumbFile));
+
+      optUrl = `/assets/optimized/${optFile}`;
+      thumbUrl = `/assets/thumbs/${thumbFile}`;
+    } catch (err) {
+      console.warn('Sharp optimization skipped:', err.message);
+    }
+
+    res.json({
+      success: true,
+      message: 'Photo uploaded and processed successfully',
+      url: optUrl,
+      thumbUrl: thumbUrl,
+      originalUrl: `/assets/uploads/${safeName}`,
+      orientation,
+      width,
+      height
+    });
+  } catch (err) {
+    console.error('Upload error:', err);
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// 7. Submit Client Inquiry / Project Booking
 app.post('/api/inquire', (req, res) => {
   const { name, email, phone, projectType, date, budget, message } = req.body;
   if (!name || !email) {
@@ -187,23 +271,57 @@ app.post('/api/inquire', (req, res) => {
   });
 });
 
-// 7. Get all inquiries (for admin review)
+// 8. Career application submission
+app.post('/api/careers', (req, res) => {
+  const { name, email, phone, role, portfolioUrl, experience, message } = req.body;
+  if (!name || !email || !role) {
+    return res.status(400).json({ success: false, message: 'Name, Email, and Role are required.' });
+  }
+
+  const inquiries = getInquiries();
+  const newCareerApp = {
+    id: 'career-' + Date.now().toString(36),
+    name: name.trim(),
+    email: email.trim(),
+    phone: phone || '',
+    projectType: `Career Application: ${role}`,
+    date: new Date().toISOString().split('T')[0],
+    budget: experience ? `Exp: ${experience}` : 'N/A',
+    message: `Portfolio: ${portfolioUrl || 'N/A'}\n\nCover Note: ${message || 'No additional note'}`,
+    status: 'Career Review',
+    createdAt: new Date().toISOString()
+  };
+
+  inquiries.unshift(newCareerApp);
+  saveInquiries(inquiries);
+  console.log(`[CAREER APP] ${newCareerApp.name} applied for ${role}`);
+
+  res.status(201).json({
+    success: true,
+    message: 'Thank you for applying to Tech Shutter Hub! Our production lead will review your portfolio.',
+    data: newCareerApp
+  });
+});
+
+// 9. Get all inquiries (for admin review)
 app.get('/api/inquiries', (req, res) => {
   const inquiries = getInquiries();
   res.json({ success: true, count: inquiries.length, data: inquiries });
 });
 
-// 8. Stats endpoint
+// 10. Stats endpoint
 app.get('/api/stats', (req, res) => {
   const projects = getProjects();
   const inquiries = getInquiries();
   const categories = [...new Set(projects.map(p => p.category))];
+  const rituals = [...new Set(projects.filter(p => p.weddingRitual).map(p => p.weddingRitual))];
   res.json({
     success: true,
     totalProjects: projects.length,
     totalCategories: categories.length,
     totalInquiries: inquiries.length,
-    categories
+    categories,
+    weddingRituals: rituals
   });
 });
 
@@ -215,7 +333,7 @@ app.use((req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`=======================================================`);
-  console.log(`🚀 TECH SHUTTER HUB Immersive 3D Platform Live!`);
+  console.log(`🚀 TECH SHUTTER HUB Immersive Platform Live!`);
   console.log(`🌐 Server running at: http://localhost:${PORT}`);
   console.log(`=======================================================`);
 });

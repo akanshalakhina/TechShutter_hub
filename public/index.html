@@ -2,223 +2,928 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>TECH SHUTTER HUB | 3D Immersive Portfolio &amp; Cinematography Gallery</title>
-  <meta name="description" content="Explore Tech Shutter Hub's work in an immersive 3D gallery: 8K cinematography, camera &amp; lens reviews, drone aerials, commercial brand films, and studio photography." />
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECH SHUTTER HUB | Cinematic Film &amp; Photography Studio</title>
+  <meta name="description" content="Tech Shutter Hub is a premier cinematic film and photography studio specializing in full-spectrum Bengali weddings, pre-wedding escapes, cinematic reels, commercial productions, and cultural milestones." />
+
   <!-- Favicon -->
   <link rel="icon" href="/favicon.png" type="image/png" />
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="TECH SHUTTER HUB | 3D Immersive Portfolio" />
-  <meta property="og:description" content="Experience cutting-edge cinematography, camera reviews, and visual productions in our 3D interactive gallery." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/logos/logo-dark-bg.jpg" />
 
-  <!-- Core Theme & Styles -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="TECH SHUTTER HUB | Cinematic Film &amp; Photography Studio" />
+  <meta property="og:description" content="Cinematic wedding rituals, pre-wedding escapes, 8K cinematography, and commercial visual productions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/logos/techshutter-logo.png" />
+
+  <!-- Core Theme & Editorial Styles -->
   <link rel="stylesheet" href="/css/theme.css" />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/editorial.css" />
 </head>
-<body>
+<body class="editorial-home">
 
-  <!-- Floating Navigation Bar -->
-  <header class="tsh-nav" role="banner">
-    <div class="tsh-nav-left">
-      <a href="/" class="brand-badge" title="Tech Shutter Hub Home">
-        <img class="brand-logo-img" src="/assets/logos/logo-dark-transparent.png" alt="Tech Shutter Hub Logo" />
-        <div class="brand-text">
-          <span class="brand-name">Tech Shutter Hub</span>
-          <span class="brand-sub">Visual Productions</span>
+  <!-- ========================================================
+       1. FIXED HEADER & NAVIGATION
+       ======================================================== -->
+  <header class="tsh-header" role="banner">
+    <div class="container">
+      <div class="tsh-nav-inner">
+        
+        <!-- Brand Badge -->
+        <a href="/" class="tsh-brand" title="Tech Shutter Hub Home">
+          <img class="tsh-brand-img" src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+          <div class="tsh-brand-text">
+            <span class="tsh-brand-name">Tech Shutter Hub</span>
+            <span class="tsh-brand-tag">Cinematic Visual Studio</span>
+          </div>
+        </a>
+
+        <!-- Main Desktop Navigation -->
+        <nav class="tsh-nav-desktop" aria-label="Main Navigation">
+          <ul class="tsh-nav-menu">
+            <li><a href="#wedding" class="tsh-nav-link">Wedding</a></li>
+            
+            <!-- Services Dropdown (Short Names) -->
+            <li class="tsh-dropdown-wrapper">
+              <button class="tsh-nav-link tsh-dropdown-trigger" type="button" aria-expanded="false">
+                Services <span class="dropdown-caret">&#9662;</span>
+              </button>
+              <div class="tsh-dropdown-menu" role="menu">
+                <a href="#services" class="dropdown-item" data-service="Weddings &amp; Rituals">
+                  <span class="dropdown-item-title">Weddings &amp; Rituals</span>
+                  <span class="dropdown-item-desc">Gaye Holud, Ashirbad, Vivaha &amp; Boubhat</span>
+                </a>
+                <a href="#services" class="dropdown-item" data-service="Pre-Wedding Shoots">
+                  <span class="dropdown-item-title">Pre-Wedding Shoots</span>
+                  <span class="dropdown-item-desc">Stylised romantic couple escapes</span>
+                </a>
+                <a href="#reels" class="dropdown-item" data-service="Cinematic Reels">
+                  <span class="dropdown-item-title">Cinematic Reels</span>
+                  <span class="dropdown-item-desc">Fast-paced 9:16 vertical social video</span>
+                </a>
+                <a href="#services" class="dropdown-item" data-service="Product &amp; E-Commerce">
+                  <span class="dropdown-item-title">Product &amp; E-Commerce</span>
+                  <span class="dropdown-item-desc">High-res jewellery, ethnic &amp; goods catalog</span>
+                </a>
+                <a href="#services" class="dropdown-item" data-service="F&amp;B &amp; Ambiance">
+                  <span class="dropdown-item-title">F&amp;B &amp; Ambiance</span>
+                  <span class="dropdown-item-desc">Culinary styling, interiors &amp; hospitality</span>
+                </a>
+                <a href="#services" class="dropdown-item" data-service="Corporate &amp; Teams">
+                  <span class="dropdown-item-title">Corporate &amp; Teams</span>
+                  <span class="dropdown-item-desc">Executive headshots &amp; seminars</span>
+                </a>
+                <a href="#services" class="dropdown-item" data-service="Maternity &amp; Annaprashan">
+                  <span class="dropdown-item-title">Maternity &amp; Annaprashan</span>
+                  <span class="dropdown-item-desc">Parenthood glow &amp; infant rice ceremony</span>
+                </a>
+                <a href="#services" data-service="Festive &amp; Cultural" class="dropdown-item">
+                  <span class="dropdown-item-title">Festive &amp; Cultural</span>
+                  <span class="dropdown-item-desc">Durga Puja editorial &amp; heritage portfolios</span>
+                </a>
+              </div>
+            </li>
+
+            <li><a href="#career" class="tsh-nav-link">Career</a></li>
+            <li><a href="#work" class="tsh-nav-link">Work</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Actions & CTA Button -->
+        <div class="tsh-nav-actions">
+          <!-- Audio sound toggle -->
+          <button class="nav-btn btn-icon-only" id="soundToggleBtn" title="Sound Effects" aria-label="Toggle Sound">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <!-- Theme toggle -->
+          <button class="nav-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Dark / Light Theme">
+            <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+            </svg>
+          </button>
+
+          <!-- Admin Portal Link -->
+          <a href="/admin.html" class="nav-btn" title="Admin Portal &amp; Photo Manager">
+            <span>Admin</span>
+          </a>
+
+          <!-- Highlighted "Start a Project" CTA button -->
+          <a href="#contact" class="btn-start-project">
+            <span>Start a Project</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
-      </a>
-    </div>
 
-    <div class="tsh-nav-right">
-      <!-- Search button -->
-      <button class="nav-btn btn-icon-only" id="searchBtn" title="Search Projects (Press /)" aria-label="Search">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-
-      <!-- Audio Mute/Unmute -->
-      <button class="nav-btn btn-icon-only" id="soundToggleBtn" title="Sound Effects" aria-label="Sound Effects">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-        </svg>
-      </button>
-
-      <!-- Theme Switcher (Dark / Light) -->
-      <button class="nav-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
-        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <span class="lbl theme-text">Light</span>
-      </button>
-
-      <!-- Grid View Switch -->
-      <a href="/gallery.html" class="nav-btn" title="Switch to Grid View" aria-label="Grid View">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
-          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
-          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
-          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
-        </svg>
-        <span class="lbl">Grid View</span>
-      </a>
-
-      <!-- Start Project CTA -->
-      <button class="nav-btn btn-cta open-inquire-btn" title="Start a Project">
-        <span>Start a Project</span>
-      </button>
+      </div>
     </div>
   </header>
 
-  <!-- Category Filter Pill Bar -->
-  <div class="cats-container">
-    <nav class="cats" id="cats" role="navigation" aria-label="Project Categories"></nav>
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" style="position:fixed;top:0;right:-100%;width:300px;height:100%;background:#0e131b;z-index:1020;padding:30px 24px;transition:right 0.3s ease;box-shadow:-10px 0 30px rgba(0,0,0,0.8);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <span style="font-weight:700;color:var(--brand-gold);text-transform:uppercase;letter-spacing:0.1em;font-size:13px;">Menu</span>
+      <button id="drawerClose" style="background:none;border:none;color:#fff;font-size:24px;cursor:pointer;">&times;</button>
+    </div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;">
+      <li><a href="#wedding" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Wedding</a></li>
+      <li><a href="#services" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Services</a></li>
+      <li><a href="#reels" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Cinematic Reels</a></li>
+      <li><a href="#career" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Career</a></li>
+      <li><a href="#work" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Work</a></li>
+      <li><a href="/admin.html" style="color:var(--brand-gold);text-decoration:none;font-size:16px;font-weight:600;display:block;">Admin Portal</a></li>
+      <li style="margin-top:20px;">
+        <a href="#contact" class="btn-start-project" style="display:block;text-align:center;">Start a Project</a>
+      </li>
+    </ul>
   </div>
 
-  <!-- Full-Screen 3D WebGL Canvas Container -->
-  <main id="app" aria-label="3D Immersive Cylinder Room"></main>
+  <!-- ========================================================
+       2. EDITORIAL HERO SECTION (Reelxpozure Style)
+       ======================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Cinematic Video Reel Backdrop -->
+    <video class="hero-video-backdrop" autoplay muted loop playsinline poster="/assets/optimized/DSC00180_1.jpg">
+      <source src="/assets/videos/video-1.mp4" type="video/mp4" />
+      <source src="/assets/videos/video-2.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
 
-  <!-- Centered Hero Headline (Auto-Fades on user interaction) -->
-  <div class="headline" aria-hidden="true">
-    <div class="eyebrow">Visual Stories by</div>
-    <div class="brand">TECH SHUTTER HUB</div>
-    <div class="tagline">
-      <span></span>
-      Cinematography &middot; Gear &middot; Visual Arts &middot; Drag to explore
-      <span></span>
+    <div class="container hero-content">
+      <div class="hero-eyebrow">
+        <span>&#9670;</span>
+        <span>Kolkata &middot; Destination Weddings &middot; Visual Production Studio</span>
+        <span>&#9670;</span>
+      </div>
+
+      <h1 class="hero-headline">
+        A cinematic film and photography studio for <span class="gold-italic">weddings,</span> brand stories and life's work.
+      </h1>
+
+      <p class="hero-subhead">
+        Documenting the emotional pulse of sacred Bengali wedding rituals, high-fashion pre-wedding escapes, and impactful visual storytelling in 8K resolution.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary">
+          <span>Explore Works</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <span>Start a Project</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3. THREE WAYS IN / SIGNATURE DISCIPLINES (Reelxpozure Architecture)
+       ======================================================== -->
+  <section class="pillars-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <span class="section-label">Our Creative Disciplines</span>
+        <h2 class="section-title">Three ways in. Pick the one that fits.</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Whether capturing once-in-a-lifetime marital vows or shaping an evocative brand film, we craft visuals you will keep forever.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1: Full-Spectrum Weddings -->
+        <div class="pillar-card">
+          <div>
+            <span class="pillar-num">01 / CEREMONIAL</span>
+            <h3 class="pillar-title">Weddings &amp; Rituals</h3>
+            <p class="pillar-desc">
+              Comprehensive Bengali wedding documentation spanning Gaye Holud, Ashirbad, Main Vivaha rituals (Saat Paake Ghaura, Sindoor Daan) and Boubhat feasts with cinematic photojournalism.
+            </p>
+          </div>
+          <a href="#wedding" class="pillar-link">
+            <span>Explore Wedding Archive</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Pillar 2: Pre-Wedding & Reels -->
+        <div class="pillar-card">
+          <div>
+            <span class="pillar-num">02 / EDITORIAL</span>
+            <h3 class="pillar-title">Pre-Wedding &amp; Reels</h3>
+            <p class="pillar-desc">
+              Themed, stylised destination photoshoots and vertical 9:16 short-form video teasers built specifically for high social media impact across Instagram &amp; Facebook.
+            </p>
+          </div>
+          <a href="#reels" class="pillar-link">
+            <span>Watch Video Reels</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Pillar 3: Brand & Milestones -->
+        <div class="pillar-card">
+          <div>
+            <span class="pillar-num">03 / COMMERCIAL</span>
+            <h3 class="pillar-title">Commercial &amp; Culture</h3>
+            <p class="pillar-desc">
+              High-resolution product &amp; jewellery photography, F&amp;B culinary styling, executive corporate portraits, infant Annaprashan milestones, and Durga Puja festival portfolios.
+            </p>
+          </div>
+          <a href="#services" class="pillar-link">
+            <span>View All Services</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4. DEDICATED WEDDING EXPERIENCE & RITUAL TABS (#wedding)
+       ======================================================== -->
+  <section class="wedding-section" id="wedding">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
+        <div>
+          <span class="section-label">Ritual Archive &amp; Galleries</span>
+          <h2 class="section-title">Full-Spectrum Wedding Coverage</h2>
+          <p class="section-subtitle">
+            Every sacred vow, teardrop, and burst of laughter. Combining candid photojournalism with heirloom posed portraiture.
+          </p>
+        </div>
+        <a href="#contact" class="btn-start-project" style="padding:10px 20px; font-size:11px;">
+          <span>Book Wedding Shoot</span>
+        </a>
+      </div>
+
+      <!-- Ritual Filter Tabs -->
+      <div class="ritual-tabs">
+        <button class="ritual-tab-btn active" data-ritual="All">All Rituals</button>
+        <button class="ritual-tab-btn" data-ritual="Gaye Holud">Gaye Holud</button>
+        <button class="ritual-tab-btn" data-ritual="Ashirbad">Ashirbad</button>
+        <button class="ritual-tab-btn" data-ritual="Main Wedding">Main Wedding</button>
+        <button class="ritual-tab-btn" data-ritual="Boubhat">Boubhat &amp; Reception</button>
+        <button class="ritual-tab-btn" data-ritual="Pre-Wedding">Pre-Wedding Escapes</button>
+      </div>
+
+      <!-- Wedding Photos Grid (Dynamically Populated from Downloaded Photos) -->
+      <div class="wedding-photos-grid" id="weddingPhotosGrid"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. CINEMATIC VIDEO REELS & TEASERS (#reels)
+       ======================================================== -->
+  <section class="reels-section" id="reels">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <span class="section-label">Short-Form Motion</span>
+        <h2 class="section-title">Cinematic Reels &amp; Teasers</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Short-form, highly edited, and fast-paced vertical video content designed specifically for social media platforms like Instagram and Facebook.
+        </p>
+      </div>
+
+      <div class="reels-grid">
+        <!-- Reel 1 -->
+        <div class="reel-card">
+          <video class="reel-video" src="/assets/videos/video-1.mp4" loop playsinline muted preload="metadata"></video>
+          <div class="reel-overlay">
+            <div class="reel-top">
+              <span class="reel-tag">Couple Reel</span>
+              <button class="reel-control-btn reel-mute-btn" title="Toggle Sound">&#128263;</button>
+            </div>
+            <div class="reel-bottom">
+              <h4 class="reel-title">Golden Hour Romance</h4>
+              <p class="reel-desc">Short-form 9:16 vertical edit for Instagram &amp; TikTok.</p>
+              <button class="reel-control-btn reel-play-btn" style="width:44px; height:44px; margin:0 auto;" title="Play Reel">&#9654;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reel 2 -->
+        <div class="reel-card">
+          <video class="reel-video" src="/assets/videos/video-2.mp4" loop playsinline muted preload="metadata"></video>
+          <div class="reel-overlay">
+            <div class="reel-top">
+              <span class="reel-tag">Haldi Teaser</span>
+              <button class="reel-control-btn reel-mute-btn" title="Toggle Sound">&#128263;</button>
+            </div>
+            <div class="reel-bottom">
+              <h4 class="reel-title">Gaye Holud Splashes</h4>
+              <p class="reel-desc">120 FPS high-frame-rate celebration highlights.</p>
+              <button class="reel-control-btn reel-play-btn" style="width:44px; height:44px; margin:0 auto;" title="Play Reel">&#9654;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reel 3 -->
+        <div class="reel-card">
+          <video class="reel-video" src="/assets/videos/video-3.mp4" loop playsinline muted preload="metadata"></video>
+          <div class="reel-overlay">
+            <div class="reel-top">
+              <span class="reel-tag">Wedding Trailer</span>
+              <button class="reel-control-btn reel-mute-btn" title="Toggle Sound">&#128263;</button>
+            </div>
+            <div class="reel-bottom">
+              <h4 class="reel-title">Sacred Bengali Vivaha</h4>
+              <p class="reel-desc">Cinematic wedding trailer with pristine audio.</p>
+              <button class="reel-control-btn reel-play-btn" style="width:44px; height:44px; margin:0 auto;" title="Play Reel">&#9654;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reel 4 -->
+        <div class="reel-card">
+          <video class="reel-video" src="/assets/videos/video-4.mp4" loop playsinline muted preload="metadata"></video>
+          <div class="reel-overlay">
+            <div class="reel-top">
+              <span class="reel-tag">Night Gala</span>
+              <button class="reel-control-btn reel-mute-btn" title="Toggle Sound">&#128263;</button>
+            </div>
+            <div class="reel-bottom">
+              <h4 class="reel-title">Boubhat Reception Highlights</h4>
+              <p class="reel-desc">Ambient lighting &amp; slow-motion entrance dance.</p>
+              <button class="reel-control-btn reel-play-btn" style="width:44px; height:44px; margin:0 auto;" title="Play Reel">&#9654;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6. ALL 8 SERVICES SECTION (Short Names & Complete Scope)
+       ======================================================== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div style="text-align:center; max-width:760px; margin:0 auto;">
+        <span class="section-label">Studio Offerings</span>
+        <h2 class="section-title">Crafted for Quality &amp; Longevity</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Each discipline is backed by cinema-grade optics, calibrated lighting, and meticulous color grading tailored to the event.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h3 class="service-short-name">Weddings &amp; Rituals</h3>
+            <span class="service-official-title">Full-Spectrum Wedding Coverage</span>
+            <p class="service-full-desc">
+              Comprehensive documentation of all wedding rituals, combining traditional posed photography with candid photojournalism across both the bride and groom's events (Gaye Holud, Ashirbad, Main Wedding, Boubhat).
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Weddings &amp; Rituals">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg>
+            </div>
+            <h3 class="service-short-name">Pre-Wedding Shoots</h3>
+            <span class="service-official-title">Pre-Wedding Escapes</span>
+            <p class="service-full-desc">
+              Stylised, themed photoshoots and video shoots conducted before the wedding day at scenic or meaningful locations to capture the couple's chemistry.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Pre-Wedding Shoots">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <h3 class="service-short-name">Cinematic Reels</h3>
+            <span class="service-official-title">Cinematic Reels &amp; Teasers</span>
+            <p class="service-full-desc">
+              Short-form, highly edited, and fast-paced vertical video content designed specifically for social media platforms like Instagram and Facebook.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Cinematic Reels">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+            <h3 class="service-short-name">Product &amp; E-Commerce</h3>
+            <span class="service-official-title">Product &amp; E-commerce Photography</span>
+            <p class="service-full-desc">
+              High-resolution, well-lit imagery of goods (ethnic wear, jewellery, etc.) intended for catalogues, online stores, and digital advertising.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Product &amp; E-Commerce">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="service-short-name">F&amp;B &amp; Ambiance</h3>
+            <span class="service-official-title">F&amp;B / Restaurant Photography</span>
+            <p class="service-full-desc">
+              Appetising, styled shots of food and beverages, along with interior ambience shots for cafes, restaurants, and cloud kitchens.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="F&amp;B &amp; Ambiance">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="service-short-name">Corporate &amp; Teams</h3>
+            <span class="service-official-title">Corporate Photography</span>
+            <p class="service-full-desc">
+              Professional headshots, team photos, facility documentation, and coverage of corporate events and seminars.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Corporate &amp; Teams">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            </div>
+            <h3 class="service-short-name">Maternity &amp; Annaprashan</h3>
+            <span class="service-official-title">Annaprashan &amp; Maternity</span>
+            <p class="service-full-desc">
+              Milestone photography documenting the journey of parenthood (maternity shoots) and the traditional Bengali rice ceremony for infants.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Maternity &amp; Annaprashan">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card">
+          <div>
+            <div class="service-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="service-short-name">Festive &amp; Cultural</h3>
+            <span class="service-official-title">Durga Puja &amp; Festive Portfolios</span>
+            <p class="service-full-desc">
+              Specialised editorial fashion shoots and cultural documentation centred around the festive season of Bengal.
+            </p>
+          </div>
+          <button class="service-book-btn" data-service="Festive &amp; Cultural">
+            <span>Inquire Service</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       7. WORK SHOWCASE (Curated Grid + 3D Cylinder Switch) (#work)
+       ======================================================== -->
+  <section class="work-section" id="work">
+    <div class="container">
+      <div class="work-header-wrap">
+        <div>
+          <span class="section-label">Curated Portfolio</span>
+          <h2 class="section-title">Selected Works</h2>
+          <p class="section-subtitle">
+            Explore our visual productions. Toggle between our editorial gallery grid and the signature interactive 3D WebGL Cylinder room.
+          </p>
+        </div>
+
+        <!-- Grid vs 3D Switch -->
+        <div class="work-view-toggle">
+          <button class="view-btn active" id="viewGridBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            <span>Grid View</span>
+          </button>
+          <button class="view-btn" id="view3dBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18"/></svg>
+            <span>3D Cylinder Room</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills for Grid -->
+      <div id="workGridWrap">
+        <div class="work-filters">
+          <button class="work-filter-btn active" data-category="All">All Works</button>
+          <button class="work-filter-btn" data-category="Full-Spectrum Wedding">Weddings</button>
+          <button class="work-filter-btn" data-category="Pre-Wedding Escapes">Pre-Wedding</button>
+          <button class="work-filter-btn" data-category="Cinematic Reels &amp; Teasers">Cinematic Reels</button>
+          <button class="work-filter-btn" data-category="Product &amp; E-commerce">Product &amp; Goods</button>
+          <button class="work-filter-btn" data-category="F&amp;B / Restaurant">F&amp;B / Culinary</button>
+          <button class="work-filter-btn" data-category="Corporate Photography">Corporate</button>
+          <button class="work-filter-btn" data-category="Annaprashan &amp; Maternity">Milestones</button>
+          <button class="work-filter-btn" data-category="Durga Puja &amp; Festive">Durga Puja &amp; Festive</button>
+        </div>
+
+        <div class="wedding-photos-grid" id="workGridCards"></div>
+      </div>
+
+      <!-- 3D Cylinder Container (Embedded when toggled) -->
+      <div class="inline-3d-wrap" id="work3dWrap">
+        <div id="app" style="position:absolute; inset:0; z-index:1;"></div>
+        <div class="tip" id="tip" role="tooltip" aria-hidden="true"></div>
+        <div class="inline-3d-hint">
+          <span>&#8644; Drag to spin cylinder</span> &middot;
+          <span>Pinch / Scroll to zoom</span> &middot;
+          <span>Click frame to open</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       8. EDITORIAL QUOTE (Reelxpozure Style)
+       ======================================================== -->
+  <section style="padding: 100px 0; background: #05070a; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+    <div class="container" style="max-width: 860px;">
+      <span class="section-label">Studio Philosophy</span>
+      <blockquote style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.5rem); line-height: 1.35; color: #ffffff; margin-bottom: 24px; font-weight: 300;">
+        &ldquo;The moments people are most afraid to forget are usually the ones nobody bothered to make well. We make sure they endure.&rdquo;
+      </blockquote>
+      <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-gold); font-weight: 700;">
+        &mdash; Tech Shutter Hub Production Ethos
+      </span>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       9. CAREER / CREATIVE COLLECTIVE (#career)
+       ======================================================== -->
+  <section class="career-section" id="career">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <span class="section-label">Join Our Creative Collective</span>
+        <h2 class="section-title">Shape Visual Culture With Us</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          We are constantly searching for passionate storytellers, colorists, drone pilots, and cinematographers who obsess over framing and lighting.
+        </p>
+      </div>
+
+      <div class="career-grid">
+        <!-- Role 1 -->
+        <div class="career-card">
+          <div>
+            <h3 class="career-role-title">Lead Wedding Photographer</h3>
+            <span class="career-role-type">Full-Time / Project Contract &middot; Kolkata</span>
+            <p class="career-role-desc">
+              Must possess deep familiarity with traditional Bengali rituals, mastery over off-camera flash, and the ability to capture authentic candid interactions under fast-paced wedding dynamics.
+            </p>
+          </div>
+          <button class="career-apply-btn" data-role="Lead Wedding Photographer">
+            <span>Apply For Role</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="career-card">
+          <div>
+            <h3 class="career-role-title">Cinematographer &amp; Gimbal Op</h3>
+            <span class="career-role-type">Full-Time &middot; Field Production</span>
+            <p class="career-role-desc">
+              Experienced with Sony FX series / Alpha bodies, anamorphic lenses, and ronin stabilization. Responsible for cinematic movement, framing, and dynamic couple storytelling.
+            </p>
+          </div>
+          <button class="career-apply-btn" data-role="Cinematographer &amp; Gimbal Op">
+            <span>Apply For Role</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="career-card">
+          <div>
+            <h3 class="career-role-title">Senior Colorist &amp; Reel Editor</h3>
+            <span class="career-role-type">Studio / Remote Hybrid</span>
+            <p class="career-role-desc">
+              Master of DaVinci Resolve &amp; Premiere Pro. Ability to create editorial skin tones, cinematic film luts, and high-energy vertical 9:16 reels with rhythm-driven sound design.
+            </p>
+          </div>
+          <button class="career-apply-btn" data-role="Senior Colorist &amp; Reel Editor">
+            <span>Apply For Role</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       10. START A PROJECT / CONTACT US (#contact)
+       ======================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+        <span class="section-label">Initiate Booking</span>
+        <h2 class="section-title">Let's make something you'll keep.</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Tell us about your upcoming celebration, commercial launch, or portrait milestone. We reply within 24 hours.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Direct Studio Info -->
+        <div class="contact-info-card">
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 24px; color: #fff; margin-bottom: 24px;">Direct Studio Line</h3>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-title">Call / WhatsApp</div>
+                <a href="tel:+919876543210" class="contact-method-val">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-title">Email Desk</div>
+                <a href="mailto:contact@techshutterhub.com" class="contact-method-val">contact@techshutterhub.com</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-title">Studio Base</div>
+                <span class="contact-method-val" style="display:block;">Kolkata, West Bengal &middot; Available Worldwide</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+            <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); display: block; margin-bottom: 10px;">
+              Follow Our Stories
+            </span>
+            <div style="display: flex; gap: 14px;">
+              <a href="https://instagram.com" target="_blank" rel="noopener" style="color: var(--brand-gold); text-decoration: none; font-size: 13px; font-weight: 600;">Instagram &rarr;</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" style="color: var(--brand-gold); text-decoration: none; font-size: 13px; font-weight: 600;">YouTube &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Booking Form -->
+        <div class="contact-form-card">
+          <form id="contactInquiryForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="e.g. Sourav Mukherjee" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="sourav@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactPhone">Phone / WhatsApp</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="+91 98765 43210" />
+              </div>
+              <div class="form-group">
+                <label for="contactService">Select Service *</label>
+                <select id="contactService" class="form-control" required>
+                  <option value="Weddings &amp; Rituals">Weddings &amp; Rituals (Full-Spectrum)</option>
+                  <option value="Pre-Wedding Shoots">Pre-Wedding Shoots (Escapes)</option>
+                  <option value="Cinematic Reels">Cinematic Reels &amp; Teasers</option>
+                  <option value="Product &amp; E-Commerce">Product &amp; E-Commerce Photography</option>
+                  <option value="F&amp;B &amp; Ambiance">F&amp;B / Restaurant Photography</option>
+                  <option value="Corporate &amp; Teams">Corporate Photography &amp; Headshots</option>
+                  <option value="Maternity &amp; Annaprashan">Maternity &amp; Annaprashan (Milestones)</option>
+                  <option value="Festive &amp; Cultural">Durga Puja &amp; Festive Portfolios</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactDate">Event Date / Timeline</label>
+                <input type="date" id="contactDate" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="contactBudget">Estimated Budget Range</label>
+                <select id="contactBudget" class="form-control">
+                  <option value="₹50k - ₹1 Lakh">₹50,000 - ₹1,00,000</option>
+                  <option value="₹1 Lakh - ₹2.5 Lakh" selected>₹1,00,000 - ₹2,50,000</option>
+                  <option value="₹2.5 Lakh - ₹5 Lakh">₹2,50,000 - ₹5,00,000</option>
+                  <option value="₹5 Lakh+">₹5,00,000+ (Luxury Multi-Day)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Project Details / Rituals Involved</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Share your vision, locations (e.g. Kolkata, destination), specific rituals (Gaye Holud, Vivaha, Boubhat), or visual preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-inquiry-btn">
+              <span>Send Project Inquiry &rarr;</span>
+            </button>
+            <div id="contactFormStatus" style="margin-top: 14px; font-size: 13px;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       11. CAREER APPLICATION MODAL
+       ======================================================== -->
+  <div class="modal-overlay" id="careerModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="careerModalClose" aria-label="Close Modal">&times;</button>
+      <div class="modal-header">
+        <h3 id="careerModalTitle">Apply for Creative Role</h3>
+        <p>Join the Tech Shutter Hub production collective.</p>
+      </div>
+      <form id="careerAppForm">
+        <input type="hidden" id="careerRoleInput" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="careerName">Full Name *</label>
+            <input type="text" id="careerName" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="careerEmail">Email Address *</label>
+            <input type="email" id="careerEmail" class="form-control" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="careerPhone">Phone / WhatsApp</label>
+            <input type="tel" id="careerPhone" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="careerExp">Years of Experience</label>
+            <input type="text" id="careerExp" class="form-control" placeholder="e.g. 3 years" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="careerPortfolio">Portfolio Link / Instagram / Showreel *</label>
+          <input type="url" id="careerPortfolio" class="form-control" placeholder="https://instagram.com/mywork or Vimeo link" required />
+        </div>
+        <div class="form-group">
+          <label for="careerMessage">Brief Note / Cameras &amp; Gear You Own</label>
+          <textarea id="careerMessage" class="form-control" placeholder="Tell us about your background and primary gear..."></textarea>
+        </div>
+        <button type="submit" class="submit-inquiry-btn">Submit Application &rarr;</button>
+        <div id="careerFormStatus" style="margin-top:14px; font-size:13px;"></div>
+      </form>
     </div>
   </div>
 
-  <!-- Floating Dynamic 3D Tilted Label Tag (Calculated by Raycaster) -->
-  <div class="tip" id="tip" role="tooltip" aria-hidden="true"></div>
-
-  <!-- Bottom Interaction Hint Bar -->
-  <footer class="hint" role="contentinfo">
-    <span>Drag to spin</span> &middot;
-    <span>Pinch / Scroll to zoom</span> &middot;
-    <span>Click tile to open</span> &middot;
-    <span>Press <b>/</b> to search</span>
-  </footer>
-
-  <!-- Cinematic Video & Photo Lightbox Modal -->
+  <!-- ========================================================
+       12. LIGHTBOX MODAL
+       ======================================================== -->
   <div class="vbox" id="vbox" role="dialog" aria-modal="true" aria-hidden="true">
     <button class="vbox-close" id="vboxClose" aria-label="Close Lightbox">&times;</button>
     <div class="vbox-stage">
       <div class="vbox-frame">
         <div class="vbox-embed" id="vboxEmbed"></div>
         <img class="vbox-img" id="vboxImg" alt="Project Media" hidden />
-        <button class="vbox-nav prev" id="vboxPrev" aria-label="Previous Photo" hidden>&#8249;</button>
-        <button class="vbox-nav next" id="vboxNext" aria-label="Next Photo" hidden>&#8250;</button>
-        <div class="vbox-count" id="vboxCount" hidden></div>
       </div>
       <div class="vbox-bar">
         <div>
           <h2 class="vbox-title" id="vboxTitle"></h2>
           <span class="vbox-cat" id="vboxCat"></span>
         </div>
-        <button class="vbox-cta" id="vboxCta">Book a Shoot &rarr;</button>
+        <a href="#contact" class="vbox-cta" onclick="document.getElementById('vboxClose').click()">Book This Coverage &rarr;</a>
       </div>
     </div>
   </div>
 
-  <!-- Project Inquiry / Booking Modal -->
-  <div class="modal-overlay" id="inquireModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card">
-      <button class="modal-close" id="inquireClose" aria-label="Close Modal">&times;</button>
-      <div class="modal-header">
-        <h3>Start Your Project</h3>
-        <p>Let's craft your next visual story with cinematic quality.</p>
+  <!-- ========================================================
+       13. FOOTER
+       ======================================================== -->
+  <footer class="tsh-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col-brand">
+          <a href="/" class="tsh-brand" style="margin-bottom: 16px;">
+            <img class="tsh-brand-img" src="/assets/logos/techshutter-logo.png" alt="Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+            <div class="tsh-brand-text">
+              <span class="tsh-brand-name">Tech Shutter Hub</span>
+              <span class="tsh-brand-tag">Cinematic Visual Studio</span>
+            </div>
+          </a>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+            Cinematic film &amp; photography studio documenting the soul of Bengali weddings, brand stories, and life milestones across India and destination locations.
+          </p>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#wedding">Wedding Archive</a></li>
+            <li><a href="#services">Services &amp; Pricing</a></li>
+            <li><a href="#reels">Cinematic Reels</a></li>
+            <li><a href="#work">Selected Works</a></li>
+            <li><a href="#career">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Ritual Coverage</h4>
+          <ul>
+            <li><a href="#wedding">Gaye Holud / Haldi</a></li>
+            <li><a href="#wedding">Ashirbad &amp; Blessings</a></li>
+            <li><a href="#wedding">Saat Paake Ghaura &amp; Vivaha</a></li>
+            <li><a href="#wedding">Boubhat &amp; Reception</a></li>
+            <li><a href="#wedding">Pre-Wedding Escapes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Studio &amp; Admin</h4>
+          <ul>
+            <li><a href="/admin.html">Admin Portal</a></li>
+            <li><a href="#contact">Start a Project</a></li>
+            <li><a href="mailto:contact@techshutterhub.com">Email Us</a></li>
+          </ul>
+        </div>
       </div>
-      <form id="inquireForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="clientName">Your Name *</label>
-            <input type="text" id="clientName" class="form-control" placeholder="e.g. Alexander Vance" required />
-          </div>
-          <div class="form-group">
-            <label for="clientEmail">Email Address *</label>
-            <input type="email" id="clientEmail" class="form-control" placeholder="alex@studio.com" required />
-          </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="clientPhone">Phone / WhatsApp</label>
-            <input type="tel" id="clientPhone" class="form-control" placeholder="+1 (555) 019-2834" />
-          </div>
-          <div class="form-group">
-            <label for="projectType">Service / Production Type *</label>
-            <select id="projectType" class="form-control" required>
-              <option value="Cinematography">Cinematography &amp; Film Production</option>
-              <option value="Tech & Gear Reviews">Tech &amp; Camera Gear Review</option>
-              <option value="Drone & Aerial">Drone &amp; Aerial Filming</option>
-              <option value="Product Shoots">Luxury Product Shoot</option>
-              <option value="Brand Commercials">Commercial &amp; Brand Story</option>
-              <option value="Studio & Portraits">Studio &amp; Editorial Portraits</option>
-              <option value="Weddings & Films">Weddings &amp; Feature Films</option>
-              <option value="Events & Live">Events &amp; Live Music</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="projectDate">Estimated Date / Timeline</label>
-            <input type="date" id="projectDate" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label for="projectBudget">Budget Range</label>
-            <select id="projectBudget" class="form-control">
-              <option value="$1k - $3k">$1,000 - $3,000</option>
-              <option value="$3k - $8k" selected>$3,000 - $8,000</option>
-              <option value="$8k - $20k">$8,000 - $20,000</option>
-              <option value="$20k+">$20,000+</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="projectMessage">Project Vision &amp; Details</label>
-          <textarea id="projectMessage" class="form-control" placeholder="Tell us about the project goals, locations, or reference styles..."></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Send Inquiry &rarr;</button>
-        <div class="form-status" id="formStatus"></div>
-      </form>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Tech Shutter Hub. All rights reserved.</div>
+        <div>Engineered with 8K Cinema Optics &middot; Built with Passion</div>
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <!-- Search & Command Palette Modal -->
-  <div class="search-palette" id="searchPalette" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="search-input-wrap">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" id="searchInput" class="search-input" placeholder="Search by title, gear, camera or category... (Esc to close)" autocomplete="off" />
-    </div>
-    <div class="search-results" id="searchResults"></div>
-  </div>
-
-  <!-- Core Scripts -->
+  <!-- Scripts -->
   <script src="/js/theme.js"></script>
   <script src="/js/audio.js"></script>
   <script type="module" src="/js/app3d.js"></script>
-  <script src="/js/lightbox.js"></script>
-  <script src="/js/inquire.js"></script>
+  <script src="/js/home.js"></script>
 </body>
 </html>

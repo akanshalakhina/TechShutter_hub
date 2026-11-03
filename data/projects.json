@@ -1,373 +1,2213 @@
 [
   {
-    "id": "tsh-01",
-    "title": "RED V-Raptor 8K Cinema Rig",
-    "category": "Tech & Gear Reviews",
-    "client": "Tech Shutter Hub Lab",
+    "id": "wed-main-01",
+    "title": "Eternal Saat Paake Ghaura & Sindoor Daan",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Ananya & Sourav",
     "year": "2026",
-    "description": "Comprehensive cinematic breakdown and field test of the RED V-Raptor 8K VV sensor in low-light architectural setups with anamorphic prime lenses.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80",
+    "description": "Comprehensive documentation of the sacred Bengali wedding ceremony, capturing the emotional Saat Paake Ghaura, Kanya Daan, and vibrant Sindoor Daan with cinematic framing.",
+    "video": "/assets/videos/video-1.mp4",
+    "image": "/assets/optimized/DSC01725.jpg",
+    "thumbImage": "/assets/thumbs/DSC01725.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1500462859233-a792df9a09e3?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC01725.jpg",
+      "/assets/optimized/DSC01727.jpg",
+      "/assets/optimized/DSC01741.jpg",
+      "/assets/optimized/DSC01769.jpg",
+      "/assets/optimized/DSC01799.jpg",
+      "/assets/optimized/DSC01923.jpg",
+      "/assets/optimized/DSC01925.jpg",
+      "/assets/optimized/DSC01936.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Cinema", "8K", "Anamorphic", "RED"]
+    "tags": [
+      "Main Wedding",
+      "Sindoor Daan",
+      "Candid",
+      "Bengali Wedding",
+      "Rituals"
+    ]
   },
   {
-    "id": "tsh-02",
-    "title": "Aperture & Light Masterclass",
-    "category": "Cinematography",
-    "client": "Apex Film Studio",
+    "id": "wed-main-02",
+    "title": "The Royal Bengali Vivaha & Sacred Vows",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Rupsha & Arghya",
     "year": "2026",
-    "description": "Exploring high dynamic range lighting, negative fill techniques, and depth-of-field control using master vintage primes.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    "image": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
+    "description": "Traditional posed portraits interwoven with pure candid photojournalism across both the bride and groom ceremonies under the sacred Mandap.",
+    "video": "/assets/videos/video-3.mp4",
+    "image": "/assets/optimized/DSC01955.jpg",
+    "thumbImage": "/assets/thumbs/DSC01955.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC01955.jpg",
+      "/assets/optimized/DSC01960.jpg",
+      "/assets/optimized/DSC01971.jpg",
+      "/assets/optimized/DSC01991.jpg",
+      "/assets/optimized/DSC01997.jpg",
+      "/assets/optimized/DSC02008.jpg",
+      "/assets/optimized/DSC02009.jpg",
+      "/assets/optimized/DSC02182.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Lighting", "Masterclass", "Studio"]
+    "tags": [
+      "Mandap",
+      "Sacred Vows",
+      "Bengali Heritage",
+      "Banarasi Saree"
+    ]
   },
   {
-    "id": "tsh-03",
-    "title": "Leica M11-P Rangefinder Soul",
-    "category": "Tech & Gear Reviews",
-    "client": "Leica Showcase",
+    "id": "wed-holud-01",
+    "title": "Gaye Holud & Yellow Hues Symphony",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Debolina & Subhajit",
     "year": "2026",
-    "description": "Deep tactile review of the Leica M11-P Content Credentials camera on the streets of Tokyo and Kyoto.",
+    "description": "High-energy, joyous celebration of the Gaye Holud ritual. Candid photojournalism capturing splashes of turmeric paste, floral tiaras, and laughter.",
+    "video": "/assets/videos/video-2.mp4",
+    "image": "/assets/optimized/DSC01271.jpg",
+    "thumbImage": "/assets/thumbs/DSC01271.jpg",
+    "photos": [
+      "/assets/optimized/DSC01271.jpg",
+      "/assets/optimized/DSC01281.jpg",
+      "/assets/optimized/DSC01300.jpg",
+      "/assets/optimized/DSC01355.jpg",
+      "/assets/optimized/DSC01373.jpg",
+      "/assets/optimized/DSC01379.jpg",
+      "/assets/optimized/DSC01385.jpg",
+      "/assets/optimized/DSC01397.jpg",
+      "/assets/optimized/DSC01402.jpg",
+      "/assets/optimized/DSC01420.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Haldi",
+      "Candid Laughs",
+      "Floral Jewelry",
+      "Tradition"
+    ]
+  },
+  {
+    "id": "wed-ashirbad-01",
+    "title": "Ashirbad & Sacred Elders' Blessings",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Ishita & Tanmoy",
+    "year": "2026",
+    "description": "Emotional documentation of family elders offering gold ornaments, husked paddy (dhan), and trefoil (durba) grass in formal Ashirbad blessing rituals.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/optimized/DSC00180_1.jpg",
+    "thumbImage": "/assets/thumbs/DSC00180_1.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1500462859233-a792df9a09e3?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC00180_1.jpg",
+      "/assets/optimized/DSC00224.jpg",
+      "/assets/optimized/DSC00287__1_.jpg",
+      "/assets/optimized/DSC00417.jpg",
+      "/assets/optimized/DSC00450.jpg",
+      "/assets/optimized/DSC00617.jpg",
+      "/assets/optimized/DSC00650.jpg",
+      "/assets/optimized/DSC01014.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Leica", "Street", "Rangefinder"]
+    "tags": [
+      "Ashirbad",
+      "Elders Blessings",
+      "Traditional Attire",
+      "Family Heirloom"
+    ]
   },
   {
-    "id": "tsh-04",
-    "title": "Nordic Solitude Commercial",
-    "category": "Brand Commercials",
-    "client": "Vanguard Outerwear",
-    "year": "2025",
-    "description": "Brand film shot along the black sand beaches of Vik and glaciers of Iceland, highlighting rugged weatherproofing.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    "image": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Iceland", "Commercial", "Landscape"]
-  },
-  {
-    "id": "tsh-05",
-    "title": "Inspire 3 Twilight Flyover",
-    "category": "Drone & Aerial",
-    "client": "Skylark Horizons",
+    "id": "wed-boubhat-01",
+    "title": "Boubhat Hospitality & Royal Reception",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Poulomi & Sayan",
     "year": "2026",
-    "description": "Dual-operator cinematic drone flight captures over mountainous coastal terrain using full-frame ProRes RAW recording.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    "image": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80",
+    "description": "The groom's family welcome feast — Bhaat Kapor pledge followed by an opulent evening reception gala with dramatic ambient lighting.",
+    "video": "/assets/videos/video-4.mp4",
+    "image": "/assets/optimized/DSC02222.jpg",
+    "thumbImage": "/assets/thumbs/DSC02222.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC02222.jpg",
+      "/assets/optimized/DSC02229.jpg",
+      "/assets/optimized/DSC02247.jpg",
+      "/assets/optimized/DSC02259.jpg",
+      "/assets/optimized/DSC02271.jpg",
+      "/assets/optimized/DSC02277.jpg",
+      "/assets/optimized/DSC02289__1_.jpg",
+      "/assets/optimized/DSC02289.jpg",
+      "/assets/optimized/DSC02341.jpg",
+      "/assets/optimized/DSC02383.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Drone", "FPV", "Aerial", "RAW"]
+    "tags": [
+      "Boubhat",
+      "Reception",
+      "Bhaat Kapor",
+      "Evening Gala",
+      "Portraits"
+    ]
   },
   {
-    "id": "tsh-06",
-    "title": "Minimalist Timepiece Macro",
-    "category": "Product Shoots",
-    "client": "Chronos Horology",
+    "id": "pre-wed-01",
+    "title": "Whispers of the Ghats & Sunset Chemistry",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Pre-Wedding",
+    "client": "Srijita & Rahul",
     "year": "2026",
-    "description": "Macro probe lens camera moves revealing the intricate escapement and hand-polished beveling of a Swiss tourbillon.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
+    "description": "Stylised, themed photoshoot and video escape captured before the wedding day at historic ghats and scenic riverside locations to highlight couple chemistry.",
+    "video": "/assets/videos/video-1.mp4",
+    "image": "/assets/optimized/DSC00617.jpg",
+    "thumbImage": "/assets/thumbs/DSC00617.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC00617.jpg",
+      "/assets/optimized/DSC00650.jpg",
+      "/assets/optimized/DSC01014.jpg",
+      "/assets/optimized/DSC01200.jpg",
+      "/assets/optimized/DSC01202.jpg",
+      "/assets/optimized/DSC01205.jpg",
+      "/assets/optimized/DSC01210.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Pre-Wedding",
+      "Couple Chemistry",
+      "Golden Hour",
+      "Heritage"
+    ]
+  },
+  {
+    "id": "pre-wed-02",
+    "title": "Colonial Charm & Modern Romance",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Pre-Wedding",
+    "client": "Moumita & Pritam",
+    "year": "2026",
+    "description": "Editorial pre-wedding narrative shot on Sony Alpha cinema primes with vintage color grading across architectural landmarks.",
+    "video": "/assets/videos/video-2.mp4",
+    "image": "/assets/optimized/DSC02271.jpg",
+    "thumbImage": "/assets/thumbs/DSC02271.jpg",
+    "photos": [
+      "/assets/optimized/DSC02271.jpg",
+      "/assets/optimized/DSC02277.jpg",
+      "/assets/optimized/DSC02289__1_.jpg",
+      "/assets/optimized/DSC02289.jpg",
+      "/assets/optimized/DSC02341.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Macro", "Product", "Horology", "Luxury"]
+    "tags": [
+      "Romance",
+      "Editorial",
+      "Cinema Look",
+      "Pre-Wedding"
+    ]
   },
   {
-    "id": "tsh-07",
-    "title": "Elysian Noir Portrait Series",
-    "category": "Studio & Portraits",
-    "client": "Vogue Editorial Concept",
+    "id": "reel-01",
+    "title": "Golden Hour Romance 9:16 Vertical Reel",
+    "category": "Cinematic Reels & Teasers",
+    "weddingRitual": "",
+    "client": "Tech Shutter Hub Social",
     "year": "2026",
-    "description": "Editorial studio shoot exploring chisel rim lighting, high-contrast chiaroscuro shadows, and silk texture reflections.",
+    "description": "Short-form, highly edited, and fast-paced vertical video content designed specifically for Instagram and Facebook with sound design and color rhythm.",
+    "video": "/assets/videos/video-1.mp4",
+    "image": "/assets/optimized/DSC01355.jpg",
+    "thumbImage": "/assets/thumbs/DSC01355.jpg",
+    "photos": [
+      "/assets/optimized/DSC01355.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Reel",
+      "9:16",
+      "Instagram",
+      "Viral",
+      "Fast-Paced"
+    ]
+  },
+  {
+    "id": "reel-02",
+    "title": "Haldi Frenzy & Slow-Motion Splashes",
+    "category": "Cinematic Reels & Teasers",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Social",
+    "year": "2026",
+    "description": "120 FPS high-frame-rate vertical teaser reel featuring vibrant marigold petals and heartfelt moments timed to upbeat percussion.",
+    "video": "/assets/videos/video-2.mp4",
+    "image": "/assets/optimized/DSC01385.jpg",
+    "thumbImage": "/assets/thumbs/DSC01385.jpg",
+    "photos": [
+      "/assets/optimized/DSC01385.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "SlowMo",
+      "120fps",
+      "Reels",
+      "WeddingTeaser"
+    ]
+  },
+  {
+    "id": "reel-03",
+    "title": "Cinematic Feature Wedding Trailer",
+    "category": "Cinematic Reels & Teasers",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Cinema",
+    "year": "2026",
+    "description": "Full cinematic wedding teaser trailer blending anamorphic optics, intimate dialogue audio, and orchestral soundtrack.",
+    "video": "/assets/videos/video-3.mp4",
+    "image": "/assets/optimized/DSC01769.jpg",
+    "thumbImage": "/assets/thumbs/DSC01769.jpg",
+    "photos": [
+      "/assets/optimized/DSC01769.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Trailer",
+      "Anamorphic",
+      "4K Cinema",
+      "WeddingFilm"
+    ]
+  },
+  {
+    "id": "reel-04",
+    "title": "Reception Elegance & Gala Teaser",
+    "category": "Cinematic Reels & Teasers",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Social",
+    "year": "2026",
+    "description": "High-contrast nighttime reception highlights featuring sparkling entrance, candlelit decor, and couple dances.",
+    "video": "/assets/videos/video-4.mp4",
+    "image": "/assets/optimized/DSC02289.jpg",
+    "thumbImage": "/assets/thumbs/DSC02289.jpg",
+    "photos": [
+      "/assets/optimized/DSC02289.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Teaser",
+      "Gala",
+      "NightCinematography"
+    ]
+  },
+  {
+    "id": "prod-01",
+    "title": "Artisan Gold & Polki Jewellery Catalog",
+    "category": "Product & E-commerce",
+    "weddingRitual": "",
+    "client": "Swarna Heritage Jewellers",
+    "year": "2026",
+    "description": "High-resolution, well-lit imagery of goods (ethnic wear, bridal jewellery, etc.) intended for luxury catalogues, e-commerce stores, and digital advertising.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/images/brand-feature-1.jpg",
+    "thumbImage": "/assets/images/brand-feature-1.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=85"
+      "/assets/images/brand-feature-1.jpg",
+      "/assets/images/brand-feature-2.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Portrait", "Chiaroscuro", "Studio"]
+    "tags": [
+      "Jewellery",
+      "E-Commerce",
+      "Macro",
+      "Studio Lighting",
+      "Catalog"
+    ]
   },
   {
-    "id": "tsh-08",
-    "title": "Neon Symphony Concert Film",
-    "category": "Events & Live",
-    "client": "Aether Sound Festival",
-    "year": "2025",
-    "description": "Multi-camera live music capture featuring synchronized handheld gimbal rigs and 4K high-frame-rate stage dynamics.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
-    "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Concert", "Stage", "Live", "Gimbal"]
-  },
-  {
-    "id": "tsh-09",
-    "title": "Amalfi Coast Romance",
-    "category": "Weddings & Films",
-    "client": "Elena & Matteo",
-    "year": "2025",
-    "description": "Dreamy 35mm and digital cinematic wedding film overlooking the cliffs of Positano with golden hour Mediterranean light.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-    "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Wedding", "Italy", "Cinematic", "35mm"]
-  },
-  {
-    "id": "tsh-10",
-    "title": "Sony FX6 Color Grading Workflow",
-    "category": "Tech & Gear Reviews",
-    "client": "Tech Shutter Hub Academy",
+    "id": "prod-02",
+    "title": "Handwoven Baluchari & Tussar Silk Campaign",
+    "category": "Product & E-commerce",
+    "weddingRitual": "",
+    "client": "Tantuja Artisan Weaves",
     "year": "2026",
-    "description": "Deep dive into S-Cinetone vs S-Log3 with custom gold & emerald LUT profiles designed specifically for Tech Shutter Hub.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-    "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Sony", "Color Grading", "S-Log3", "LUTs"]
-  },
-  {
-    "id": "tsh-11",
-    "title": "Cyberpunk City Midnight Drive",
-    "category": "Cinematography",
-    "client": "Velocity Media",
-    "year": "2026",
-    "description": "Anamorphic night drive through neon-drenched downtown reflections with customized car-rigged motorized sliders.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackSeeTheWorld.mp4",
-    "image": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Night", "Anamorphic", "Automotive"]
-  },
-  {
-    "id": "tsh-12",
-    "title": "Aero Carbon Fiber Tripod",
-    "category": "Product Shoots",
-    "client": "Titan Rigging Co.",
-    "year": "2026",
-    "description": "Clean, dynamic studio lighting and fluid motion control highlighting ultra-light carbon weave and titanium fluid heads.",
+    "description": "Commercial editorial styling and clean studio tabletop product documentation capturing intricate threadwork, zari texture, and rich palette.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/optimized/DSC01997.jpg",
+    "thumbImage": "/assets/thumbs/DSC01997.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC01997.jpg",
+      "/assets/optimized/DSC00287__1_.jpg"
     ],
-    "orientation": "landscape",
-    "tags": ["Hardware", "Carbon", "Studio"]
+    "orientation": "portrait",
+    "tags": [
+      "Textiles",
+      "Ethnic Wear",
+      "Silk",
+      "E-Commerce"
+    ]
   },
   {
-    "id": "tsh-13",
-    "title": "Hasselblad 100MP Medium Format",
-    "category": "Tech & Gear Reviews",
-    "client": "Hasselblad Masters Project",
+    "id": "fb-01",
+    "title": "Culinary Alchemy & Gastronomy Styling",
+    "category": "F&B / Restaurant",
+    "weddingRitual": "",
+    "client": "Mocambo & Flavours Bistro",
     "year": "2026",
-    "description": "Pushing 100 megapixels to the extreme: studio still-life and architectural hyper-resolutions with natural color calibration.",
+    "description": "Appetising, styled shots of food and beverages, along with interior ambience shots for cafes, fine-dining restaurants, and cloud kitchens.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1500462859233-a792df9a09e3?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/optimized/DSC02415.jpg",
+    "thumbImage": "/assets/thumbs/DSC02415.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1500462859233-a792df9a09e3?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC02415.jpg",
+      "/assets/optimized/DSC01402.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Medium Format", "100MP", "Hasselblad"]
+    "tags": [
+      "Culinary",
+      "Plating",
+      "Ambience",
+      "Fine Dining",
+      "Cocktails"
+    ]
   },
   {
-    "id": "tsh-14",
-    "title": "Alpine Peak Sunrise Cinematic",
-    "category": "Drone & Aerial",
-    "client": "Swiss Tourism Board",
-    "year": "2025",
-    "description": "Sub-zero mountain flight traversing Matterhorn ridges at golden dawn with high-altitude custom tuned FPV rigs.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Alps", "FPV", "Sunrise", "Aerial"]
-  },
-  {
-    "id": "tsh-15",
-    "title": "Monolith Architectural Living",
-    "category": "Brand Commercials",
-    "client": "Kaufmann Architecture",
+    "id": "corp-01",
+    "title": "Executive Headshots & Leadership Profiles",
+    "category": "Corporate Photography",
+    "weddingRitual": "",
+    "client": "Fintech Horizon & Zenith Media",
     "year": "2026",
-    "description": "Architectural showcase capturing cast-concrete lines, floor-to-ceiling glass pavilions, and ambient interior lighting transitions.",
+    "description": "Professional executive headshots, team photos, facility documentation, and full coverage of corporate conferences and global leadership seminars.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/optimized/DSC01202.jpg",
+    "thumbImage": "/assets/thumbs/DSC01202.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC01202.jpg",
+      "/assets/optimized/DSC01799.jpg"
     ],
-    "orientation": "landscape",
-    "tags": ["Architecture", "Modern", "Interior"]
+    "orientation": "portrait",
+    "tags": [
+      "Headshots",
+      "Corporate",
+      "Leadership",
+      "Seminars"
+    ]
   },
   {
-    "id": "tsh-16",
-    "title": "Chinatown Wet Pavement Stories",
-    "category": "Cinematography",
-    "client": "San Francisco Film Society",
-    "year": "2025",
-    "description": "Atmospheric slow-motion documentary short capturing foggy rain reflections and lantern glow through 50mm f/0.95 glass.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    "image": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Documentary", "Rain", "Night", "Atmosphere"]
-  },
-  {
-    "id": "tsh-17",
-    "title": "Acoustic Sessions in Vault 4",
-    "category": "Events & Live",
-    "client": "Echo Chamber Music",
+    "id": "milestone-01",
+    "title": "Parenthood Grace — Maternity Glow Series",
+    "category": "Annaprashan & Maternity",
+    "weddingRitual": "",
+    "client": "Sayani & Joydeep",
     "year": "2026",
-    "description": "Intimate acoustic showcase inside a historic stone cellar with warm tungsten practicals and ribbon mic setups.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Acoustic", "Live Music", "Tungsten"]
-  },
-  {
-    "id": "tsh-18",
-    "title": "Golden Hour Tuscany Vows",
-    "category": "Weddings & Films",
-    "client": "Sophia & Lucas",
-    "year": "2025",
-    "description": "Cypress-lined villa wedding celebration captured across sunset, twilight speeches, and sparkler illuminated night dances.",
+    "description": "Milestone photography documenting the intimate journey of parenthood through serene outdoor maternity portraiture with soft natural backlight.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/optimized/DSC00417.jpg",
+    "thumbImage": "/assets/thumbs/DSC00417.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC00417.jpg",
+      "/assets/optimized/DSC00450.jpg",
+      "/assets/optimized/DSC00617.jpg",
+      "/assets/optimized/DSC00650.jpg"
     ],
-    "orientation": "landscape",
-    "tags": ["Tuscany", "Wedding", "Sunset"]
+    "orientation": "portrait",
+    "tags": [
+      "Maternity",
+      "Parenthood",
+      "Natural Light",
+      "Glow"
+    ]
   },
   {
-    "id": "tsh-19",
-    "title": "Wireless Video Transmission Test",
-    "category": "Tech & Gear Reviews",
-    "client": "Tech Shutter Hub Lab",
+    "id": "milestone-02",
+    "title": "Annaprashan: Baby's First Rice Ceremony",
+    "category": "Annaprashan & Maternity",
+    "weddingRitual": "",
+    "client": "Little Yuvaan & Family",
     "year": "2026",
-    "description": "Stress-testing zero-latency wireless HDMI/SDI transmitters in dense urban RF environments up to 1,500 feet.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Wireless", "SDI", "Gear Review", "Tech"]
-  },
-  {
-    "id": "tsh-20",
-    "title": "Artisan Espresso Pour Macro",
-    "category": "Product Shoots",
-    "client": "Caelum Roasters",
-    "year": "2026",
-    "description": "Super-slow-motion 1000fps capture of crema extraction, micro-foam pouring, and roast bean textures.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["High Speed", "Macro", "Coffee", "Commercial"]
-  },
-  {
-    "id": "tsh-21",
-    "title": "Sculptural Silhouette Portraits",
-    "category": "Studio & Portraits",
-    "client": "Atelier Form",
-    "year": "2026",
-    "description": "Minimal monochrome lighting study framing human silhouettes against frosted acrylic diffusers and warm backlight.",
+    "description": "Tender cultural documentation of the traditional Bengali Mukhe Bhaat (Annaprashan) ceremony with miniature dhoti-kurta, silverware, and blessings.",
     "video": "",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+    "image": "/assets/optimized/DSC01456.jpg",
+    "thumbImage": "/assets/thumbs/DSC01456.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC01456.jpg",
+      "/assets/optimized/DSC01462.jpg",
+      "/assets/optimized/DSC01481.jpg",
+      "/assets/optimized/DSC01576.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Monochrome", "Silhouette", "Studio"]
+    "tags": [
+      "Annaprashan",
+      "Rice Ceremony",
+      "Baby Milestone",
+      "Bengali Tradition"
+    ]
   },
   {
-    "id": "tsh-22",
-    "title": "Pacific Coastline Highway Cruise",
-    "category": "Brand Commercials",
-    "client": "Electra EV Supercars",
+    "id": "festive-01",
+    "title": "Sharodotsav: Autumn Festive Editorial",
+    "category": "Durga Puja & Festive",
+    "weddingRitual": "",
+    "client": "Kolkata Cultural Collective",
     "year": "2026",
-    "description": "Russian Arm chase vehicle shots chasing an electric grand tourer along Big Sur coastline bends at dusk.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackSeeTheWorld.mp4",
-    "image": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
+    "description": "Specialised editorial fashion shoots and cultural documentation centred around the festive season of Bengal — Dhunuchi naach, Kaash flower landscapes, and heritage sarees.",
+    "video": "",
+    "image": "/assets/optimized/DSC02182.jpg",
+    "thumbImage": "/assets/thumbs/DSC02182.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC02182.jpg",
+      "/assets/optimized/DSC02247.jpg",
+      "/assets/optimized/DSC02259.jpg"
     ],
-    "orientation": "landscape",
-    "tags": ["Automotive", "Supercar", "Big Sur", "Tracking"]
+    "orientation": "portrait",
+    "tags": [
+      "Durga Puja",
+      "Sharodotsav",
+      "Heritage",
+      "Festive",
+      "Bengali Culture"
+    ]
   },
   {
-    "id": "tsh-23",
-    "title": "Islands of Mist Drone Odyssey",
-    "category": "Drone & Aerial",
-    "client": "Discovery Earth Series",
-    "year": "2025",
-    "description": "Hovering above rolling cloud inversions over dramatic volcanic sea stacks at morning blue hour.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-    "photos": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=85"
-    ],
-    "orientation": "landscape",
-    "tags": ["Aerial", "Nature", "Islands", "Blue Hour"]
-  },
-  {
-    "id": "tsh-24",
-    "title": "Vintage Cooke Anamorphic Bokeh",
-    "category": "Cinematography",
-    "client": "Tech Shutter Hub Optical Lab",
+    "id": "tsh-photo-001",
+    "title": "Ashirbad Visual Story #1",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
     "year": "2026",
-    "description": "Analysis of oval bokeh highlights, horizontal streak flares, and barrel distortion characteristics on large-format digital sensors.",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-    "image": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00180_1.jpg",
+    "thumbImage": "/assets/thumbs/DSC00180_1.jpg",
     "photos": [
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85"
+      "/assets/optimized/DSC00180_1.jpg"
     ],
     "orientation": "landscape",
-    "tags": ["Anamorphic", "Cooke", "Optics", "Flares"]
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-002",
+    "title": "Ashirbad Visual Story #2",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00224.jpg",
+    "thumbImage": "/assets/thumbs/DSC00224.jpg",
+    "photos": [
+      "/assets/optimized/DSC00224.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-003",
+    "title": "Ashirbad Visual Story #3",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00287__1_.jpg",
+    "thumbImage": "/assets/thumbs/DSC00287__1_.jpg",
+    "photos": [
+      "/assets/optimized/DSC00287__1_.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-004",
+    "title": "Ashirbad Visual Story #4",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00417.jpg",
+    "thumbImage": "/assets/thumbs/DSC00417.jpg",
+    "photos": [
+      "/assets/optimized/DSC00417.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-005",
+    "title": "Ashirbad Visual Story #5",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00450.jpg",
+    "thumbImage": "/assets/thumbs/DSC00450.jpg",
+    "photos": [
+      "/assets/optimized/DSC00450.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-006",
+    "title": "Ashirbad Visual Story #6",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00617.jpg",
+    "thumbImage": "/assets/thumbs/DSC00617.jpg",
+    "photos": [
+      "/assets/optimized/DSC00617.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-007",
+    "title": "Ashirbad Visual Story #7",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC00650.jpg",
+    "thumbImage": "/assets/thumbs/DSC00650.jpg",
+    "photos": [
+      "/assets/optimized/DSC00650.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-008",
+    "title": "Ashirbad Visual Story #8",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01014.jpg",
+    "thumbImage": "/assets/thumbs/DSC01014.jpg",
+    "photos": [
+      "/assets/optimized/DSC01014.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-009",
+    "title": "Ashirbad Visual Story #9",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01200.jpg",
+    "thumbImage": "/assets/thumbs/DSC01200.jpg",
+    "photos": [
+      "/assets/optimized/DSC01200.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-010",
+    "title": "Ashirbad Visual Story #10",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01202.jpg",
+    "thumbImage": "/assets/thumbs/DSC01202.jpg",
+    "photos": [
+      "/assets/optimized/DSC01202.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-011",
+    "title": "Ashirbad Visual Story #11",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01205.jpg",
+    "thumbImage": "/assets/thumbs/DSC01205.jpg",
+    "photos": [
+      "/assets/optimized/DSC01205.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-012",
+    "title": "Ashirbad Visual Story #12",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01210.jpg",
+    "thumbImage": "/assets/thumbs/DSC01210.jpg",
+    "photos": [
+      "/assets/optimized/DSC01210.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-013",
+    "title": "Ashirbad Visual Story #13",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01247.jpg",
+    "thumbImage": "/assets/thumbs/DSC01247.jpg",
+    "photos": [
+      "/assets/optimized/DSC01247.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-014",
+    "title": "Ashirbad Visual Story #14",
+    "category": "Pre-Wedding Escapes",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01250.jpg",
+    "thumbImage": "/assets/thumbs/DSC01250.jpg",
+    "photos": [
+      "/assets/optimized/DSC01250.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Pre-Wedding Escapes",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-015",
+    "title": "Ashirbad Visual Story #15",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Ashirbad",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Ashirbad.",
+    "video": "",
+    "image": "/assets/optimized/DSC01264.jpg",
+    "thumbImage": "/assets/thumbs/DSC01264.jpg",
+    "photos": [
+      "/assets/optimized/DSC01264.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Ashirbad",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-016",
+    "title": "Gaye Holud Visual Story #16",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01271.jpg",
+    "thumbImage": "/assets/thumbs/DSC01271.jpg",
+    "photos": [
+      "/assets/optimized/DSC01271.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-017",
+    "title": "Gaye Holud Visual Story #17",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01281.jpg",
+    "thumbImage": "/assets/thumbs/DSC01281.jpg",
+    "photos": [
+      "/assets/optimized/DSC01281.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-018",
+    "title": "Gaye Holud Visual Story #18",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01300.jpg",
+    "thumbImage": "/assets/thumbs/DSC01300.jpg",
+    "photos": [
+      "/assets/optimized/DSC01300.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-019",
+    "title": "Gaye Holud Visual Story #19",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01355.jpg",
+    "thumbImage": "/assets/thumbs/DSC01355.jpg",
+    "photos": [
+      "/assets/optimized/DSC01355.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-020",
+    "title": "Gaye Holud Visual Story #20",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01373.jpg",
+    "thumbImage": "/assets/thumbs/DSC01373.jpg",
+    "photos": [
+      "/assets/optimized/DSC01373.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-021",
+    "title": "Gaye Holud Visual Story #21",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01379.jpg",
+    "thumbImage": "/assets/thumbs/DSC01379.jpg",
+    "photos": [
+      "/assets/optimized/DSC01379.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-022",
+    "title": "Gaye Holud Visual Story #22",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01385.jpg",
+    "thumbImage": "/assets/thumbs/DSC01385.jpg",
+    "photos": [
+      "/assets/optimized/DSC01385.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-023",
+    "title": "Gaye Holud Visual Story #23",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01397.jpg",
+    "thumbImage": "/assets/thumbs/DSC01397.jpg",
+    "photos": [
+      "/assets/optimized/DSC01397.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-024",
+    "title": "Gaye Holud Visual Story #24",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01402.jpg",
+    "thumbImage": "/assets/thumbs/DSC01402.jpg",
+    "photos": [
+      "/assets/optimized/DSC01402.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-025",
+    "title": "Gaye Holud Visual Story #25",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01420.jpg",
+    "thumbImage": "/assets/thumbs/DSC01420.jpg",
+    "photos": [
+      "/assets/optimized/DSC01420.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-026",
+    "title": "Gaye Holud Visual Story #26",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01432.jpg",
+    "thumbImage": "/assets/thumbs/DSC01432.jpg",
+    "photos": [
+      "/assets/optimized/DSC01432.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-027",
+    "title": "Gaye Holud Visual Story #27",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01456.jpg",
+    "thumbImage": "/assets/thumbs/DSC01456.jpg",
+    "photos": [
+      "/assets/optimized/DSC01456.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-028",
+    "title": "Gaye Holud Visual Story #28",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01462.jpg",
+    "thumbImage": "/assets/thumbs/DSC01462.jpg",
+    "photos": [
+      "/assets/optimized/DSC01462.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-029",
+    "title": "Gaye Holud Visual Story #29",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01481.jpg",
+    "thumbImage": "/assets/thumbs/DSC01481.jpg",
+    "photos": [
+      "/assets/optimized/DSC01481.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-030",
+    "title": "Gaye Holud Visual Story #30",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01576.jpg",
+    "thumbImage": "/assets/thumbs/DSC01576.jpg",
+    "photos": [
+      "/assets/optimized/DSC01576.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-031",
+    "title": "Gaye Holud Visual Story #31",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01595.jpg",
+    "thumbImage": "/assets/thumbs/DSC01595.jpg",
+    "photos": [
+      "/assets/optimized/DSC01595.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-032",
+    "title": "Gaye Holud Visual Story #32",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01673.jpg",
+    "thumbImage": "/assets/thumbs/DSC01673.jpg",
+    "photos": [
+      "/assets/optimized/DSC01673.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-033",
+    "title": "Gaye Holud Visual Story #33",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01697.jpg",
+    "thumbImage": "/assets/thumbs/DSC01697.jpg",
+    "photos": [
+      "/assets/optimized/DSC01697.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-034",
+    "title": "Gaye Holud Visual Story #34",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01714.jpg",
+    "thumbImage": "/assets/thumbs/DSC01714.jpg",
+    "photos": [
+      "/assets/optimized/DSC01714.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-035",
+    "title": "Gaye Holud Visual Story #35",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Gaye Holud",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Gaye Holud.",
+    "video": "",
+    "image": "/assets/optimized/DSC01720.jpg",
+    "thumbImage": "/assets/thumbs/DSC01720.jpg",
+    "photos": [
+      "/assets/optimized/DSC01720.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Gaye Holud",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-036",
+    "title": "Main Wedding Visual Story #36",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01725.jpg",
+    "thumbImage": "/assets/thumbs/DSC01725.jpg",
+    "photos": [
+      "/assets/optimized/DSC01725.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-037",
+    "title": "Main Wedding Visual Story #37",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01727.jpg",
+    "thumbImage": "/assets/thumbs/DSC01727.jpg",
+    "photos": [
+      "/assets/optimized/DSC01727.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-038",
+    "title": "Main Wedding Visual Story #38",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01741.jpg",
+    "thumbImage": "/assets/thumbs/DSC01741.jpg",
+    "photos": [
+      "/assets/optimized/DSC01741.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-039",
+    "title": "Main Wedding Visual Story #39",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01769.jpg",
+    "thumbImage": "/assets/thumbs/DSC01769.jpg",
+    "photos": [
+      "/assets/optimized/DSC01769.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-040",
+    "title": "Main Wedding Visual Story #40",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01799.jpg",
+    "thumbImage": "/assets/thumbs/DSC01799.jpg",
+    "photos": [
+      "/assets/optimized/DSC01799.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-041",
+    "title": "Main Wedding Visual Story #41",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01923.jpg",
+    "thumbImage": "/assets/thumbs/DSC01923.jpg",
+    "photos": [
+      "/assets/optimized/DSC01923.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-042",
+    "title": "Main Wedding Visual Story #42",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01925.jpg",
+    "thumbImage": "/assets/thumbs/DSC01925.jpg",
+    "photos": [
+      "/assets/optimized/DSC01925.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-043",
+    "title": "Main Wedding Visual Story #43",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01936.jpg",
+    "thumbImage": "/assets/thumbs/DSC01936.jpg",
+    "photos": [
+      "/assets/optimized/DSC01936.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-044",
+    "title": "Main Wedding Visual Story #44",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01955.jpg",
+    "thumbImage": "/assets/thumbs/DSC01955.jpg",
+    "photos": [
+      "/assets/optimized/DSC01955.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-045",
+    "title": "Main Wedding Visual Story #45",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01960.jpg",
+    "thumbImage": "/assets/thumbs/DSC01960.jpg",
+    "photos": [
+      "/assets/optimized/DSC01960.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-046",
+    "title": "Main Wedding Visual Story #46",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01971.jpg",
+    "thumbImage": "/assets/thumbs/DSC01971.jpg",
+    "photos": [
+      "/assets/optimized/DSC01971.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-047",
+    "title": "Main Wedding Visual Story #47",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01991.jpg",
+    "thumbImage": "/assets/thumbs/DSC01991.jpg",
+    "photos": [
+      "/assets/optimized/DSC01991.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-048",
+    "title": "Main Wedding Visual Story #48",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC01997.jpg",
+    "thumbImage": "/assets/thumbs/DSC01997.jpg",
+    "photos": [
+      "/assets/optimized/DSC01997.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-049",
+    "title": "Main Wedding Visual Story #49",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02008.jpg",
+    "thumbImage": "/assets/thumbs/DSC02008.jpg",
+    "photos": [
+      "/assets/optimized/DSC02008.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-050",
+    "title": "Main Wedding Visual Story #50",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02009.jpg",
+    "thumbImage": "/assets/thumbs/DSC02009.jpg",
+    "photos": [
+      "/assets/optimized/DSC02009.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-051",
+    "title": "Main Wedding Visual Story #51",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02182.jpg",
+    "thumbImage": "/assets/thumbs/DSC02182.jpg",
+    "photos": [
+      "/assets/optimized/DSC02182.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-052",
+    "title": "Main Wedding Visual Story #52",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02205.jpg",
+    "thumbImage": "/assets/thumbs/DSC02205.jpg",
+    "photos": [
+      "/assets/optimized/DSC02205.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-053",
+    "title": "Main Wedding Visual Story #53",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02207.jpg",
+    "thumbImage": "/assets/thumbs/DSC02207.jpg",
+    "photos": [
+      "/assets/optimized/DSC02207.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-054",
+    "title": "Main Wedding Visual Story #54",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02216.jpg",
+    "thumbImage": "/assets/thumbs/DSC02216.jpg",
+    "photos": [
+      "/assets/optimized/DSC02216.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-055",
+    "title": "Main Wedding Visual Story #55",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Main Wedding",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Main Wedding.",
+    "video": "",
+    "image": "/assets/optimized/DSC02221.jpg",
+    "thumbImage": "/assets/thumbs/DSC02221.jpg",
+    "photos": [
+      "/assets/optimized/DSC02221.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Main Wedding",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-056",
+    "title": "Boubhat Visual Story #56",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02222.jpg",
+    "thumbImage": "/assets/thumbs/DSC02222.jpg",
+    "photos": [
+      "/assets/optimized/DSC02222.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-057",
+    "title": "Boubhat Visual Story #57",
+    "category": "Festive & Cultural",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02229.jpg",
+    "thumbImage": "/assets/thumbs/DSC02229.jpg",
+    "photos": [
+      "/assets/optimized/DSC02229.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Festive & Cultural",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-058",
+    "title": "Boubhat Visual Story #58",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02247.jpg",
+    "thumbImage": "/assets/thumbs/DSC02247.jpg",
+    "photos": [
+      "/assets/optimized/DSC02247.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-059",
+    "title": "Boubhat Visual Story #59",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02259.jpg",
+    "thumbImage": "/assets/thumbs/DSC02259.jpg",
+    "photos": [
+      "/assets/optimized/DSC02259.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-060",
+    "title": "Boubhat Visual Story #60",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02271.jpg",
+    "thumbImage": "/assets/thumbs/DSC02271.jpg",
+    "photos": [
+      "/assets/optimized/DSC02271.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-061",
+    "title": "Boubhat Visual Story #61",
+    "category": "Festive & Cultural",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02277.jpg",
+    "thumbImage": "/assets/thumbs/DSC02277.jpg",
+    "photos": [
+      "/assets/optimized/DSC02277.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Festive & Cultural",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-062",
+    "title": "Boubhat Visual Story #62",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02289__1_.jpg",
+    "thumbImage": "/assets/thumbs/DSC02289__1_.jpg",
+    "photos": [
+      "/assets/optimized/DSC02289__1_.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-063",
+    "title": "Boubhat Visual Story #63",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02289.jpg",
+    "thumbImage": "/assets/thumbs/DSC02289.jpg",
+    "photos": [
+      "/assets/optimized/DSC02289.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-064",
+    "title": "Boubhat Visual Story #64",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02341.jpg",
+    "thumbImage": "/assets/thumbs/DSC02341.jpg",
+    "photos": [
+      "/assets/optimized/DSC02341.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-065",
+    "title": "Boubhat Visual Story #65",
+    "category": "Festive & Cultural",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02383.jpg",
+    "thumbImage": "/assets/thumbs/DSC02383.jpg",
+    "photos": [
+      "/assets/optimized/DSC02383.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Festive & Cultural",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-066",
+    "title": "Boubhat Visual Story #66",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02415.jpg",
+    "thumbImage": "/assets/thumbs/DSC02415.jpg",
+    "photos": [
+      "/assets/optimized/DSC02415.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-067",
+    "title": "Boubhat Visual Story #67",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02418.jpg",
+    "thumbImage": "/assets/thumbs/DSC02418.jpg",
+    "photos": [
+      "/assets/optimized/DSC02418.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-068",
+    "title": "Boubhat Visual Story #68",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02439.jpg",
+    "thumbImage": "/assets/thumbs/DSC02439.jpg",
+    "photos": [
+      "/assets/optimized/DSC02439.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-069",
+    "title": "Boubhat Visual Story #69",
+    "category": "Festive & Cultural",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02447.jpg",
+    "thumbImage": "/assets/thumbs/DSC02447.jpg",
+    "photos": [
+      "/assets/optimized/DSC02447.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Festive & Cultural",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-070",
+    "title": "Boubhat Visual Story #70",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02451.jpg",
+    "thumbImage": "/assets/thumbs/DSC02451.jpg",
+    "photos": [
+      "/assets/optimized/DSC02451.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-071",
+    "title": "Boubhat Visual Story #71",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02482.jpg",
+    "thumbImage": "/assets/thumbs/DSC02482.jpg",
+    "photos": [
+      "/assets/optimized/DSC02482.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-072",
+    "title": "Boubhat Visual Story #72",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02504.jpg",
+    "thumbImage": "/assets/thumbs/DSC02504.jpg",
+    "photos": [
+      "/assets/optimized/DSC02504.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-073",
+    "title": "Boubhat Visual Story #73",
+    "category": "Festive & Cultural",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02506.jpg",
+    "thumbImage": "/assets/thumbs/DSC02506.jpg",
+    "photos": [
+      "/assets/optimized/DSC02506.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Festive & Cultural",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-074",
+    "title": "Boubhat Visual Story #74",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02514.jpg",
+    "thumbImage": "/assets/thumbs/DSC02514.jpg",
+    "photos": [
+      "/assets/optimized/DSC02514.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-075",
+    "title": "Boubhat Visual Story #75",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02521.jpg",
+    "thumbImage": "/assets/thumbs/DSC02521.jpg",
+    "photos": [
+      "/assets/optimized/DSC02521.jpg"
+    ],
+    "orientation": "landscape",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
+  },
+  {
+    "id": "tsh-photo-076",
+    "title": "Boubhat Visual Story #76",
+    "category": "Full-Spectrum Wedding",
+    "weddingRitual": "Boubhat",
+    "client": "Tech Shutter Hub Gallery",
+    "year": "2026",
+    "description": "High-resolution studio frame from our curated visual archive. Captured with Sony Alpha G-Master prime lenses, documenting authentic emotions during Boubhat.",
+    "video": "",
+    "image": "/assets/optimized/DSC02523.jpg",
+    "thumbImage": "/assets/thumbs/DSC02523.jpg",
+    "photos": [
+      "/assets/optimized/DSC02523.jpg"
+    ],
+    "orientation": "portrait",
+    "tags": [
+      "Boubhat",
+      "Full-Spectrum Wedding",
+      "Sony Alpha",
+      "G-Master",
+      "Editorial"
+    ]
   }
 ]
