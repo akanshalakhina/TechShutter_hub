@@ -81,9 +81,13 @@
 
     if (vboxCta) {
       vboxCta.onclick = (e) => {
-        e.preventDefault();
         close();
-        if (window.tshModal) window.tshModal.openInquiry(project.category, project.title);
+        if (window.tshModal) {
+          e.preventDefault();
+          window.tshModal.openInquiry(project.category, project.title);
+        } else {
+          window.location.href = `/contact?service=${encodeURIComponent(project.category || '')}`;
+        }
       };
     }
 

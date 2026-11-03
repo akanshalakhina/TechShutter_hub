@@ -35,6 +35,22 @@ body {
   font-family: var(--font-body);
 }
 
+/* Full-Screen Immersive 3D Experience (On /work) */
+body.work-3d-page {
+  overflow: hidden !important;
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+body.work-3d-page #app {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1 !important;
+  pointer-events: auto !important;
+}
+
 /* ========================================================
    3D Canvas & Ambient Glow Container
    ======================================================== */

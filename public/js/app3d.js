@@ -441,9 +441,13 @@ let pinching = false, lastPinch = 0;
 const dom = renderer.domElement;
 dom.style.cursor = 'grab';
 
+let startPointerX = 0, startPointerY = 0;
+
 function pointerDown(x, y) {
   dragging = true;
   dragMoved = false;
+  startPointerX = x;
+  startPointerY = y;
   lastX = x;
   lastY = y;
   spinVel = 0;
@@ -453,9 +457,13 @@ function pointerDown(x, y) {
 
 function pointerMove(x, y) {
   if (!dragging) return;
+  const dist = Math.hypot(x - startPointerX, y - startPointerY);
+  if (dist > 8) {
+    dragMoved = true;
+  }
+
   const dx = x - lastX;
   const dy = y - lastY;
-  if (Math.abs(dx) + Math.abs(dy) > 4) dragMoved = true;
 
   spin -= dx * 0.005;
   spinVel = -dx * 0.005;
@@ -472,7 +480,7 @@ function pointerMove(x, y) {
 function pointerUp() {
   dragging = false;
   dom.style.cursor = 'grab';
-  setTimeout(() => { dragMoved = false; }, 0);
+  setTimeout(() => { dragMoved = false; }, 80);
 }
 
 dom.addEventListener('mousedown', (e) => pointerDown(e.clientX, e.clientY));
@@ -482,7 +490,12 @@ window.addEventListener('mousemove', (e) => {
 window.addEventListener('mouseup', pointerUp);
 
 dom.addEventListener('mousemove', (e) => {
-  px = (e.clientX / window.innerWidth) * 2 - 1;
+  const rect = dom.getBoundingClientRect();
+  if (rect.width > 0 && rect.height > 0) {
+    px = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    py = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  }
+});
   py = -(e.clientY / window.innerHeight) * 2 + 1;
 });
 
@@ -712,8 +725,9 @@ function buildCategoryChips() {
    ======================================================== */
 function pickAt(clientX, clientY) {
   if (!tiles.length) return null;
-  const nx = (clientX / window.innerWidth) * 2 - 1;
-  const ny = -(clientY / window.innerHeight) * 2 + 1;
+  const rect = dom.getBoundingClientRect();
+  const nx = ((clientX - rect.left) / rect.width) * 2 - 1;
+  const ny = -((clientY - rect.top) / rect.height) * 2 + 1;
   raycaster.setFromCamera({ x: nx, y: ny }, camera);
   const visible = tiles.filter(t => t.visible);
   const hits = raycaster.intersectObjects(visible, false);
@@ -727,8 +741,10 @@ function activate(clientX, clientY) {
   if (window.soundEngine) window.soundEngine.shutterClick();
 
   const p = obj.userData.p;
-  if (window.tshLightbox) {
+  if (window.tshLightbox && typeof window.tshLightbox.open === 'function') {
     window.tshLightbox.open(p);
+  } else if (typeof window.openLightbox === 'function') {
+    window.openLightbox(p);
   }
 }
 
@@ -738,9 +754,11 @@ dom.addEventListener('click', (e) => {
 });
 
 dom.addEventListener('touchend', (e) => {
-  if (dragMoved || pinching || e.changedTouches.length !== 1) return;
-  const t = e.changedTouches[0];
-  activate(t.clientX, t.clientY);
+  if (dragMoved || pinching) return;
+  if (e.changedTouches.length === 1) {
+    const t = e.changedTouches[0];
+    activate(t.clientX, t.clientY);
+  }
 });
 
 /* ========================================================
