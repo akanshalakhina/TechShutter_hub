@@ -1266,8 +1266,180 @@ textarea.form-control {
   gap: 16px;
 }
 
+/* ========================================================
+   11. EDITORIAL REVIEWS & TESTIMONIALS (Reelxpozure Style)
+   ======================================================== */
+.rx-reviews-section {
+  padding: 110px 0;
+  background: #06090e;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rx-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 48px;
+}
+
+.rx-review-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.rx-review-card:hover {
+  border-color: rgba(229, 192, 88, 0.35);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.rx-review-stars {
+  color: var(--brand-gold, #E5C058);
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.rx-review-quote {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #f0f2f5;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.rx-review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 18px;
+}
+
+.rx-review-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.rx-review-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ========================================================
+   12. STUDIO FAQ ACCORDION (Reelxpozure Style)
+   ======================================================== */
+.rx-faq-section {
+  padding: 110px 0;
+  background: #040608;
+}
+
+.rx-faq-wrap {
+  max-width: 840px;
+  margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rx-faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.rx-faq-item.active {
+  border-color: rgba(229, 192, 88, 0.4);
+}
+
+.rx-faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 22px 26px;
+  font-size: 1.05rem;
+  font-family: var(--font-brand);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.rx-faq-question:hover {
+  color: var(--brand-gold);
+}
+
+.rx-faq-icon {
+  font-size: 20px;
+  color: var(--brand-gold);
+  transition: transform 0.3s ease;
+}
+
+.rx-faq-item.active .rx-faq-icon {
+  transform: rotate(45deg);
+}
+
+.rx-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 26px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.rx-faq-item.active .rx-faq-answer {
+  max-height: 300px;
+  padding: 0 26px 24px 26px;
+}
+
+/* ========================================================
+   13. CLOSING CTA BANNER ("Let's make something you'll keep")
+   ======================================================== */
+.rx-banner-section {
+  padding: 120px 0;
+  background: radial-gradient(circle at 50% 50%, rgba(229, 192, 88, 0.06) 0%, rgba(5, 7, 10, 1) 70%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.rx-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.rx-banner-sub {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
 /* Mobile Responsive Adjustments */
 @media (max-width: 992px) {
+  .rx-reviews-grid {
+    grid-template-columns: 1fr;
+  }
   .tsh-nav-menu {
     display: none;
   }
@@ -1292,4 +1464,5 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
 

@@ -526,7 +526,7 @@ dom.addEventListener('touchend', (e) => {
   }
 });
 
-// Wheel scroll (zoom, spin, pan)
+// Wheel interactions: pinch-to-zoom and horizontal spin without blocking webpage scroll
 dom.addEventListener('wheel', (e) => {
   if (e.ctrlKey) {
     // Pinch to zoom
@@ -534,16 +534,13 @@ dom.addEventListener('wheel', (e) => {
     dolly = Math.max(DOLLY_IN, Math.min(DOLLY_OUT, dolly + e.deltaY * 0.028));
     camera.position.z = dolly;
   } else if (e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-    // Horizontal swipe
+    // Horizontal spin
     e.preventDefault();
     const dx = e.deltaX !== 0 ? e.deltaX : e.deltaY;
     spin -= dx * 0.004;
     spinVel = -dx * 0.004;
-  } else {
-    // Vertical pan through rows
-    e.preventDefault();
-    groupY = Math.max(-GY_MAX, Math.min(GY_MAX, groupY + e.deltaY * 0.004));
   }
+  // Vertical wheel scrolling is not prevented so the user can scroll the webpage smoothly!
 }, { passive: false });
 
 /* ========================================================
