@@ -57,7 +57,7 @@ function writeDataFile($file, $data) {
     if (!is_dir($dir)) {
         mkdir($dir, 0755, true);
     }
-    $json = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    $json = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     return file_put_contents($file, $json, LOCK_EX) !== false;
 }
 

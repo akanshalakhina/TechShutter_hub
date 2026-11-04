@@ -102,134 +102,81 @@
     </div>
   </section>
 
-  <!-- Open Roles -->
-  <section style="padding: 20px 0 100px;">
-    <div class="container">
-      <div class="career-grid">
-        
-        <!-- Role 1 -->
-        <div class="career-card">
-          <div>
-            <h3 class="career-role-title">Lead Wedding Photographer</h3>
-            <span class="career-role-type">Full-Time / Contract &middot; Kolkata &amp; Travel</span>
-            <p class="career-role-desc">
-              Direct and capture multi-day Bengali wedding ceremonies. Mastery of fast low-light lenses, off-camera flash balance, and capturing decisive moments without staging.
-            </p>
-            <ul style="color:var(--text-muted); font-size:12px; margin-left:18px; margin-bottom:24px; line-height:1.7;">
-              <li>3+ years wedding photography portfolio</li>
-              <li>Experience with Sony Alpha full-frame / G-Master primes</li>
-              <li>Flawless communication with family elders &amp; couples</li>
-            </ul>
-          </div>
-          <button class="career-apply-btn" onclick="openApply('Lead Wedding Photographer')">
-            <span>Apply For Position &rarr;</span>
-          </button>
+    <!-- Open Creative Applications -->
+  <section style="padding: 10px 0 100px;">
+    <div class="container" style="max-width: 840px;">
+      
+      <div style="background: var(--bg-surface, #0e131b); border: 1px solid rgba(229, 192, 88, 0.3); border-radius: var(--radius-md, 14px); padding: clamp(28px, 5vw, 48px); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);">
+        <div style="text-align: center; margin-bottom: 36px;">
+          <span class="section-label" style="margin-bottom: 8px;">Direct Creative Application</span>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: #fff; margin-bottom: 12px;">
+            Join Our Production Collective
+          </h2>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; max-width: 620px; margin: 0 auto;">
+            We are always scouting exceptional wedding photographers, cinematographers, colorists, and aerial drone artists. Submit your portfolio to be considered for upcoming high-end weddings, brand campaigns, and editorial projects.
+          </p>
         </div>
 
-        <!-- Role 2 -->
-        <div class="career-card">
-          <div>
-            <h3 class="career-role-title">Cinematographer &amp; Gimbal Op</h3>
-            <span class="career-role-type">Full-Time &middot; Field Production</span>
-            <p class="career-role-desc">
-              Operate 8K &amp; 4K cinema bodies, anamorphic lenses, and Ronin 3-axis stabilization. Ability to shoot in 10-bit log and orchestrate dynamic couple movements.
-            </p>
-            <ul style="color:var(--text-muted); font-size:12px; margin-left:18px; margin-bottom:24px; line-height:1.7;">
-              <li>Proficiency with Sony FX series or RED Digital Cinema</li>
-              <li>Strong eye for natural lighting &amp; negative fill</li>
-              <li>Understanding of wedding sequence pacing</li>
-            </ul>
+        <form id="careerDirectForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cName">Full Name *</label>
+              <input type="text" id="cName" class="form-control" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="cEmail">Email Address *</label>
+              <input type="email" id="cEmail" class="form-control" placeholder="name@example.com" required />
+            </div>
           </div>
-          <button class="career-apply-btn" onclick="openApply('Cinematographer &amp; Gimbal Op')">
-            <span>Apply For Position &rarr;</span>
-          </button>
-        </div>
 
-        <!-- Role 3 -->
-        <div class="career-card">
-          <div>
-            <h3 class="career-role-title">Senior Colorist &amp; Reel Editor</h3>
-            <span class="career-role-type">Studio / Remote Hybrid</span>
-            <p class="career-role-desc">
-              Create film looks, accurate skin tones, and high-impact 9:16 vertical reels with sound design in DaVinci Resolve Studio &amp; Premiere Pro.
-            </p>
-            <ul style="color:var(--text-muted); font-size:12px; margin-left:18px; margin-bottom:24px; line-height:1.7;">
-              <li>Expertise in ACES / DaVinci YRGB Color Managed</li>
-              <li>Proven viral track record with vertical short-form reels</li>
-              <li>Deep ear for rhythm, Foley, and emotional music timing</li>
-            </ul>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cRole">Creative Discipline *</label>
+              <select id="cRole" class="form-control" required>
+                <option value="Wedding Photographer">Wedding Photographer</option>
+                <option value="Cinematographer & Filmmaker">Cinematographer &amp; Filmmaker</option>
+                <option value="Colorist & Video Editor">Colorist &amp; Video Editor</option>
+                <option value="Drone & Aerial Specialist">Drone &amp; Aerial Specialist</option>
+                <option value="Assistant & Production Crew">Assistant &amp; Production Crew</option>
+                <option value="Other Creative">Other Creative Visual Discipline</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cExp">Years of Field Experience</label>
+              <input type="text" id="cExp" class="form-control" placeholder="e.g. 3 years" />
+            </div>
           </div>
-          <button class="career-apply-btn" onclick="openApply('Senior Colorist &amp; Reel Editor')">
-            <span>Apply For Position &rarr;</span>
-          </button>
-        </div>
 
-        <!-- Role 4 -->
-        <div class="career-card">
-          <div>
-            <h3 class="career-role-title">Drone &amp; Aerial Specialist</h3>
-            <span class="career-role-type">Project Basis &middot; Destination Shoots</span>
-            <p class="career-role-desc">
-              Capture sweeping landscapes, heritage architecture, and grand outdoor wedding processions using high-end DJI Inspire / Mavic 3 Pro drones.
-            </p>
-            <ul style="color:var(--text-muted); font-size:12px; margin-left:18px; margin-bottom:24px; line-height:1.7;">
-              <li>Valid DGCA drone pilot certificate / experience</li>
-              <li>Smooth, cinematic camera movements</li>
-              <li>Safe operation in crowded venue environments</li>
-            </ul>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cPhone">Contact / WhatsApp (Optional)</label>
+              <input type="tel" id="cPhone" class="form-control" placeholder="Your contact number" />
+            </div>
+            <div class="form-group">
+              <label for="cPortfolio">Portfolio Link / Instagram / Showreel *</label>
+              <input type="url" id="cPortfolio" class="form-control" placeholder="https://instagram.com/myhandle or Vimeo link" required />
+            </div>
           </div>
-          <button class="career-apply-btn" onclick="openApply('Drone &amp; Aerial Specialist')">
-            <span>Apply For Position &rarr;</span>
-          </button>
-        </div>
 
+          <div class="form-group">
+            <label for="cGear">Primary Cameras, Lenses &amp; Software You Use</label>
+            <input type="text" id="cGear" class="form-control" placeholder="e.g. Sony A7S III / FX3, G-Master primes, DaVinci Resolve, DJI Mavic 3" />
+          </div>
+
+          <div class="form-group">
+            <label for="cMessage">About Your Style &amp; Creative Approach</label>
+            <textarea id="cMessage" class="form-control" rows="4" placeholder="Brief note on your artistic background and why you want to collaborate with Tech Shutter Hub..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 15px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; cursor: pointer;">
+            Submit Application to Studio &rarr;
+          </button>
+          <div id="careerFormStatus" style="margin-top: 16px; font-size: 13px; text-align: center;"></div>
+        </form>
       </div>
+
     </div>
   </section>
-
-  <!-- Application Modal -->
-  <div class="modal-overlay" id="careerModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeApply()">&times;</button>
-      <div class="modal-header">
-        <h3 id="careerModalTitle">Apply for Creative Role</h3>
-        <p>Submit your details and portfolio link to our studio review desk.</p>
-      </div>
-      <form id="careerAppForm">
-        <input type="hidden" id="careerRoleInput" />
-        <div class="form-row">
-          <div class="form-group">
-            <label for="careerName">Full Name *</label>
-            <input type="text" id="careerName" class="form-control" placeholder="e.g. Priyo Sen" required />
-          </div>
-          <div class="form-group">
-            <label for="careerEmail">Email Address *</label>
-            <input type="email" id="careerEmail" class="form-control" placeholder="priyo@example.com" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="careerPhone">Phone / WhatsApp</label>
-            <input type="tel" id="careerPhone" class="form-control" placeholder="+91 98300 00000" />
-          </div>
-          <div class="form-group">
-            <label for="careerExp">Years of Experience</label>
-            <input type="text" id="careerExp" class="form-control" placeholder="e.g. 4 years" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="careerPortfolio">Portfolio Link / Instagram / Showreel *</label>
-          <input type="url" id="careerPortfolio" class="form-control" placeholder="https://instagram.com/myhandle or Vimeo link" required />
-        </div>
-        <div class="form-group">
-          <label for="careerMessage">Primary Cameras, Lenses &amp; Software You Use</label>
-          <textarea id="careerMessage" class="form-control" placeholder="Mention your primary gear kit and recent projects..."></textarea>
-        </div>
-        <button type="submit" class="submit-inquiry-btn">Submit Application &rarr;</button>
-        <div id="careerFormStatus" style="margin-top:14px; font-size:13px;"></div>
-      </form>
-    </div>
-  </div>
 
   <!-- Footer -->
   <footer class="tsh-footer">
@@ -267,47 +214,36 @@
 
   <script src="/js/theme.js"></script>
   <script>
-    function openApply(role) {
-      document.getElementById('careerRoleInput').value = role;
-      document.getElementById('careerModalTitle').textContent = `Apply for: ${role}`;
-      document.getElementById('careerModal').classList.add('active');
-    }
-
-    function closeApply() {
-      document.getElementById('careerModal').classList.remove('active');
-    }
-
-    document.getElementById('careerAppForm').addEventListener('submit', async (e) => {
+    document.getElementById('careerDirectForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const statusDiv = document.getElementById('careerFormStatus');
-      statusDiv.innerHTML = '<span style="color:var(--brand-gold);">Submitting application...</span>';
+      const status = document.getElementById('careerFormStatus');
+      status.innerHTML = '<span style="color:var(--brand-gold);">Sending your application...</span>';
 
       const payload = {
-        name: document.getElementById('careerName').value,
-        email: document.getElementById('careerEmail').value,
-        phone: document.getElementById('careerPhone').value,
-        role: document.getElementById('careerRoleInput').value,
-        portfolioUrl: document.getElementById('careerPortfolio').value,
-        experience: document.getElementById('careerExp').value,
-        message: document.getElementById('careerMessage').value
+        name: document.getElementById('cName').value.trim(),
+        email: document.getElementById('cEmail').value.trim(),
+        role: document.getElementById('cRole').value,
+        phone: document.getElementById('cPhone').value.trim(),
+        experience: document.getElementById('cExp').value.trim(),
+        portfolio: document.getElementById('cPortfolio').value.trim(),
+        message: 'Gear: ' + (document.getElementById('cGear').value.trim() || 'N/A') + '\n\nNote: ' + (document.getElementById('cMessage').value.trim() || 'No note')
       };
 
       try {
-        const res = await fetch('/api/careers', {
+        const res = await fetch('/api/career-apply.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
-        const data = await res.json();
-        if (data.success) {
-          statusDiv.innerHTML = `<span style="color:#4ade80; font-weight:600;">&#10003; ${data.message}</span>`;
-          document.getElementById('careerAppForm').reset();
-          setTimeout(closeApply, 2500);
+        const json = await res.json();
+        if (json.success) {
+          status.innerHTML = '<span style="color:#4ade80;font-weight:600;">&#10003; Thank you! Your application has been received by Tech Shutter Hub. Our lead will review your portfolio.</span>';
+          document.getElementById('careerDirectForm').reset();
         } else {
-          statusDiv.innerHTML = `<span style="color:#ef4444;">${data.message}</span>`;
+          status.innerHTML = `<span style="color:#ef4444;">${json.message || 'Submission error. Please try again.'}</span>`;
         }
       } catch (err) {
-        statusDiv.innerHTML = `<span style="color:#ef4444;">Error: ${err.message}</span>`;
+        status.innerHTML = `<span style="color:#ef4444;">Error: ${err.message}</span>`;
       }
     });
   </script>

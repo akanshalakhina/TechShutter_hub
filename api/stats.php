@@ -1,7 +1,7 @@
 <?php
 /* ========================================================
    TECH SHUTTER HUB - Dashboard Stats API (PHP)
-   GET: Returns project, category, and inquiry counts
+   GET: Returns project, category, inquiry, and career counts
    ======================================================== */
 
 require_once __DIR__ . '/common.php';
@@ -16,6 +16,7 @@ if (empty($projects) && file_exists(dirname(__DIR__) . '/projects.json')) {
 }
 
 $inquiries = readDataFile(INQUIRIES_FILE);
+$careers = readDataFile(CAREERS_FILE);
 
 $categories = array_values(array_unique(array_filter(array_column($projects, 'category'))));
 $rituals = array_values(array_unique(array_filter(array_column($projects, 'weddingRitual'))));
@@ -25,7 +26,7 @@ jsonResponse([
     'totalProjects' => count($projects),
     'totalCategories' => count($categories),
     'totalInquiries' => count($inquiries),
+    'totalCareers' => count($careers),
     'categories' => $categories,
     'weddingRituals' => $rituals
 ]);
-

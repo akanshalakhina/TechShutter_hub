@@ -1,7 +1,7 @@
 <?php
 /* ========================================================
-   TECH SHUTTER HUB - Inquiries Retrieval API (PHP)
-   GET: Returns inquiries list (Admin Protected)
+   TECH SHUTTER HUB - Inquiries & Careers Retrieval API (PHP)
+   GET: Returns client bookings & career submissions (Admin Protected)
    ======================================================== */
 
 require_once __DIR__ . '/common.php';
@@ -12,11 +12,31 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 requireAdmin();
 
+$type = $_GET['type'] ?? 'all';
 $inquiries = readDataFile(INQUIRIES_FILE);
+$careers = readDataFile(CAREERS_FILE);
+
+if ($type === 'careers') {
+    jsonResponse([
+        'success' => true,
+        'count' => count($careers),
+        'data' => $careers
+    ]);
+}
+
+if ($type === 'inquiries') {
+    jsonResponse([
+        'success' => true,
+        'count' => count($inquiries),
+        'data' => $inquiries
+    ]);
+}
 
 jsonResponse([
     'success' => true,
-    'count' => count($inquiries),
+    'totalInquiries' => count($inquiries),
+    'totalCareers' => count($careers),
+    'inquiries' => $inquiries,
+    'careers' => $careers,
     'data' => $inquiries
 ]);
-

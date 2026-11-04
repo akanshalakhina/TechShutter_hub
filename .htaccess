@@ -8,6 +8,10 @@ DirectoryIndex index.php index.html
     RewriteBase /
 
     # API endpoints routing
+    RewriteRule ^api/admin/login/?$ api/login.php [QSA,L]
+    RewriteRule ^api/admin/verify/?$ api/login.php [QSA,L]
+    RewriteRule ^api/admin/logout/?$ api/login.php [QSA,L]
+    RewriteRule ^api/projects/([^/]+)/?$ api/projects.php?id=$1 [QSA,L]
     RewriteRule ^api/projects/?$ api/projects.php [QSA,L]
     RewriteRule ^api/inquire/?$ api/inquire.php [QSA,L]
     RewriteRule ^api/career-apply/?$ api/career-apply.php [QSA,L]

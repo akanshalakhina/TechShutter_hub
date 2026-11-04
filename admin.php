@@ -327,7 +327,11 @@
         </div>
         <div class="stat-card">
           <div class="stat-num" id="statInquiries">-</div>
-          <div class="stat-lbl">Real Client Bookings</div>
+          <div class="stat-lbl">Client Bookings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="statCareers">-</div>
+          <div class="stat-lbl">Career Applications</div>
         </div>
       </div>
 
@@ -335,7 +339,8 @@
       <div class="admin-tabs">
         <button class="admin-tab active" data-tab="tabProjects">Portfolio &amp; Galleries</button>
         <button class="admin-tab" data-tab="tabAdd">Add Photos to Wedding Tabs / Galleries</button>
-        <button class="admin-tab" data-tab="tabInquiries">Inquiries Received (<span id="inquiryCountBadge">0</span>)</button>
+        <button class="admin-tab" data-tab="tabInquiries">Client Inquiries (<span id="inquiryCountBadge">0</span>)</button>
+        <button class="admin-tab" data-tab="tabCareers">Career Applications (<span id="careerCountBadge">0</span>)</button>
       </div>
 
       <!-- Panel 1: Projects & Wedding Photos Table -->
@@ -493,6 +498,33 @@
         </div>
       </div>
 
+      <!-- Panel 4: Career Applications (Artist Portfolios) -->
+      <div class="admin-panel" id="tabCareers">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="font-size: 18px;">Received Creative Portfolio Applications</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Applications submitted via the Career page for photographers, cinematographers, and editors.</p>
+          </div>
+          <span style="font-size:12px; color:var(--brand-gold);">&#10003; Real Candidate Portfolios</span>
+        </div>
+        <div class="table-responsive">
+          <table id="careersTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Candidate Name</th>
+                <th>Discipline / Role</th>
+                <th>Contact</th>
+                <th>Portfolio Link</th>
+                <th>Experience</th>
+                <th>Gear &amp; Cover Note</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -516,7 +548,7 @@
         return;
       }
       try {
-        const res = await fetch('/api/admin/verify', {
+        const res = await fetch('/api/login', {
           headers: { 'Authorization': 'Bearer ' + authToken }
         });
         const json = await res.json();
@@ -553,7 +585,7 @@
       const password = document.getElementById('adminPass').value.trim();
 
       try {
-        const res = await fetch('/api/admin/login', {
+        const res = await fetch('/api/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password })
@@ -575,7 +607,7 @@
     // Logout
     logoutBtn.addEventListener('click', async () => {
       try {
-        await fetch('/api/admin/logout', {
+        await fetch('/api/login', {
           method: 'POST',
           headers: { 'Authorization': 'Bearer ' + authToken }
         });
@@ -671,7 +703,7 @@
 
       // Load Real Inquiries (NO mock data)
       try {
-        const res = await fetch('/api/inquiries', {
+        const res = await fetch('/api/inquiries?type=inquiries', {
           headers: { 'Authorization': 'Bearer ' + authToken }
         });
         if (res.status === 401) {
@@ -700,6 +732,49 @@
             `;
             tbody.appendChild(tr);
           });
+        }
+      } catch (e) {}
+
+      // Load Real Career Applications
+      try {
+        const res = await fetch('/api/inquiries?type=careers', {
+          headers: { 'Authorization': 'Bearer ' + authToken }
+        });
+        const json = await res.json();
+        const tbody = document.querySelector('#careersTable tbody');
+        if (tbody) {
+          tbody.innerHTML = '';
+          if (!json.data || json.data.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">No career applications submitted yet. Candidate submissions from the Career page will appear here.</td></tr>`;
+          } else {
+            json.data.forEach(app => {
+              const tr = document.createElement('tr');
+              const dt = app.createdAt ? new Date(app.createdAt).toLocaleDateString() : '';
+              tr.innerHTML = `
+                <td>${dt}</td>
+                <td><strong>${app.name}</strong></td>
+                <td><span class="badge">${app.role || 'Creative'}</span></td>
+                <td>
+                  <a href="mailto:${app.email}" style="color:var(--brand-gold);">${app.email}</a>
+                  ${app.phone ? `<div style="font-size:11px;color:var(--text-muted);">${app.phone}</div>` : ''}
+                </td>
+                <td>
+                  ${app.portfolio ? `<a href="${app.portfolio}" target="_blank" rel="noopener noreferrer" style="color:var(--brand-gold);text-decoration:underline;">View Portfolio &rarr;</a>` : '-'}
+                </td>
+                <td>
+                  ${app.experience ? `<span class="badge ritual-badge">${app.experience}</span>` : '-'}
+                </td>
+                <td style="max-width:280px; font-size:12px; color:var(--text-muted);">${app.message || '-'}</td>
+              `;
+              tbody.appendChild(tr);
+            });
+          }
+        }
+        if (document.getElementById('careerCountBadge')) {
+          document.getElementById('careerCountBadge').textContent = (json.data && json.data.length) || 0;
+        }
+        if (document.getElementById('statCareers')) {
+          document.getElementById('statCareers').textContent = (json.data && json.data.length) || 0;
         }
       } catch (e) {}
     }
@@ -743,7 +818,7 @@
     async function deleteProject(id) {
       if (!confirm('Are you sure you want to delete this project from the database?')) return;
       try {
-        const res = await fetch('/api/projects/' + id, {
+        const res = await fetch('/api/projects?id=' + encodeURIComponent(id), {
           method: 'DELETE',
           headers: { 'Authorization': 'Bearer ' + authToken }
         });

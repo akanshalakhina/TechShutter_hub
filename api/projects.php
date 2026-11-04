@@ -104,6 +104,12 @@ if ($method === 'DELETE') {
     requireAdmin();
     $id = $_GET['id'] ?? '';
     if (empty($id)) {
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        if (preg_match('#/projects/([^/?#]+)#', $path, $m)) {
+            $id = $m[1];
+        }
+    }
+    if (empty($id)) {
         $body = getJsonBody();
         $id = $body['id'] ?? '';
     }

@@ -1,37 +1,63 @@
 <?php
 /* ========================================================
-   TECH SHUTTER HUB - Admin Login API (PHP)
-   POST: Authenticates admin credentials and returns JWT/HMAC token
+   TECH SHUTTER HUB - Admin Login & Session API (PHP)
+   POST: Authenticates admin credentials and returns HMAC token
+   GET: Verifies active session token
    ======================================================== */
 
 require_once __DIR__ . '/common.php';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    jsonResponse(['success' => false, 'message' => 'Method not allowed.'], 405);
+$method = $_SERVER['REQUEST_METHOD'];
+
+if ($method === 'GET') {
+    if (verifyAdminToken()) {
+        jsonResponse([
+            'success' => true,
+            'authenticated' => true,
+            'user' => [
+                'username' => 'admin',
+                'role' => 'Studio Administrator'
+            ]
+        ]);
+    } else {
+        jsonResponse([
+            'success' => false,
+            'authenticated' => false,
+            'message' => 'Session expired or invalid token.'
+        ], 401);
+    }
 }
 
-$body = getJsonBody();
-$user = trim($body['username'] ?? '');
-$pass = trim($body['password'] ?? '');
+if ($method === 'POST') {
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    if (strpos($path, 'logout') !== false) {
+        jsonResponse(['success' => true, 'message' => 'Logged out successfully.']);
+    }
 
-$validUser = getenv('ADMIN_USER') ?: 'admin';
-$validPass = getenv('ADMIN_PASS') ?: 'techshutter2026';
+    $body = getJsonBody();
+    $user = trim($body['username'] ?? '');
+    $pass = trim($body['password'] ?? '');
 
-if ($user === $validUser && $pass === $validPass) {
-    $token = generateAdminToken();
+    $validUser = getenv('ADMIN_USER') ?: 'admin';
+    $validPass = getenv('ADMIN_PASS') ?: 'techshutter2026';
+
+    if ($user === $validUser && $pass === $validPass) {
+        $token = generateAdminToken();
+        jsonResponse([
+            'success' => true,
+            'message' => 'Authentication successful. Welcome, Studio Director.',
+            'token' => $token,
+            'user' => [
+                'username' => 'admin',
+                'role' => 'Studio Administrator'
+            ]
+        ]);
+    }
+
     jsonResponse([
-        'success' => true,
-        'message' => 'Authentication successful.',
-        'token' => $token,
-        'user' => [
-            'username' => 'admin',
-            'role' => 'Studio Administrator'
-        ]
-    ]);
+        'success' => false,
+        'message' => 'Invalid username or password.'
+    ], 401);
 }
 
-jsonResponse([
-    'success' => false,
-    'message' => 'Invalid username or password.'
-], 401);
-
+jsonResponse(['success' => false, 'message' => 'Method not allowed.'], 405);
