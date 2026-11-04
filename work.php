@@ -12,7 +12,7 @@
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="stylesheet" href="/css/theme.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/editorial.css" />
+  <link rel="stylesheet" href="/css/editorial.css?v=2" />
   
   <style>
     /* 3D Immersive Full-Screen Page Overrides */

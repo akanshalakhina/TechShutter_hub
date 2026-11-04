@@ -21,7 +21,7 @@
   <!-- Core Theme & Editorial Styles -->
   <link rel="stylesheet" href="/css/theme.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/editorial.css" />
+  <link rel="stylesheet" href="/css/editorial.css?v=2" />
 </head>
 <body class="editorial-home">
 
