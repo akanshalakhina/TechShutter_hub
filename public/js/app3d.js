@@ -224,7 +224,9 @@ function loadTextureCover(uri, p, maxAniso) {
 function loadDirectTexture(uri, maxAniso) {
   return new Promise((resolve) => {
     const img = new Image();
-    img.crossOrigin = 'anonymous';
+    if (!uri.startsWith('data:')) {
+      img.crossOrigin = 'anonymous';
+    }
     img.onload = () => {
       const tex = new THREE.Texture(img);
       tex.colorSpace = THREE.SRGBColorSpace;
@@ -312,12 +314,61 @@ const TMP = new THREE.Vector3();
 const EA = new THREE.Vector3();
 const EB = new THREE.Vector3();
 
+function createInstantTileTexture(p, index) {
+  const W = 800, H = 450;
+  const cv = document.createElement('canvas');
+  cv.width = W;
+  cv.height = H;
+  const ctx = cv.getContext('2d');
+
+  const grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, '#101622');
+  grad.addColorStop(1, '#06090e');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Gold luxury rim
+  ctx.strokeStyle = '#E5C058';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(8, 8, W - 16, H - 16);
+
+  // Bottom overlay
+  ctx.fillStyle = 'rgba(5, 7, 10, 0.88)';
+  ctx.fillRect(0, H - 76, W, 76);
+  ctx.fillStyle = '#E5C058';
+  ctx.fillRect(0, H - 77, W, 2);
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = 'bold 22px Montserrat, Arial, sans-serif';
+  ctx.fillText(p.title || 'Tech Shutter Hub', 24, H - 42);
+
+  ctx.fillStyle = '#8CAE82';
+  ctx.font = '600 13px Montserrat, Arial, sans-serif';
+  ctx.fillText((p.category || 'PORTFOLIO').toUpperCase(), 24, H - 18);
+
+  if (p.video) {
+    drawPlayBadge(ctx, W / 2, H / 2 - 20, 44);
+  }
+
+  const tex = new THREE.CanvasTexture(cv);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = maxAniso;
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.repeat.x = -1;
+  tex.offset.x = 1;
+  tex.needsUpdate = true;
+  return tex;
+}
+
 /* ========================================================
    Build Cylinder Wall & Project Tiles
    ======================================================== */
 async function buildGallery() {
   portfolioData = await loadProjects();
   window.TSH_PROJECTS = portfolioData;
+
+  // Build category chips immediately so pills appear without delay
+  buildCategoryChips();
 
   // Flatten items
   const items = [];
@@ -362,70 +413,93 @@ async function buildGallery() {
   outline.scale.setScalar(1.004);
   group.add(outline);
 
-  const phTex = await loadDirectTexture(placeholderURI(), maxAniso);
-  const phMat = new THREE.MeshBasicMaterial({
-    map: phTex,
-    side: THREE.BackSide,
-    color: 0x707070,
-    fog: true
-  });
+  // Synchronously add all curated project tiles with instant textures
+  picked.forEach((it, i) => {
+    const col = Math.floor(i / ROWS);
+    const ring = i % ROWS;
+    const angle = col * ((Math.PI * 2) / AROUND) + Math.PI;
+    const y = (ring - (ROWS - 1) / 2) * ROW_SP;
 
-  // Populate curated project tiles
-  await Promise.all(
-    picked.map(async (it, i) => {
-      const col = Math.floor(i / ROWS);
-      const ring = i % ROWS;
-      const angle = col * ((Math.PI * 2) / AROUND) + Math.PI;
-      const y = (ring - (ROWS - 1) / 2) * ROW_SP;
+    const instantTex = createInstantTileTexture(it.project, i);
+    const mat = new THREE.MeshBasicMaterial({
+      map: instantTex,
+      side: THREE.BackSide,
+      color: 0x909090,
+      fog: true
+    });
 
-      let tex = null;
-      if (it.video && it.img) {
-        tex = await loadVideoTexture(it.img, it.project, maxAniso);
-      } else if (it.img) {
-        tex = await loadTextureCover(it.img, it.project, maxAniso);
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.rotation.y = angle;
+    mesh.position.y = y;
+    mesh.userData = {
+      p: it.project,
+      item: it,
+      baseY: y,
+      ph: i * 1.7,
+      angle0: angle,
+      y0: y
+    };
+
+    group.add(mesh);
+    tiles.push(mesh);
+
+    // Asynchronously & non-blockingly load the real image texture
+    if (it.img) {
+      const img = new Image();
+      if (!it.img.startsWith('data:')) {
+        img.crossOrigin = 'anonymous';
       }
+      img.onload = () => {
+        try {
+          const W = 800, H = 450;
+          const cv = document.createElement('canvas');
+          cv.width = W;
+          cv.height = H;
+          const ctx = cv.getContext('2d');
+          const s = Math.max(W / img.naturalWidth, H / img.naturalHeight);
+          const dw = img.naturalWidth * s, dh = img.naturalHeight * s;
+          ctx.drawImage(img, (W - dw) / 2, (H - dh) / 2, dw, dh);
+          if (it.video) {
+            drawPlayBadge(ctx, W / 2, H / 2 - 20, 44);
+          }
+          drawTitleOverlay(ctx, W, H, it.project);
 
-      if (!tex) {
-        // Fallback procedural mockup
-        tex = await loadDirectTexture(thumb(it.project, i), maxAniso);
-      }
+          const realTex = new THREE.CanvasTexture(cv);
+          realTex.colorSpace = THREE.SRGBColorSpace;
+          realTex.anisotropy = maxAniso;
+          realTex.wrapS = THREE.RepeatWrapping;
+          realTex.repeat.x = -1;
+          realTex.offset.x = 1;
+          realTex.needsUpdate = true;
 
-      const mat = new THREE.MeshBasicMaterial({
-        map: tex || phMat.map,
-        side: THREE.BackSide,
-        color: 0x909090,
-        fog: true
-      });
-
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.rotation.y = angle;
-      mesh.position.y = y;
-      mesh.userData = {
-        p: it.project,
-        item: it,
-        baseY: y,
-        ph: i * 1.7,
-        angle0: angle,
-        y0: y
+          mesh.material.map = realTex;
+          mesh.material.needsUpdate = true;
+        } catch (e) {
+          // Instant luxury texture remains
+        }
       };
-
-      group.add(mesh);
-      tiles.push(mesh);
-    })
-  );
+      img.onerror = () => {};
+      img.src = it.img;
+    }
+  });
 
   // Fillers to complete the cylinder
   for (let i = picked.length; i < totalSlots; i++) {
     const col = Math.floor(i / ROWS);
     const ring = i % ROWS;
-    const mesh = new THREE.Mesh(geo, phMat);
+    const instantTex = createInstantTileTexture({ title: 'Tech Shutter Hub', category: 'STUDIO' }, i);
+    const mat = new THREE.MeshBasicMaterial({
+      map: instantTex,
+      side: THREE.BackSide,
+      color: 0x707070,
+      fog: true
+    });
+    const mesh = new THREE.Mesh(geo, mat);
     mesh.rotation.y = col * ((Math.PI * 2) / AROUND) + Math.PI;
     mesh.position.y = (ring - (ROWS - 1) / 2) * ROW_SP;
     group.add(mesh);
     fillers.push(mesh);
   }
-
-  buildCategoryChips();
 }
 
 /* ========================================================
@@ -838,7 +912,10 @@ window.addEventListener('resize', () => {
   });
 })();
 
-// Start
-buildGallery().then(() => {
-  tick();
+// Start rendering loop immediately so the WebGL cylinder & scene are visible from second 0
+tick();
+
+// Build gallery & populate category chips
+buildGallery().catch(err => {
+  console.error('[3D Gallery] Initialization error:', err);
 });

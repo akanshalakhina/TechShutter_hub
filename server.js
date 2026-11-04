@@ -413,3 +413,5 @@ app.listen(PORT, () => {
   console.log(`🔑 Admin credentials configured (login via /admin.html)`);
   console.log(`=======================================================`);
 });
+
+module.exports = app;
