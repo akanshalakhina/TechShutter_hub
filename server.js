@@ -24,17 +24,25 @@ app.use((req, res, next) => {
   next();
 });
 
+// Helper to send PHP/HTML pages with proper text/html header
+function sendPage(res, filename) {
+  const filePath = path.join(__dirname, 'public', filename);
+  res.type('html');
+  res.sendFile(filePath);
+}
+
 // Explicit clean route handlers
-app.get('/wedding', (req, res) => res.sendFile(path.join(__dirname, 'public', 'wedding.html')));
-app.get('/services', (req, res) => res.sendFile(path.join(__dirname, 'public', 'services.html')));
-app.get('/career', (req, res) => res.sendFile(path.join(__dirname, 'public', 'career.html')));
-app.get('/work', (req, res) => res.sendFile(path.join(__dirname, 'public', 'work.html')));
-app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public', 'contact.html')));
-app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'public', 'admin.html')));
-app.get('/gallery', (req, res) => res.sendFile(path.join(__dirname, 'public', 'gallery.html')));
+app.get('/', (req, res) => sendPage(res, 'index.php'));
+app.get('/wedding', (req, res) => sendPage(res, 'wedding.php'));
+app.get('/services', (req, res) => sendPage(res, 'services.php'));
+app.get('/career', (req, res) => sendPage(res, 'career.php'));
+app.get('/work', (req, res) => sendPage(res, 'work.php'));
+app.get('/contact', (req, res) => sendPage(res, 'contact.php'));
+app.get('/admin', (req, res) => sendPage(res, 'admin.php'));
+app.get('/gallery', (req, res) => sendPage(res, 'gallery.php'));
 
 // Serve static frontend files
-app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html', 'php'] }));
 
 const DATA_FILE = path.join(__dirname, 'data', 'projects.json');
 const PUBLIC_DATA_FILE = path.join(__dirname, 'public', 'projects.json');
@@ -400,10 +408,10 @@ app.get('/api/stats', (req, res) => {
   });
 });
 
-// Fallback routing to index.html for SPA feel
+// Fallback routing to index.php for SPA feel
 app.use((req, res, next) => {
   if (req.path.startsWith('/api/')) return next();
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  sendPage(res, 'index.php');
 });
 
 app.listen(PORT, () => {

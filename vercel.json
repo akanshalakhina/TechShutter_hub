@@ -2,12 +2,12 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/server.js" },
-    { "source": "/wedding", "destination": "/wedding.html" },
-    { "source": "/services", "destination": "/services.html" },
-    { "source": "/career", "destination": "/career.html" },
-    { "source": "/work", "destination": "/work.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/admin", "destination": "/admin.html" }
+    { "source": "/wedding", "destination": "/wedding.php" },
+    { "source": "/services", "destination": "/services.php" },
+    { "source": "/career", "destination": "/career.php" },
+    { "source": "/work", "destination": "/work.php" },
+    { "source": "/contact", "destination": "/contact.php" },
+    { "source": "/admin", "destination": "/admin.php" },
+    { "source": "/gallery", "destination": "/gallery.php" }
   ]
 }
-

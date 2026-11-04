@@ -1,4 +1,518 @@
 <?php
-// Tech Shutter Hub - Home Page
-require_once __DIR__ . '/index.html';
+// Tech Shutter Hub - PHP Page
+?>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECH SHUTTER HUB | Cinematic Film &amp; Photography Studio</title>
+  <meta name="description" content="Tech Shutter Hub is a premier cinematic film and photography studio specializing in full-spectrum Bengali weddings, pre-wedding escapes, cinematic reels, commercial productions, and cultural milestones." />
 
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TECH SHUTTER HUB | Cinematic Film &amp; Photography Studio" />
+  <meta property="og:description" content="Cinematic wedding rituals, pre-wedding escapes, 8K cinematography, and commercial visual productions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/logos/techshutter-logo.png" />
+
+  <!-- Core Theme & Editorial Styles -->
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/editorial.css" />
+</head>
+<body class="editorial-home">
+
+  <!-- ========================================================
+       1. FIXED HEADER & NAVIGATION
+       ======================================================== -->
+  <header class="tsh-header" role="banner">
+    <div class="container">
+      <div class="tsh-nav-inner">
+        
+        <!-- Brand Badge -->
+        <a href="/" class="tsh-brand" title="Tech Shutter Hub Home">
+          <img class="tsh-brand-img" src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+          <div class="tsh-brand-text">
+            <span class="tsh-brand-name">Tech Shutter Hub</span>
+            <span class="tsh-brand-tag">Cinematic Visual Studio</span>
+          </div>
+        </a>
+
+        <!-- Main Desktop Navigation -->
+        <nav class="tsh-nav-desktop" aria-label="Main Navigation">
+          <ul class="tsh-nav-menu">
+            <li><a href="/wedding" class="tsh-nav-link">Wedding</a></li>
+            
+            <!-- Services Dropdown (Short Names) -->
+            <li class="tsh-dropdown-wrapper">
+              <a href="/services" class="tsh-nav-link">
+                Services <span class="dropdown-caret">&#9662;</span>
+              </a>
+              <div class="tsh-dropdown-menu" role="menu">
+                <a href="/services#wedding-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Weddings &amp; Rituals</span>
+                  <span class="dropdown-item-desc">Gaye Holud, Ashirbad, Vivaha &amp; Boubhat</span>
+                </a>
+                <a href="/services#prewedding-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Pre-Wedding Shoots</span>
+                  <span class="dropdown-item-desc">Stylised romantic couple escapes</span>
+                </a>
+                <a href="/services#reels-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Cinematic Reels</span>
+                  <span class="dropdown-item-desc">Fast-paced 9:16 vertical social video</span>
+                </a>
+                <a href="/services#product-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Product &amp; E-Commerce</span>
+                  <span class="dropdown-item-desc">High-res jewellery, ethnic &amp; goods catalog</span>
+                </a>
+                <a href="/services#fb-service" class="dropdown-item">
+                  <span class="dropdown-item-title">F&amp;B &amp; Ambiance</span>
+                  <span class="dropdown-item-desc">Culinary styling, interiors &amp; hospitality</span>
+                </a>
+                <a href="/services#corp-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Corporate &amp; Teams</span>
+                  <span class="dropdown-item-desc">Executive headshots &amp; seminars</span>
+                </a>
+                <a href="/services#maternity-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Maternity &amp; Annaprashan</span>
+                  <span class="dropdown-item-desc">Parenthood glow &amp; infant rice ceremony</span>
+                </a>
+                <a href="/services#festive-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Festive &amp; Cultural</span>
+                  <span class="dropdown-item-desc">Durga Puja editorial &amp; heritage portfolios</span>
+                </a>
+              </div>
+            </li>
+
+            <li><a href="/career" class="tsh-nav-link">Career</a></li>
+            <li><a href="/work" class="tsh-nav-link">Work</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Actions & CTA Button (No Admin Button) -->
+        <div class="tsh-nav-actions">
+          <!-- Audio sound toggle -->
+          <button class="nav-btn btn-icon-only" id="soundToggleBtn" title="Sound Effects" aria-label="Toggle Sound">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <!-- Theme toggle -->
+          <button class="nav-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Dark / Light Theme">
+            <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+            </svg>
+          </button>
+
+          <!-- Highlighted "Start a Project" CTA button -->
+          <a href="/contact" class="btn-start-project">
+            <span>Start a Project</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" style="position:fixed;top:0;right:-100%;width:300px;height:100%;background:#0e131b;z-index:1020;padding:30px 24px;transition:right 0.3s ease;box-shadow:-10px 0 30px rgba(0,0,0,0.8);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <span style="font-weight:700;color:var(--brand-gold);text-transform:uppercase;letter-spacing:0.1em;font-size:13px;">Menu</span>
+      <button id="drawerClose" style="background:none;border:none;color:#fff;font-size:24px;cursor:pointer;">&times;</button>
+    </div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;">
+      <li><a href="/wedding" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Wedding</a></li>
+      <li><a href="/services" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Services</a></li>
+      <li><a href="/career" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Career</a></li>
+      <li><a href="/work" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Work</a></li>
+      <li style="margin-top:20px;">
+        <a href="/contact" class="btn-start-project" style="display:block;text-align:center;">Start a Project</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ========================================================
+       2. EDITORIAL HERO SECTION (Reelxpozure Style)
+       ======================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Cinematic Video Reel Backdrop -->
+    <video class="hero-video-backdrop" autoplay muted loop playsinline poster="/assets/optimized/DSC00180_1.jpg">
+      <source src="/assets/videos/video-1.mp4" type="video/mp4" />
+      <source src="/assets/videos/video-2.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-eyebrow">
+        <span>&#9670;</span>
+        <span>Kolkata &middot; Destination Weddings &middot; Visual Production Studio</span>
+        <span>&#9670;</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Films and photographs for the moments you <span class="gold-italic">only get once.</span>
+      </h1>
+
+      <p class="hero-subhead">
+        A premier cinematic film and photography studio for weddings, brand stories, and life's work, with one vision behind every frame.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="/contact" class="btn-primary">
+          <span>Start a Project</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="/work" class="btn-secondary">
+          <span>Explore Selected Works &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3. THREE WAYS IN / WAYS TO WORK WITH THE STUDIO (Reelxpozure Architecture)
+       ======================================================== -->
+  <section class="pillars-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <span class="section-label">Ways to work with the studio</span>
+        <h2 class="section-title">Three ways in. Pick the one that fits.</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Each discipline is its own lane, with a dedicated crew, calibrated cinema optics, and an uncompromising editorial standard.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1: Full-Spectrum Weddings -->
+        <div class="pillar-card">
+          <div>
+            <span class="pillar-num">01 / CEREMONIAL</span>
+            <h3 class="pillar-title">Weddings &amp; Rituals</h3>
+            <p class="pillar-desc">
+              Comprehensive Bengali wedding documentation spanning Gaye Holud, Ashirbad, Main Vivaha rituals (Saat Paake Ghaura, Sindoor Daan) and Boubhat feasts with cinematic photojournalism.
+            </p>
+          </div>
+          <a href="/wedding" class="pillar-link">
+            <span>Explore Wedding Archive &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Pillar 2: Pre-Wedding & Reels -->
+        <div class="pillar-card">
+          <div>
+            <span class="pillar-num">02 / MOTION &amp; PORTFOLIO</span>
+            <h3 class="pillar-title">Selected Works &amp; Reels</h3>
+            <p class="pillar-desc">
+              Stylised destination pre-wedding escapes, 4K wedding trailers, fast-paced 9:16 vertical reels, and an interactive 3D WebGL Cylinder room.
+            </p>
+          </div>
+          <a href="/work" class="pillar-link">
+            <span>Step Inside Selected Works &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Pillar 3: Commercial & Cultural Services -->
+        <div class="pillar-card">
+          <div>
+            <span class="pillar-num">03 / BESPOKE COMMERCIAL</span>
+            <h3 class="pillar-title">Studio Services</h3>
+            <p class="pillar-desc">
+              High-resolution product &amp; jewellery photography, F&amp;B culinary styling, executive corporate portraits, infant Annaprashan milestones, and Durga Puja festival portfolios.
+            </p>
+          </div>
+          <a href="/services" class="pillar-link">
+            <span>View All 8 Services &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4. STEP INSIDE THE WALL / 3D CYLINDER HIGHLIGHT (Reelxpozure Style)
+       ======================================================== -->
+  <section class="work-section" style="padding: 100px 0; background: #030508;">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 40px;">
+        <span class="section-label">Interactive Experience</span>
+        <h2 class="section-title">Step inside the wall</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Every film and frame in one place. Drag to spin the cylinder, scroll to zoom, or click any frame to inspect high-resolution details.
+        </p>
+      </div>
+
+      <!-- 3D Cylinder Container -->
+      <div class="inline-3d-wrap" style="display: block; position: relative; height: 580px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #070b10;">
+        <div id="app" style="position: absolute; inset: 0; z-index: 1;"></div>
+        <div class="tip" id="tip" role="tooltip" aria-hidden="true"></div>
+        <div class="inline-3d-hint">
+          <span>&#8644; Drag to spin cylinder</span> &middot;
+          <span>Pinch / Scroll to zoom</span> &middot;
+          <span>Click frame to inspect</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 36px;">
+        <a href="/work" class="btn-primary">
+          <span>Open Full Portfolio &amp; Gallery Archive &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. WHY TECH SHUTTER HUB EXISTS / STUDIO ETHOS (Reelxpozure Core Philosophy)
+       ======================================================== -->
+  <section style="padding: 110px 0; background: #06090e; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+    <div class="container" style="max-width: 900px;">
+      <span class="section-label">Why Tech Shutter Hub Exists</span>
+      <blockquote style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3.8vw, 2.7rem); line-height: 1.35; color: #ffffff; margin-bottom: 28px; font-weight: 300;">
+        &ldquo;The moments people are most afraid to forget are usually the ones nobody bothered to make well.&rdquo;
+      </blockquote>
+      <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); max-width: 720px; margin: 0 auto 28px;">
+        Wedding, launch, life's work. One studio, both cameras, held to one documentary and editorial standard. Photography sits first-class next to film, never an afterthought. Mindful creation of our visual world is essential to preserve the spirit of what matters most.
+      </p>
+      <span style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand-gold); font-weight: 700;">
+        &mdash; Tech Shutter Hub Production Ethos
+      </span>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6. CLIENT STORIES & REVIEWS (Reelxpozure Style)
+       ======================================================== -->
+  <section class="rx-reviews-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <span class="section-label">Client Stories</span>
+        <h2 class="section-title">What the people we work with say.</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Real words from couples, brands, and culinary curators who trusted our cameras with their milestones.
+        </p>
+      </div>
+
+      <div class="rx-reviews-grid">
+        <!-- Review 1 -->
+        <div class="rx-review-card">
+          <div class="rx-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rx-review-quote">
+            &ldquo;From our Gaye Holud turmeric splashes to the quiet emotional moments during Sindoor Daan, Tech Shutter Hub documented everything like a cinema masterpiece. We still cry watching our reel.&rdquo;
+          </p>
+          <div class="rx-review-author">
+            <div>
+              <div class="rx-review-name">Debolina &amp; Arka</div>
+              <div class="rx-review-meta">Full Wedding &amp; Boubhat &middot; ITC Royal Bengal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="rx-review-card">
+          <div class="rx-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rx-review-quote">
+            &ldquo;Their team captured our luxury bridal jewellery catalog with immaculate lighting and precision color grading. Conversions on our e-commerce store jumped by 40% after launching the new imagery.&rdquo;
+          </p>
+          <div class="rx-review-author">
+            <div>
+              <div class="rx-review-name">Suman Mukherjee</div>
+              <div class="rx-review-meta">Founder, Heritage Silk &amp; Jewels</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="rx-review-card">
+          <div class="rx-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rx-review-quote">
+            &ldquo;The pre-wedding escape shoot felt so natural and effortless. They never asked us to do fake poses &mdash; they just let us be ourselves in breathtaking light. Highly recommended!&rdquo;
+          </p>
+          <div class="rx-review-author">
+            <div>
+              <div class="rx-review-name">Priyanka &amp; Ronit</div>
+              <div class="rx-review-meta">Pre-Wedding &amp; Social Reels &middot; Kolkata &amp; Mandarmani</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       7. QUESTIONS PEOPLE ASK US (FAQ Accordion)
+       ======================================================== -->
+  <section class="rx-faq-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <span class="section-label">Answers</span>
+        <h2 class="section-title">Questions people ask us.</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Straightforward answers about our booking process, equipment, turnaround times, and travel.
+        </p>
+      </div>
+
+      <div class="rx-faq-wrap">
+        <div class="rx-faq-item active">
+          <button class="rx-faq-question" type="button">
+            <span>What does Tech Shutter Hub make?</span>
+            <span class="rx-faq-icon">+</span>
+          </button>
+          <div class="rx-faq-answer">
+            Tech Shutter Hub is a cinematic film and photography studio. We make heirloom wedding films and photography (Gaye Holud, Ashirbad, Vivaha, Boubhat), pre-wedding escapes, fast-paced vertical reels for social platforms, high-resolution product catalogs, F&amp;B culinary styling, and corporate media.
+          </div>
+        </div>
+
+        <div class="rx-faq-item">
+          <button class="rx-faq-question" type="button">
+            <span>How far in advance should we reserve our dates?</span>
+            <span class="rx-faq-icon">+</span>
+          </button>
+          <div class="rx-faq-answer">
+            For peak Bengali wedding seasons (November through March), we recommend reserving 4 to 9 months in advance. Because we deploy dedicated senior cinematographers to each wedding rather than outsourcing, our date calendar is strictly capped.
+          </div>
+        </div>
+
+        <div class="rx-faq-item">
+          <button class="rx-faq-question" type="button">
+            <span>What is your typical turnaround time?</span>
+            <span class="rx-faq-icon">+</span>
+          </button>
+          <div class="rx-faq-answer">
+            We deliver social media highlight reels and teasers within 48 to 72 hours while celebration excitement is peak. Full color-graded photograph collections and cinematic wedding films are delivered in 3 to 4 weeks via our private online client gallery.
+          </div>
+        </div>
+
+        <div class="rx-faq-item">
+          <button class="rx-faq-question" type="button">
+            <span>Do you travel for destination shoots?</span>
+            <span class="rx-faq-icon">+</span>
+          </button>
+          <div class="rx-faq-answer">
+            Yes. While our headquarters are in Kolkata, our production crew frequently travels across India and international destination venues. Travel and accommodation are arranged seamlessly with flat-rate transparent logistics.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       8. CLOSING CTA BANNER ("Let's make something you'll keep")
+       ======================================================== -->
+  <section class="rx-banner-section">
+    <div class="container">
+      <h2 class="rx-banner-title">Let's make something you'll keep.</h2>
+      <p class="rx-banner-sub">
+        Tell us what you're making and your timeline: a wedding celebration, an editorial brand launch, or a milestone. We reply personally within 24 hours.
+      </p>
+      <a href="/contact" class="btn-start-project" style="display: inline-flex; padding: 16px 36px; font-size: 13px;">
+        <span>Start a Project &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       9. LIGHTBOX MODAL (For 3D Frame clicks)
+       ======================================================== -->
+  <div class="vbox" id="vbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="vbox-close" id="vboxClose" aria-label="Close Lightbox">&times;</button>
+    <div class="vbox-stage">
+      <div class="vbox-frame">
+        <div class="vbox-embed" id="vboxEmbed"></div>
+        <img class="vbox-img" id="vboxImg" alt="Project Media" hidden />
+      </div>
+      <div class="vbox-bar">
+        <div>
+          <h2 class="vbox-title" id="vboxTitle"></h2>
+          <span class="vbox-cat" id="vboxCat"></span>
+        </div>
+        <a href="/contact" class="vbox-cta">Inquire About This Work &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       10. EDITORIAL FOOTER
+       ======================================================== -->
+  <footer class="tsh-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col-brand">
+          <a href="/" class="tsh-brand" style="margin-bottom: 16px;">
+            <img class="tsh-brand-img" src="/assets/logos/techshutter-logo.png" alt="Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+            <div class="tsh-brand-text">
+              <span class="tsh-brand-name">Tech Shutter Hub</span>
+              <span class="tsh-brand-tag">Cinematic Visual Studio</span>
+            </div>
+          </a>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+            Cinematic film &amp; photography studio documenting the soul of Bengali weddings, brand stories, and life milestones across India and destination locations.
+          </p>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/wedding">Wedding Archive</a></li>
+            <li><a href="/services">Services &amp; Pricing</a></li>
+            <li><a href="/career">Careers</a></li>
+            <li><a href="/work">Selected Works</a></li>
+            <li><a href="/contact">Start a Project</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Ritual Coverage</h4>
+          <ul>
+            <li><a href="/wedding">Gaye Holud</a></li>
+            <li><a href="/wedding">Ashirbad</a></li>
+            <li><a href="/wedding">Main Vivaha</a></li>
+            <li><a href="/wedding">Boubhat</a></li>
+            <li><a href="/wedding">Pre-Wedding</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-links">
+          <h4>Studio &amp; Inquiries</h4>
+          <ul>
+            <li><a href="/contact">Book a Shoot</a></li>
+            <li><a href="mailto:contact@techshutterhub.com">Email Us</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Tech Shutter Hub. All rights reserved.</div>
+        <div>Engineered with 8K Cinema Optics &middot; Clean Editorial Platform</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/lightbox.js"></script>
+  <script type="module" src="/js/app3d.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

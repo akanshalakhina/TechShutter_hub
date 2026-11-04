@@ -1,0 +1,313 @@
+<?php
+// Tech Shutter Hub - PHP Page
+?>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weddings &amp; Rituals | TECH SHUTTER HUB</title>
+  <meta name="description" content="Full-spectrum Bengali wedding documentation and pre-wedding escapes by Tech Shutter Hub. Preserving Gaye Holud, Ashirbad, Saat Paake Ghaura, and Boubhat with cinematic photojournalism." />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/editorial.css" />
+</head>
+<body class="editorial-home">
+
+  <!-- Header -->
+  <header class="tsh-header" role="banner">
+    <div class="container">
+      <div class="tsh-nav-inner">
+        <a href="/" class="tsh-brand" title="Tech Shutter Hub Home">
+          <img class="tsh-brand-img" src="/assets/logos/techshutter-logo.png" alt="Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+          <div class="tsh-brand-text">
+            <span class="tsh-brand-name">Tech Shutter Hub</span>
+            <span class="tsh-brand-tag">Cinematic Visual Studio</span>
+          </div>
+        </a>
+
+        <nav class="tsh-nav-desktop">
+          <ul class="tsh-nav-menu">
+            <li><a href="/wedding" class="tsh-nav-link active">Wedding</a></li>
+            <li class="tsh-dropdown-wrapper">
+              <a href="/services" class="tsh-nav-link">Services <span class="dropdown-caret">&#9662;</span></a>
+              <div class="tsh-dropdown-menu" role="menu">
+                <a href="/services#wedding-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Weddings &amp; Rituals</span>
+                  <span class="dropdown-item-desc">Full-spectrum ceremony documentation</span>
+                </a>
+                <a href="/services#prewedding-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Pre-Wedding Shoots</span>
+                  <span class="dropdown-item-desc">Stylised romantic couple escapes</span>
+                </a>
+                <a href="/services#reels-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Cinematic Reels</span>
+                  <span class="dropdown-item-desc">Fast-paced 9:16 vertical video</span>
+                </a>
+                <a href="/services#product-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Product &amp; E-Commerce</span>
+                  <span class="dropdown-item-desc">Jewellery &amp; goods catalog imagery</span>
+                </a>
+                <a href="/services#fb-service" class="dropdown-item">
+                  <span class="dropdown-item-title">F&amp;B &amp; Ambiance</span>
+                  <span class="dropdown-item-desc">Culinary styling &amp; hospitality</span>
+                </a>
+                <a href="/services#corp-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Corporate &amp; Teams</span>
+                  <span class="dropdown-item-desc">Executive portraits &amp; events</span>
+                </a>
+                <a href="/services#maternity-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Maternity &amp; Annaprashan</span>
+                  <span class="dropdown-item-desc">Parenthood glow &amp; rice ceremony</span>
+                </a>
+                <a href="/services#festive-service" class="dropdown-item">
+                  <span class="dropdown-item-title">Festive &amp; Cultural</span>
+                  <span class="dropdown-item-desc">Durga Puja editorial portfolios</span>
+                </a>
+              </div>
+            </li>
+            <li><a href="/career" class="tsh-nav-link">Career</a></li>
+            <li><a href="/work" class="tsh-nav-link">Work</a></li>
+          </ul>
+        </nav>
+
+        <div class="tsh-nav-actions">
+          <button class="nav-btn theme-toggle-btn" title="Toggle Theme">
+            <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+            </svg>
+          </button>
+          <a href="/contact" class="btn-start-project">
+            <span>Start a Project</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Wedding Hero -->
+  <section style="padding: 160px 0 60px; text-align: center; position: relative;">
+    <div class="container" style="max-width: 900px;">
+      <span class="section-label">Ceremonial Archive</span>
+      <h1 class="section-title" style="font-size: clamp(2.6rem, 5vw, 4.4rem);">
+        Full-Spectrum Wedding Coverage
+      </h1>
+      <p class="section-subtitle" style="margin: 0 auto 36px;">
+        Comprehensive documentation of all wedding rituals, combining traditional posed photography with candid photojournalism across both the bride and groom's events (Gaye Holud, Ashirbad, Main Wedding, Boubhat).
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="/contact?service=Weddings%20%26%20Rituals" class="btn-primary">Reserve Wedding Date</a>
+        <a href="#rituals" class="btn-secondary">Browse Ritual Galleries</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ritual Filter Tabs & Gallery Grid -->
+  <section style="padding: 40px 0 100px;" id="rituals">
+    <div class="container">
+      <div class="ritual-tabs" style="justify-content: center; margin-bottom: 40px;">
+        <button class="ritual-tab-btn active" data-ritual="All">All Rituals</button>
+        <button class="ritual-tab-btn" data-ritual="Gaye Holud">Gaye Holud (Turmeric)</button>
+        <button class="ritual-tab-btn" data-ritual="Ashirbad">Ashirbad (Blessings)</button>
+        <button class="ritual-tab-btn" data-ritual="Main Wedding">Main Wedding (Vivaha)</button>
+        <button class="ritual-tab-btn" data-ritual="Boubhat">Boubhat &amp; Reception</button>
+        <button class="ritual-tab-btn" data-ritual="Pre-Wedding">Pre-Wedding Escapes</button>
+      </div>
+
+      <!-- Real Photos Grid -->
+      <div class="wedding-photos-grid" id="weddingPhotosGrid"></div>
+    </div>
+  </section>
+
+  <!-- Cinematic Wedding Films & Video Teasers -->
+  <section style="padding: 90px 0; background: #080b10; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 48px;">
+        <span class="section-label">Motion Pictures</span>
+        <h2 class="section-title">Cinematic Wedding Films &amp; Teasers</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          High dynamic range film captures with synchronized audio dialogue and rhythmic color grading.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div style="background:#0e131b; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);">
+          <video src="/assets/videos/video-3.mp4" controls playsinline style="width:100%; height:260px; object-fit:cover; display:block;"></video>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-serif); font-size:18px; color:#fff; margin-bottom:6px;">Main Wedding Vivaha Trailer</h3>
+            <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">Saat Paake Ghaura and sacred vows documented with vintage primes.</p>
+          </div>
+        </div>
+
+        <div style="background:#0e131b; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);">
+          <video src="/assets/videos/video-2.mp4" controls playsinline style="width:100%; height:260px; object-fit:cover; display:block;"></video>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-serif); font-size:18px; color:#fff; margin-bottom:6px;">Gaye Holud High-Speed Teaser</h3>
+            <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">120 FPS slow-motion splashes of turmeric and genuine laughter.</p>
+          </div>
+        </div>
+
+        <div style="background:#0e131b; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);">
+          <video src="/assets/videos/video-4.mp4" controls playsinline style="width:100%; height:260px; object-fit:cover; display:block;"></video>
+          <div style="padding:20px;">
+            <h3 style="font-family:var(--font-serif); font-size:18px; color:#fff; margin-bottom:6px;">Boubhat Grand Reception Gala</h3>
+            <p style="font-size:12px; color:var(--text-muted); line-height:1.5;">Evening banquet highlights with romantic couple entrance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="vbox" id="vbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="vbox-close" id="vboxClose" aria-label="Close Lightbox">&times;</button>
+    <div class="vbox-stage">
+      <div class="vbox-frame">
+        <div class="vbox-embed" id="vboxEmbed"></div>
+        <img class="vbox-img" id="vboxImg" alt="Project Media" hidden />
+      </div>
+      <div class="vbox-bar">
+        <div>
+          <h2 class="vbox-title" id="vboxTitle"></h2>
+          <span class="vbox-cat" id="vboxCat"></span>
+        </div>
+        <a href="/contact?service=Weddings%20%26%20Rituals" class="vbox-cta">Inquire for Your Wedding &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="tsh-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col-brand">
+          <a href="/" class="tsh-brand" style="margin-bottom: 16px;">
+            <img class="tsh-brand-img" src="/assets/logos/techshutter-logo.png" alt="Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+            <div class="tsh-brand-text">
+              <span class="tsh-brand-name">Tech Shutter Hub</span>
+              <span class="tsh-brand-tag">Cinematic Visual Studio</span>
+            </div>
+          </a>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+            Cinematic film &amp; photography studio documenting the soul of Bengali weddings across India and destination locations.
+          </p>
+        </div>
+        <div class="footer-col-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/wedding">Wedding</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/career">Career</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/contact">Start a Project</a></li>
+          </ul>
+        </div>
+        <div class="footer-col-links">
+          <h4>Ritual Coverage</h4>
+          <ul>
+            <li><a href="/wedding">Gaye Holud</a></li>
+            <li><a href="/wedding">Ashirbad</a></li>
+            <li><a href="/wedding">Main Vivaha</a></li>
+            <li><a href="/wedding">Boubhat</a></li>
+            <li><a href="/wedding">Pre-Wedding</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Tech Shutter Hub. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js"></script>
+  <script>
+    let weddingProjects = [];
+    async function loadWeddingPhotos() {
+      const container = document.getElementById('weddingPhotosGrid');
+      try {
+        const res = await fetch('/api/projects');
+        const json = await res.json();
+        if (json.success && Array.isArray(json.data)) {
+          weddingProjects = json.data.filter(p => (p.category || '').toLowerCase().includes('wedding') || p.weddingRitual);
+          renderRitual('All');
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function renderRitual(ritual) {
+      const container = document.getElementById('weddingPhotosGrid');
+      container.innerHTML = '';
+      let list = (ritual === 'All')
+        ? weddingProjects
+        : weddingProjects.filter(p => (p.weddingRitual || '').toLowerCase() === ritual.toLowerCase());
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = `wedding-photo-card ${p.orientation || 'landscape'}`;
+        card.innerHTML = `
+          <img class="wedding-photo-img" src="${p.image || (p.photos && p.photos[0]) || '/assets/logos/logo-dark-bg.jpg'}" alt="${p.title}" loading="lazy" />
+          <div class="wedding-photo-overlay">
+            <span class="wedding-photo-ritual">${p.weddingRitual || p.category}</span>
+            <h3 class="wedding-photo-title">${p.title}</h3>
+            <span class="wedding-photo-meta">${p.client || 'Tech Shutter Hub'} &middot; ${p.year || '2026'}</span>
+          </div>
+        `;
+        card.addEventListener('click', () => openLightbox(p));
+        container.appendChild(card);
+      });
+    }
+
+    function openLightbox(p) {
+      const vbox = document.getElementById('vbox');
+      const vboxTitle = document.getElementById('vboxTitle');
+      const vboxCat = document.getElementById('vboxCat');
+      const vboxImg = document.getElementById('vboxImg');
+      const vboxEmbed = document.getElementById('vboxEmbed');
+      const vboxClose = document.getElementById('vboxClose');
+
+      if (vboxTitle) vboxTitle.textContent = p.title;
+      if (vboxCat) vboxCat.textContent = `${p.category} • ${p.weddingRitual || ''}`;
+
+      if (p.video) {
+        vboxImg.hidden = true;
+        vboxEmbed.hidden = false;
+        vboxEmbed.innerHTML = `<video src="${p.video}" controls autoplay playsinline style="width:100%;height:100%;max-height:80vh;border-radius:12px;"></video>`;
+      } else {
+        vboxEmbed.hidden = true;
+        vboxEmbed.innerHTML = '';
+        vboxImg.hidden = false;
+        vboxImg.src = p.image || (p.photos && p.photos[0]) || '';
+      }
+
+      vbox.classList.add('active');
+      vbox.setAttribute('aria-hidden', 'false');
+
+      const closeHandler = () => {
+        vbox.classList.remove('active');
+        vbox.setAttribute('aria-hidden', 'true');
+        vboxEmbed.innerHTML = '';
+        vboxClose.removeEventListener('click', closeHandler);
+      };
+      vboxClose.addEventListener('click', closeHandler);
+    }
+
+    document.querySelectorAll('.ritual-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ritual-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderRitual(btn.getAttribute('data-ritual') || 'All');
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', loadWeddingPhotos);
+  </script>
+</body>
+</html>
+

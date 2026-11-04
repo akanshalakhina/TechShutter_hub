@@ -1,4 +1,260 @@
 <?php
-// Tech Shutter Hub - 2D Portfolio Gallery Grid
-require_once __DIR__ . '/gallery.html';
+// Tech Shutter Hub - PHP Page
+?>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Grid | TECH SHUTTER HUB</title>
+  <meta name="description" content="Browse all visual projects, cinematography reels, camera reviews, and drone films by Tech Shutter Hub in grid view." />
+  
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/gallery.css" />
+</head>
+<body class="gallery-page">
 
+  <!-- Floating Navigation Bar -->
+  <header class="tsh-nav" role="banner">
+    <div class="tsh-nav-left">
+      <a href="/" class="brand-badge" title="Back to Home">
+        <img class="brand-logo-img" src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+        <div class="brand-text">
+          <span class="brand-name">Tech Shutter Hub</span>
+          <span class="brand-sub">Visual Productions</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="tsh-nav-right">
+      <a href="/wedding" class="nav-btn">Wedding</a>
+      <a href="/services" class="nav-btn">Services</a>
+      <a href="/career" class="nav-btn">Career</a>
+      <a href="/work" class="nav-btn">Work</a>
+      
+      <!-- Theme Switcher -->
+      <button class="nav-btn theme-toggle-btn" title="Toggle Theme">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+        </svg>
+        <span class="lbl theme-text">Theme</span>
+      </button>
+
+      <!-- 3D View Switch Button -->
+      <a href="/work" class="nav-btn" title="Switch to 3D Cylinder View">
+        <span>3D Cylinder</span>
+      </a>
+
+      <!-- Start Project CTA -->
+      <a href="/contact" class="btn-start-project" style="padding:10px 20px; font-size:12px;">
+        <span>Start a Project</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="gallery-container">
+    <div class="gallery-header">
+      <h1>Selected Works &amp; Productions</h1>
+      <p>Tech Shutter Hub Visual Catalog &middot; Cinematography, Aerial &amp; Reviews</p>
+    </div>
+
+    <!-- Category Filter Buttons -->
+    <div class="gallery-filters" id="galleryFilters"></div>
+
+    <!-- Grid Cards Container -->
+    <div class="grid-cards" id="gridCards"></div>
+  </main>
+
+  <!-- Cinematic Media Lightbox Modal -->
+  <div class="vbox" id="vbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="vbox-close" id="vboxClose" aria-label="Close Lightbox">&times;</button>
+    <div class="vbox-stage">
+      <div class="vbox-frame">
+        <div class="vbox-embed" id="vboxEmbed"></div>
+        <img class="vbox-img" id="vboxImg" alt="Project Media" hidden />
+        <button class="vbox-nav prev" id="vboxPrev" aria-label="Previous Photo" hidden>&#8249;</button>
+        <button class="vbox-nav next" id="vboxNext" aria-label="Next Photo" hidden>&#8250;</button>
+        <div class="vbox-count" id="vboxCount" hidden></div>
+      </div>
+      <div class="vbox-bar">
+        <div>
+          <h2 class="vbox-title" id="vboxTitle"></h2>
+          <span class="vbox-cat" id="vboxCat"></span>
+        </div>
+        <button class="vbox-cta" id="vboxCta">Book a Shoot &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Inquiry Modal -->
+  <div class="modal-overlay" id="inquireModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="inquireClose" aria-label="Close Modal">&times;</button>
+      <div class="modal-header">
+        <h3>Start Your Project</h3>
+        <p>Let's craft your next visual story with cinematic quality.</p>
+      </div>
+      <form id="inquireForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName">Your Name *</label>
+            <input type="text" id="clientName" class="form-control" placeholder="e.g. Alexander Vance" required />
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">Email Address *</label>
+            <input type="email" id="clientEmail" class="form-control" placeholder="alex@studio.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientPhone">Phone / WhatsApp</label>
+            <input type="tel" id="clientPhone" class="form-control" placeholder="+1 (555) 019-2834" />
+          </div>
+          <div class="form-group">
+            <label for="projectType">Service / Production Type *</label>
+            <select id="projectType" class="form-control" required>
+              <option value="Cinematography">Cinematography &amp; Film Production</option>
+              <option value="Tech & Gear Reviews">Tech &amp; Camera Gear Review</option>
+              <option value="Drone & Aerial">Drone &amp; Aerial Filming</option>
+              <option value="Product Shoots">Luxury Product Shoot</option>
+              <option value="Brand Commercials">Commercial &amp; Brand Story</option>
+              <option value="Studio & Portraits">Studio &amp; Editorial Portraits</option>
+              <option value="Weddings & Films">Weddings &amp; Feature Films</option>
+              <option value="Events & Live">Events &amp; Live Music</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectDate">Estimated Date / Timeline</label>
+            <input type="date" id="projectDate" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="projectBudget">Budget Range</label>
+            <select id="projectBudget" class="form-control">
+              <option value="$1k - $3k">$1,000 - $3,000</option>
+              <option value="$3k - $8k" selected>$3,000 - $8,000</option>
+              <option value="$8k - $20k">$8,000 - $20,000</option>
+              <option value="$20k+">$20,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectMessage">Project Vision &amp; Details</label>
+          <textarea id="projectMessage" class="form-control" placeholder="Tell us about the project goals, locations, or reference styles..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Inquiry &rarr;</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-palette" id="searchPalette">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search projects by title, camera or category..." />
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/lightbox.js"></script>
+  <script src="/js/inquire.js"></script>
+  <script>
+    let allProjects = [];
+    let currentFilter = 'All';
+
+    async function loadGallery() {
+      try {
+        const res = await fetch('/api/projects');
+        const json = await res.json();
+        allProjects = json.data || [];
+      } catch (e) {
+        allProjects = [];
+      }
+      window.TSH_PROJECTS = allProjects;
+      renderFilters();
+      renderCards();
+    }
+
+    function renderFilters() {
+      const container = document.getElementById('galleryFilters');
+      if (!container) return;
+      const cats = ['All', ...new Set(allProjects.map(p => p.category).filter(Boolean))];
+
+      container.innerHTML = '';
+      cats.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'gallery-filter-btn' + (c === currentFilter ? ' active' : '');
+        btn.textContent = c;
+        btn.addEventListener('click', () => {
+          currentFilter = c;
+          container.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+          if (window.soundEngine) window.soundEngine.apertureTick();
+          renderCards();
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function renderCards() {
+      const grid = document.getElementById('gridCards');
+      if (!grid) return;
+      const filtered = currentFilter === 'All'
+        ? allProjects
+        : allProjects.filter(p => (p.category || '').toLowerCase() === currentFilter.toLowerCase());
+
+      grid.innerHTML = '';
+      filtered.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'project-card';
+        const imgUrl = p.image || (p.photos && p.photos[0]) || '';
+
+        card.innerHTML = `
+          <div class="card-media-wrap">
+            <img src="${imgUrl}" alt="${p.title}" loading="lazy" />
+            ${p.video ? `
+              <div class="card-play-badge">
+                <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>` : ''}
+          </div>
+          <div class="card-content">
+            <div class="card-category">${p.category}</div>
+            <h3 class="card-title">${p.title}</h3>
+            <p class="card-desc">${p.description || ''}</p>
+            <div class="card-footer">
+              <div class="card-tags">
+                ${(p.tags || []).slice(0, 3).map(t => `<span class="card-tag">${t}</span>`).join('')}
+              </div>
+              <span class="card-year">${p.year || ''}</span>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          if (window.soundEngine) window.soundEngine.shutterClick();
+          if (window.tshLightbox) window.tshLightbox.open(p);
+        });
+
+        grid.appendChild(card);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadGallery);
+  </script>
+</body>
+</html>
