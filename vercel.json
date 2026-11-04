@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/server.js" },
+    { "source": "/(.*)\\.php", "destination": "/server.js" },
     { "source": "/", "destination": "/server.js" },
     { "source": "/wedding", "destination": "/server.js" },
     { "source": "/services", "destination": "/server.js" },

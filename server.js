@@ -30,9 +30,25 @@ function sendPage(res, filename) {
   if (!fs.existsSync(filePath)) {
     filePath = path.join(__dirname, 'public', filename);
   }
-  res.type('html');
-  res.sendFile(filePath);
+  if (!fs.existsSync(filePath)) {
+    const htmlName = filename.replace(/\.php$/, '.html');
+    filePath = path.join(__dirname, htmlName);
+  }
+  if (fs.existsSync(filePath)) {
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.sendFile(filePath);
+  }
+  res.status(404).send('Page Not Found');
 }
+
+// Intercept ANY direct .php request and serve as text/html so browser never downloads it
+app.use((req, res, next) => {
+  if (req.path.endsWith('.php') && !req.path.startsWith('/api/')) {
+    const filename = path.basename(req.path);
+    return sendPage(res, filename);
+  }
+  next();
+});
 
 // Explicit clean route handlers
 app.get('/', (req, res) => sendPage(res, 'index.php'));
