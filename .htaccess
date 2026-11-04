@@ -1,6 +1,7 @@
 # ========================================================
 # TECH SHUTTER HUB - Hostinger Apache Configuration
 # ========================================================
+DirectoryIndex index.php index.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
