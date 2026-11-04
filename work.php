@@ -62,6 +62,10 @@
       padding: 0 16px;
     }
 
+    .work-cats:empty {
+      display: none;
+    }
+
     .work-cats {
       pointer-events: auto;
       display: flex;

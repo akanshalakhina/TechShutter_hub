@@ -568,9 +568,10 @@ dom.addEventListener('mousemove', (e) => {
   if (rect.width > 0 && rect.height > 0) {
     px = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     py = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  } else {
+    px = (e.clientX / window.innerWidth) * 2 - 1;
+    py = -(e.clientY / window.innerHeight) * 2 + 1;
   }
-});
-  py = -(e.clientY / window.innerHeight) * 2 + 1;
 });
 
 dom.addEventListener('mouseleave', () => {
