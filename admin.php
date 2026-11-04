@@ -694,10 +694,13 @@
 
       try {
         const res = await fetch('/api/projects');
-        const json = await res.json();
-        if (json.success && Array.isArray(json.data)) {
-          currentProjects = json.data;
-          renderProjectsTable();
+        if (res.ok) {
+          const json = await res.json();
+          const items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
+          if (items.length) {
+            currentProjects = items;
+            renderProjectsTable();
+          }
         }
       } catch (e) {}
 

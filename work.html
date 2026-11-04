@@ -312,7 +312,7 @@
       <div style="text-align: center; max-width: 720px; margin: 0 auto 36px;">
         <span class="section-label">Curated Catalog</span>
         <h2 class="section-title">Selected Works</h2>
-        <p class="section-subtitle" style="margin: 0 auto;">Browse all 76 high-resolution photographs &amp; video teasers.</p>
+        <p class="section-subtitle" id="gridSubtitle" style="margin: 0 auto;">Browse all high-resolution photographs &amp; video teasers.</p>
       </div>
 
       <div class="wedding-photos-grid" id="gridCardsContainer"></div>
@@ -359,31 +359,50 @@
 
       async function loadGrid() {
         if (gridLoaded) return;
+        let items = [];
         try {
           const res = await fetch('/api/projects');
-          const json = await res.json();
-          if (json.success && Array.isArray(json.data)) {
-            container.innerHTML = '';
-            json.data.forEach(p => {
-              const card = document.createElement('div');
-              card.className = `wedding-photo-card ${p.orientation || 'landscape'}`;
-              card.innerHTML = `
-                <img class="wedding-photo-img" src="${p.image || (p.photos && p.photos[0]) || '/assets/logos/logo-dark-bg.jpg'}" alt="${p.title}" loading="lazy" />
-                <div class="wedding-photo-overlay">
-                  <span class="wedding-photo-ritual">${p.category} ${p.weddingRitual ? '• ' + p.weddingRitual : ''}</span>
-                  <h3 class="wedding-photo-title">${p.title}</h3>
-                  <span class="wedding-photo-meta">${p.client || 'Tech Shutter Hub'} &middot; ${p.year || '2026'}</span>
-                </div>
-              `;
-              card.addEventListener('click', () => {
-                if (window.tshLightbox) window.tshLightbox.open(p, json.data);
-              });
-              container.appendChild(card);
-            });
-            gridLoaded = true;
+          if (res.ok) {
+            const json = await res.json();
+            items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
           }
-        } catch (e) {
-          console.error('Error loading grid:', e);
+        } catch (e) {}
+
+        if (!items.length) {
+          try {
+            const res = await fetch('/projects.json');
+            if (res.ok) {
+              const json = await res.json();
+              items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
+            }
+          } catch (e) {}
+        }
+
+        if (items.length) {
+          container.innerHTML = '';
+          const sub = document.getElementById('gridSubtitle');
+          if (sub) sub.textContent = `Browse all ${items.length} high-resolution photographs & video teasers.`;
+
+          items.forEach(p => {
+            const card = document.createElement('div');
+            card.className = `wedding-photo-card ${p.orientation || 'landscape'}`;
+            const imgSrc = p.image || (p.photos && p.photos[0]) || p.thumbImage || '/assets/logos/logo-dark-bg.jpg';
+            card.innerHTML = `
+              <img class="wedding-photo-img" src="${imgSrc}" alt="${p.title}" loading="lazy" />
+              <div class="wedding-photo-overlay">
+                <span class="wedding-photo-ritual">${p.category || 'Portfolio'} ${p.weddingRitual ? '• ' + p.weddingRitual : ''}</span>
+                <h3 class="wedding-photo-title">${p.title}</h3>
+                <span class="wedding-photo-meta">${p.client || 'Tech Shutter Hub'} &middot; ${p.year || '2026'}</span>
+              </div>
+            `;
+            card.addEventListener('click', () => {
+              if (window.tshLightbox) window.tshLightbox.open(p, items);
+            });
+            container.appendChild(card);
+          });
+          gridLoaded = true;
+        } else {
+          container.innerHTML = '<div style="color:var(--text-muted);text-align:center;padding:40px;grid-column:1/-1;">No projects found.</div>';
         }
       }
 

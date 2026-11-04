@@ -234,15 +234,28 @@
     let weddingProjects = [];
     async function loadWeddingPhotos() {
       const container = document.getElementById('weddingPhotosGrid');
+      let items = [];
       try {
         const res = await fetch('/api/projects');
-        const json = await res.json();
-        if (json.success && Array.isArray(json.data)) {
-          weddingProjects = json.data.filter(p => (p.category || '').toLowerCase().includes('wedding') || p.weddingRitual);
-          renderRitual('All');
+        if (res.ok) {
+          const json = await res.json();
+          items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
         }
-      } catch (e) {
-        console.error(e);
+      } catch (e) {}
+
+      if (!items.length) {
+        try {
+          const res = await fetch('/projects.json');
+          if (res.ok) {
+            const json = await res.json();
+            items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
+          }
+        } catch (e) {}
+      }
+
+      if (items.length) {
+        weddingProjects = items.filter(p => (p.category || '').toLowerCase().includes('wedding') || p.weddingRitual);
+        renderRitual('All');
       }
     }
 

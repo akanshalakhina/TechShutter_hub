@@ -43,8 +43,9 @@
       const res = await fetch('/api/projects');
       if (res.ok) {
         const json = await res.json();
-        if (json.success && Array.isArray(json.data) && json.data.length) {
-          currentProjectList = json.data;
+        const list = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
+        if (list.length) {
+          currentProjectList = list;
           window.TSH_PROJECTS = currentProjectList;
           return currentProjectList;
         }

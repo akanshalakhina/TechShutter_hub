@@ -176,13 +176,26 @@
     let currentFilter = 'All';
 
     async function loadGallery() {
+      let items = [];
       try {
         const res = await fetch('/api/projects');
-        const json = await res.json();
-        allProjects = json.data || [];
-      } catch (e) {
-        allProjects = [];
+        if (res.ok) {
+          const json = await res.json();
+          items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
+        }
+      } catch (e) {}
+
+      if (!items.length) {
+        try {
+          const res = await fetch('/projects.json');
+          if (res.ok) {
+            const json = await res.json();
+            items = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
+          }
+        } catch (e) {}
       }
+
+      allProjects = items;
       window.TSH_PROJECTS = allProjects;
       renderFilters();
       renderCards();
