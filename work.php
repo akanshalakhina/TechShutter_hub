@@ -379,7 +379,7 @@
                 </div>
               `;
               card.addEventListener('click', () => {
-                if (window.tshLightbox) window.tshLightbox.open(p);
+                if (window.tshLightbox) window.tshLightbox.open(p, json.data);
               });
               container.appendChild(card);
             });

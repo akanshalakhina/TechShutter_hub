@@ -247,7 +247,7 @@
 
         card.addEventListener('click', () => {
           if (window.soundEngine) window.soundEngine.shutterClick();
-          if (window.tshLightbox) window.tshLightbox.open(p);
+          if (window.tshLightbox) window.tshLightbox.open(p, allProjects);
         });
 
         grid.appendChild(card);

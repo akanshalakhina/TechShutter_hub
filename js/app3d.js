@@ -817,7 +817,7 @@ function activate(clientX, clientY) {
 
   const p = obj.userData.p;
   if (window.tshLightbox && typeof window.tshLightbox.open === 'function') {
-    window.tshLightbox.open(p);
+    window.tshLightbox.open(p, portfolioData);
   } else if (typeof window.openLightbox === 'function') {
     window.openLightbox(p);
   }

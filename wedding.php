@@ -168,7 +168,10 @@
     <div class="vbox-stage">
       <div class="vbox-frame">
         <div class="vbox-embed" id="vboxEmbed"></div>
-        <img class="vbox-img" id="vboxImg" alt="Project Media" hidden />
+        <img class="vbox-img" id="vboxImg" alt="Project Media" style="display:none;" />
+        <button class="vbox-nav prev" id="vboxPrev" aria-label="Previous Photo">&#8249;</button>
+        <button class="vbox-nav next" id="vboxNext" aria-label="Next Photo">&#8250;</button>
+        <div class="vbox-count" id="vboxCount"></div>
       </div>
       <div class="vbox-bar">
         <div>
@@ -225,6 +228,8 @@
   </footer>
 
   <script src="/js/theme.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/lightbox.js"></script>
   <script>
     let weddingProjects = [];
     async function loadWeddingPhotos() {
@@ -259,7 +264,13 @@
             <span class="wedding-photo-meta">${p.client || 'Tech Shutter Hub'} &middot; ${p.year || '2026'}</span>
           </div>
         `;
-        card.addEventListener('click', () => openLightbox(p));
+        card.addEventListener('click', () => {
+          if (window.tshLightbox && typeof window.tshLightbox.open === 'function') {
+            window.tshLightbox.open(p, list);
+          } else {
+            openLightbox(p);
+          }
+        });
         container.appendChild(card);
       });
     }
