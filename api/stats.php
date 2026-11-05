@@ -17,6 +17,8 @@ if (empty($projects) && file_exists(dirname(__DIR__) . '/projects.json')) {
 
 $inquiries = readDataFile(INQUIRIES_FILE);
 $careers = readDataFile(CAREERS_FILE);
+$jobPostingsFile = defined('CAREER_POSTINGS_FILE') ? CAREER_POSTINGS_FILE : (DATA_DIR . '/career_postings.json');
+$jobPostings = readDataFile($jobPostingsFile);
 
 $categories = array_values(array_unique(array_filter(array_column($projects, 'category'))));
 $rituals = array_values(array_unique(array_filter(array_column($projects, 'weddingRitual'))));
@@ -27,6 +29,7 @@ jsonResponse([
     'totalCategories' => count($categories),
     'totalInquiries' => count($inquiries),
     'totalCareers' => count($careers),
+    'totalJobPostings' => count($jobPostings),
     'categories' => $categories,
     'weddingRituals' => $rituals
 ]);

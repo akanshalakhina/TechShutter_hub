@@ -70,6 +70,11 @@
   // Universal Mobile Navigation Drawer & Hamburger Controller
   // ========================================================
   function initMobileNav() {
+    // Never inject public site mobile drawer on the admin studio management portal
+    if (window.location.pathname.includes('admin') || (document.body && document.body.classList.contains('admin-page'))) {
+      return;
+    }
+
     // 1. Ensure Hamburger Toggle Button exists in Header
     let toggleBtn = document.getElementById('mobileNavToggle');
     const navActions = document.querySelector('.tsh-nav-actions') || document.querySelector('.tsh-nav-right');

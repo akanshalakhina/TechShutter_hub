@@ -15,6 +15,7 @@ DirectoryIndex index.php index.html
     RewriteRule ^api/projects/?$ api/projects.php [QSA,L]
     RewriteRule ^api/inquire/?$ api/inquire.php [QSA,L]
     RewriteRule ^api/career-apply/?$ api/career-apply.php [QSA,L]
+    RewriteRule ^api/career-postings/?$ api/career-postings.php [QSA,L]
     RewriteRule ^api/login/?$ api/login.php [QSA,L]
     RewriteRule ^api/inquiries/?$ api/inquiries.php [QSA,L]
     RewriteRule ^api/stats/?$ api/stats.php [QSA,L]

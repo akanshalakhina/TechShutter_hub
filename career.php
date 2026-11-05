@@ -158,7 +158,27 @@
     </div>
   </section>
 
-    <!-- Open Creative Applications -->
+      <!-- Active Studio Vacancies Section -->
+  <section style="padding: 10px 0 60px;" id="openingsSection">
+    <div class="container" style="max-width: 860px;">
+      <div style="text-align: center; margin-bottom: 36px;">
+        <span class="section-label" style="margin-bottom: 8px;">Studio Vacancies</span>
+        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem);">
+          Current Open Positions
+        </h2>
+        <p class="section-subtitle" style="margin: 0 auto; max-width: 640px;">
+          Explore available positions in cinematography, wedding photography, color grading, and drone operations. Click any role to apply.
+        </p>
+      </div>
+
+      <!-- Dynamic Job Cards Container -->
+      <div id="jobPostingsContainer" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Dynamically rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Creative Applications -->
   <section style="padding: 10px 0 100px;">
     <div class="container" style="max-width: 840px;">
       
@@ -323,6 +343,101 @@ Note: ' + (document.getElementById('cMessage').value.trim() || 'No note'),
       }
     });
   </script>
+  <script>
+    // Load and render active job postings
+    async function loadJobPostings() {
+      const container = document.getElementById('jobPostingsContainer');
+      if (!container) return;
+
+      let postings = [];
+      try {
+        const res = await fetch('/api/career-postings.php');
+        if (res.ok) {
+          const json = await res.json();
+          postings = Array.isArray(json.data) ? json.data : (Array.isArray(json) ? json : []);
+        }
+      } catch (e) {}
+
+      if (!postings.length) {
+        try {
+          const res = await fetch('/career_postings.json');
+          if (res.ok) {
+            const json = await res.json();
+            postings = Array.isArray(json) ? json : [];
+          }
+        } catch (e) {}
+      }
+
+      const localJobs = JSON.parse(localStorage.getItem('tsh_local_job_postings') || '[]');
+      const deletedJobIds = JSON.parse(localStorage.getItem('tsh_deleted_job_ids') || '[]');
+      postings = [...localJobs, ...postings].filter(j => !deletedJobIds.includes(j.id));
+
+      if (!postings.length) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 40px 20px; background: rgba(14, 19, 27, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; color: var(--text-muted);">
+            <p style="font-size: 15px; margin-bottom: 8px; color: #fff;">No specific vacancies listed right now.</p>
+            <p style="font-size: 13px;">We are always scouting exceptional artists. Submit your portfolio application below.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '';
+      postings.forEach(job => {
+        const card = document.createElement('div');
+        card.className = 'pillar-card';
+        card.style.padding = '30px';
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 18px;">
+            <div style="max-width: 620px;">
+              <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                <span class="badge" style="background: rgba(229, 192, 88, 0.15); color: var(--brand-gold);">${job.department}</span>
+                <span class="badge">${job.type}</span>
+                ${job.location ? `<span class="badge" style="background:rgba(255,255,255,0.06);">${job.location}</span>` : ''}
+              </div>
+              <h3 style="font-family: var(--font-serif); font-size: 22px; color: #fff; margin-bottom: 8px;">${job.title}</h3>
+              ${job.experience ? `<div style="font-size: 12px; color: var(--brand-gold); font-weight: 600; margin-bottom: 12px;">Experience: ${job.experience}</div>` : ''}
+              <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0;">${job.description || ''}</p>
+            </div>
+            <button type="button" class="btn-primary apply-job-btn" data-role="${job.department || job.title}" style="align-self: flex-start; white-space: nowrap; padding: 12px 24px; font-size: 12px;">
+              Apply for this Role &darr;
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Wire up apply buttons
+      container.querySelectorAll('.apply-job-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const role = btn.dataset.role;
+          const select = document.getElementById('cRole');
+          if (select) {
+            let matched = false;
+            for (let opt of select.options) {
+              if (opt.value.toLowerCase().includes(role.toLowerCase()) || role.toLowerCase().includes(opt.value.toLowerCase())) {
+                select.value = opt.value;
+                matched = true;
+                break;
+              }
+            }
+            if (!matched) {
+              const newOpt = new Option(role, role, true, true);
+              select.add(newOpt);
+            }
+          }
+          const form = document.getElementById('careerDirectForm');
+          if (form) {
+            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.getElementById('cName')?.focus();
+          }
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadJobPostings);
+  </script>
+
 </body>
 </html>
 

@@ -10,6 +10,7 @@
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="stylesheet" href="/css/theme.css" />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/editorial.css" />
   <style>
     body {
       overflow-y: auto !important;
@@ -296,7 +297,7 @@
 
   </style>
 </head>
-<body>
+<body class="admin-page">
 
   <!-- Top Nav Bar -->
   <header class="tsh-nav" role="banner">
@@ -374,12 +375,18 @@
           <div class="stat-num" id="statCareers">-</div>
           <div class="stat-lbl">Career Applications</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-num" id="statJobs">-</div>
+          <div class="stat-lbl">Active Job Vacancies</div>
+        </div>
+
       </div>
 
       <!-- Main Navigation Tabs -->
       <div class="admin-tabs">
         <button class="admin-tab active" data-tab="tabProjects">Portfolio &amp; Galleries</button>
         <button class="admin-tab" data-tab="tabAdd">Add Photos to Wedding Tabs / Galleries</button>
+                <button class="admin-tab" data-tab="tabPostJob">Career Openings (<span id="jobPostCountBadge">0</span>)</button>
         <button class="admin-tab" data-tab="tabInquiries">Client Inquiries (<span id="inquiryCountBadge">0</span>)</button>
         <button class="admin-tab" data-tab="tabCareers">Career Applications (<span id="careerCountBadge">0</span>)</button>
       </div>
@@ -516,6 +523,97 @@
         </form>
       </div>
 
+            <!-- Panel: Career Postings (Post & Manage Jobs) -->
+      <div class="admin-panel" id="tabPostJob">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h3 style="font-size: 18px;">Post &amp; Manage Studio Career Openings</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Publish vacancies for photographers, cinematographers, colorists, and drone pilots. Active jobs immediately display live on the Career page.</p>
+          </div>
+          <span style="font-size:12px; color:var(--brand-gold);">&#10003; Live Career Page Sync</span>
+        </div>
+
+        <!-- Job Posting Form -->
+        <div style="background: rgba(22, 28, 39, 0.6); border: 1px solid rgba(229, 192, 88, 0.25); border-radius: 12px; padding: 24px; margin-bottom: 36px;">
+          <h4 style="font-family: var(--font-serif); font-size: 16px; color: #fff; margin-bottom: 16px;">
+            Publish a New Job Opening
+          </h4>
+          <form id="postJobForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Job Title *</label>
+                <input type="text" id="jobTitle" class="form-control" placeholder="e.g. Lead Wedding Cinematographer" required />
+              </div>
+              <div class="form-group">
+                <label>Creative Discipline / Department *</label>
+                <select id="jobDepartment" class="form-control" required>
+                  <option value="Cinematography & Film">Cinematography &amp; Film</option>
+                  <option value="Wedding Photography">Wedding Photography</option>
+                  <option value="Colorist & Video Editor">Colorist &amp; Video Editor</option>
+                  <option value="Drone & Aerial Specialist">Drone &amp; Aerial Specialist</option>
+                  <option value="Assistant & Production Crew">Assistant &amp; Production Crew</option>
+                  <option value="Commercial & Studio">Commercial &amp; Studio</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Employment Commitment *</label>
+                <select id="jobType" class="form-control" required>
+                  <option value="Full-Time / Project Commission">Full-Time / Project Commission</option>
+                  <option value="Commission / Seasonal">Commission / Seasonal</option>
+                  <option value="Part-Time / Contract">Part-Time / Contract</option>
+                  <option value="Freelance Per Wedding">Freelance Per Wedding</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Location Base *</label>
+                <input type="text" id="jobLocation" class="form-control" placeholder="e.g. Kolkata, WB · On-Location" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Required Experience</label>
+                <input type="text" id="jobExp" class="form-control" placeholder="e.g. 2+ Years Field Experience" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Role Summary &amp; Requirements *</label>
+              <textarea id="jobDesc" class="form-control" placeholder="Describe the role responsibilities, gear expectations (e.g. Sony FX3 / A7SIII, prime glass, gimbals), and creative vision..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, var(--brand-gold-bright), var(--brand-gold)); color: #000; font-weight: 700; padding: 12px 28px; border-radius: 9999px; border:none; cursor:pointer;">
+              Publish Career Opening &rarr;
+            </button>
+            <div class="form-status" id="jobStatus" style="margin-top: 14px;"></div>
+          </form>
+        </div>
+
+        <!-- Table of Active Job Openings -->
+        <h4 style="font-family: var(--font-serif); font-size: 16px; color: #fff; margin-bottom: 14px;">
+          Active Published Vacancies (<span id="activeJobsCount">0</span>)
+        </h4>
+        <div class="table-responsive">
+          <table id="jobPostingsTable">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Discipline</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Experience</th>
+                <th>Date Posted</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
       <!-- Panel 3: Inquiries & Bookings (Real Queries Only - No Mock Data) -->
       <div class="admin-panel" id="tabInquiries">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
@@ -570,10 +668,11 @@
 
   </div>
 
-    <script src="/js/theme.js"></script>
+      <script src="/js/theme.js"></script>
   <script>
     let uploadedUrls = [];
     let currentProjects = [];
+    let currentJobs = [];
     let authToken = localStorage.getItem('tsh_admin_token') || '';
 
     const loginScreen = document.getElementById('loginScreen');
@@ -849,7 +948,10 @@
         }
       }
 
-      // 4. Update Stats Counters
+      // 4. Job Openings Loader
+      await loadJobPostings();
+
+      // 5. Update Stats Counters
       const uniqueCats = new Set(currentProjects.map(p => p.category)).size;
       const uniqueRituals = new Set(currentProjects.filter(p => p.weddingRitual).map(p => p.weddingRitual)).size;
       if (document.getElementById('statProjects')) document.getElementById('statProjects').textContent = currentProjects.length;
@@ -860,6 +962,113 @@
       if (document.getElementById('careerCountBadge')) document.getElementById('careerCountBadge').textContent = allCareers.length;
       if (document.getElementById('statCareers')) document.getElementById('statCareers').textContent = allCareers.length;
     }
+
+    // Job Openings Management
+    async function loadJobPostings() {
+      let jobs = [];
+      const res = await safeFetchJson('/api/career-postings.php');
+      if (res.ok && res.json && Array.isArray(res.json.data)) {
+        jobs = res.json.data;
+      }
+      if (!jobs.length) {
+        const fallbackRes = await safeFetchJson('/career_postings.json');
+        if (fallbackRes.ok && fallbackRes.json && Array.isArray(fallbackRes.json)) {
+          jobs = fallbackRes.json;
+        }
+      }
+
+      const localJobs = JSON.parse(localStorage.getItem('tsh_local_job_postings') || '[]');
+      const deletedJobIds = JSON.parse(localStorage.getItem('tsh_deleted_job_ids') || '[]');
+      currentJobs = [...localJobs, ...jobs].filter(j => !deletedJobIds.includes(j.id));
+
+      const tbody = document.querySelector('#jobPostingsTable tbody');
+      if (tbody) {
+        tbody.innerHTML = '';
+        if (!currentJobs.length) {
+          tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">No active vacancies published. Use the form above to post a job opening.</td></tr>`;
+        } else {
+          currentJobs.forEach(job => {
+            const tr = document.createElement('tr');
+            const dt = job.createdAt ? new Date(job.createdAt).toLocaleDateString() : '';
+            tr.innerHTML = `
+              <td><strong>${job.title}</strong></td>
+              <td><span class="badge">${job.department}</span></td>
+              <td>${job.type}</td>
+              <td>${job.location || 'Kolkata'}</td>
+              <td>${job.experience || 'Field Exp'}</td>
+              <td>${dt}</td>
+              <td>
+                <button class="btn-action delete" onclick="deleteJob('${job.id}')">Delete</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      }
+
+      const count = currentJobs.length;
+      if (document.getElementById('jobPostCountBadge')) document.getElementById('jobPostCountBadge').textContent = count;
+      if (document.getElementById('activeJobsCount')) document.getElementById('activeJobsCount').textContent = count;
+      if (document.getElementById('statJobs')) document.getElementById('statJobs').textContent = count;
+    }
+
+    async function deleteJob(id) {
+      if (!confirm('Are you sure you want to delete this career vacancy?')) return;
+
+      await safeFetchJson('/api/career-postings.php?id=' + encodeURIComponent(id), {
+        method: 'DELETE',
+        headers: { 'Authorization': 'Bearer ' + authToken }
+      });
+
+      const deletedJobIds = JSON.parse(localStorage.getItem('tsh_deleted_job_ids') || '[]');
+      if (!deletedJobIds.includes(id)) deletedJobIds.push(id);
+      localStorage.setItem('tsh_deleted_job_ids', JSON.stringify(deletedJobIds));
+
+      let localJobs = JSON.parse(localStorage.getItem('tsh_local_job_postings') || '[]');
+      localJobs = localJobs.filter(j => j.id !== id);
+      localStorage.setItem('tsh_local_job_postings', JSON.stringify(localJobs));
+
+      currentJobs = currentJobs.filter(j => j.id !== id);
+      loadJobPostings();
+    }
+
+    // Post Job Form Handler
+    document.getElementById('postJobForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('jobStatus');
+      status.innerHTML = '<span style="color:var(--brand-gold);">Publishing vacancy...</span>';
+
+      const payload = {
+        id: 'job_' + Date.now(),
+        title: document.getElementById('jobTitle').value.trim(),
+        department: document.getElementById('jobDepartment').value,
+        type: document.getElementById('jobType').value,
+        location: document.getElementById('jobLocation').value.trim(),
+        experience: document.getElementById('jobExp').value.trim(),
+        description: document.getElementById('jobDesc').value.trim(),
+        createdAt: new Date().toISOString()
+      };
+
+      // 1. Try server endpoint
+      await safeFetchJson('/api/career-postings.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + authToken
+        },
+        body: JSON.stringify(payload)
+      });
+
+      // 2. Always persist locally for static preview & live career page
+      const localJobs = JSON.parse(localStorage.getItem('tsh_local_job_postings') || '[]');
+      localJobs.unshift(payload);
+      localStorage.setItem('tsh_local_job_postings', JSON.stringify(localJobs));
+
+      currentJobs.unshift(payload);
+      status.innerHTML = '<span style="color:#4ade80;font-weight:600;">&#10003; Career opening published live to Career page!</span>';
+      document.getElementById('postJobForm').reset();
+      loadJobPostings();
+    });
 
     function renderProjectsTable() {
       const tbody = document.querySelector('#projectsTable tbody');

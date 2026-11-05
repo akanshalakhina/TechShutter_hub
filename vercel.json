@@ -14,6 +14,14 @@
       "destination": "/projects.json"
     },
     {
+      "source": "/api/career-postings",
+      "destination": "/career_postings.json"
+    },
+    {
+      "source": "/api/career-postings.php",
+      "destination": "/career_postings.json"
+    },
+    {
       "source": "/api/stats",
       "destination": "/projects.json"
     },

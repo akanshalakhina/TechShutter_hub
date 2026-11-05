@@ -1,0 +1,32 @@
+[
+  {
+    "id": "job_1",
+    "title": "Lead Wedding Cinematographer",
+    "department": "Cinematography & Film",
+    "type": "Full-Time / Project Commission",
+    "location": "Kolkata, WB · On-Location",
+    "experience": "2-4 Years Field Experience",
+    "description": "Seeking a skilled wedding filmmaker proficient with Sony FX3/A7SIII cameras, gimbal operations, natural light mastery, and high dynamic range ceremonial documentation.",
+    "createdAt": "2026-11-05T00:00:00Z"
+  },
+  {
+    "id": "job_2",
+    "title": "Candid Wedding & Ritual Photographer",
+    "department": "Wedding Photography",
+    "type": "Commission / Seasonal",
+    "location": "Kolkata & Destination Weddings",
+    "experience": "2+ Years Experience",
+    "description": "Documenting Bengali wedding rituals (Gaye Holud, Vivaha, Boubhat) with emotional intuition, sharp candid portraits, and fast prime lens framing.",
+    "createdAt": "2026-11-05T00:00:00Z"
+  },
+  {
+    "id": "job_3",
+    "title": "Senior Colorist & Video Editor",
+    "department": "Post-Production",
+    "type": "Studio Base / Hybrid",
+    "location": "Kolkata Studio Base",
+    "experience": "3+ Years Experience",
+    "description": "Expert in DaVinci Resolve color grading, narrative film pacing, dialogue audio synchronization, and high-impact vertical 9:16 reels.",
+    "createdAt": "2026-11-05T00:00:00Z"
+  }
+]
