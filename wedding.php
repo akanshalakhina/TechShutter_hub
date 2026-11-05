@@ -85,9 +85,65 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
         </div>
-      </div>
+      
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Mobile Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Backdrop & Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="/" class="mobile-drawer-brand">
+        <img src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+        <span class="mobile-drawer-title">Tech Shutter Hub</span>
+      </a>
+      <button class="mobile-drawer-close" id="drawerClose" aria-label="Close Menu">&times;</button>
+    </div>
+    <ul class="mobile-drawer-nav">
+      <li>
+        <a href="/wedding" class="mobile-drawer-link active">
+          <span>Wedding</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/services" class="mobile-drawer-link">
+          <span>Services</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/career" class="mobile-drawer-link">
+          <span>Career</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/work" class="mobile-drawer-link">
+          <span>Work</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/gallery" class="mobile-drawer-link">
+          <span>Gallery</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="/contact" class="mobile-drawer-cta">Start a Project</a>
+    </div>
+  </div>
 
   <!-- Wedding Hero -->
   <section style="padding: 160px 0 60px; text-align: center; position: relative;">

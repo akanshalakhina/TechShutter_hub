@@ -66,6 +66,145 @@
     applyTheme(nextTheme, true);
   }
 
+  // ========================================================
+  // Universal Mobile Navigation Drawer & Hamburger Controller
+  // ========================================================
+  function initMobileNav() {
+    // 1. Ensure Hamburger Toggle Button exists in Header
+    let toggleBtn = document.getElementById('mobileNavToggle');
+    const navActions = document.querySelector('.tsh-nav-actions') || document.querySelector('.tsh-nav-right');
+
+    if (!toggleBtn && navActions) {
+      toggleBtn = document.createElement('button');
+      toggleBtn.className = 'mobile-nav-toggle';
+      toggleBtn.id = 'mobileNavToggle';
+      toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
+      toggleBtn.innerHTML = `
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      `;
+      navActions.appendChild(toggleBtn);
+    }
+
+    // 2. Ensure Backdrop Overlay exists
+    let backdrop = document.getElementById('mobileDrawerBackdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'mobile-drawer-backdrop';
+      backdrop.id = 'mobileDrawerBackdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    // 3. Ensure Mobile Drawer exists
+    let drawer = document.getElementById('mobileDrawer');
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+    if (!drawer) {
+      drawer = document.createElement('div');
+      drawer.className = 'mobile-drawer';
+      drawer.id = 'mobileDrawer';
+
+      const navLinks = [
+        { label: 'Wedding', href: '/wedding' },
+        { label: 'Services', href: '/services' },
+        { label: 'Career', href: '/career' },
+        { label: 'Work', href: '/work' },
+        { label: 'Gallery', href: '/gallery' }
+      ];
+
+      const navItemsHtml = navLinks.map(link => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return `
+          <li>
+            <a href="${link.href}" class="mobile-drawer-link ${isActive ? 'active' : ''}">
+              <span>${link.label}</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </li>
+        `;
+      }).join('');
+
+      drawer.innerHTML = `
+        <div class="mobile-drawer-header">
+          <a href="/" class="mobile-drawer-brand">
+            <img src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+            <span class="mobile-drawer-title">Tech Shutter Hub</span>
+          </a>
+          <button class="mobile-drawer-close" id="drawerClose" aria-label="Close Menu">&times;</button>
+        </div>
+        <ul class="mobile-drawer-nav">
+          ${navItemsHtml}
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="/contact" class="mobile-drawer-cta">Start a Project</a>
+        </div>
+      `;
+      document.body.appendChild(drawer);
+    } else {
+      // If drawer existed in HTML, remove restrictive inline right styling so CSS class works
+      drawer.classList.add('mobile-drawer');
+      drawer.style.right = '';
+    }
+
+    // 4. Toggle & Close Handlers
+    function openDrawer() {
+      if (drawer) drawer.classList.add('open');
+      if (backdrop) backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeDrawer() {
+      if (drawer) drawer.classList.remove('open');
+      if (backdrop) backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (drawer && drawer.classList.contains('open')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+    }
+
+    const closeBtn = document.getElementById('drawerClose');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeDrawer();
+      });
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', closeDrawer);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
+
+    if (drawer) {
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeDrawer();
+        });
+      });
+    }
+  }
+
   // Initial application on DOM load
   document.addEventListener('DOMContentLoaded', () => {
     applyTheme(currentTheme, false);
@@ -76,6 +215,9 @@
         toggleTheme();
       });
     });
+
+    // Initialize Universal Mobile Navigation
+    initMobileNav();
   });
 
   window.tshTheme = {

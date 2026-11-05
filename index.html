@@ -131,59 +131,52 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer" style="position:fixed;top:0;right:-100%;width:300px;height:100%;background:#0e131b;z-index:1020;padding:30px 24px;transition:right 0.3s ease;box-shadow:-10px 0 30px rgba(0,0,0,0.8);">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
-      <span style="font-weight:700;color:var(--brand-gold);text-transform:uppercase;letter-spacing:0.1em;font-size:13px;">Menu</span>
-      <button id="drawerClose" style="background:none;border:none;color:#fff;font-size:24px;cursor:pointer;">&times;</button>
+    <!-- Mobile Navigation Backdrop & Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="/" class="mobile-drawer-brand">
+        <img src="/assets/logos/techshutter-logo.png" alt="Tech Shutter Hub Logo" onerror="this.src='/assets/logos/logo-dark-transparent.png'" />
+        <span class="mobile-drawer-title">Tech Shutter Hub</span>
+      </a>
+      <button class="mobile-drawer-close" id="drawerClose" aria-label="Close Menu">&times;</button>
     </div>
-    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;">
-      <li><a href="/wedding" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Wedding</a></li>
-      <li><a href="/services" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Services</a></li>
-      <li><a href="/career" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Career</a></li>
-      <li><a href="/work" style="color:#fff;text-decoration:none;font-size:16px;font-weight:600;display:block;">Work</a></li>
-      <li style="margin-top:20px;">
-        <a href="/contact" class="btn-start-project" style="display:block;text-align:center;">Start a Project</a>
+    <ul class="mobile-drawer-nav">
+      <li>
+        <a href="/wedding" class="mobile-drawer-link">
+          <span>Wedding</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/services" class="mobile-drawer-link">
+          <span>Services</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/career" class="mobile-drawer-link">
+          <span>Career</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/work" class="mobile-drawer-link">
+          <span>Work</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/gallery" class="mobile-drawer-link">
+          <span>Gallery</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
       </li>
     </ul>
-  </div>
-
-  <!-- ========================================================
-       2. EDITORIAL HERO SECTION (Reelxpozure Style)
-       ======================================================== -->
-  <section class="hero-section" id="hero">
-    <!-- Cinematic Video Reel Backdrop -->
-    <video class="hero-video-backdrop" autoplay muted loop playsinline poster="/assets/optimized/DSC00180_1.jpg">
-      <source src="/assets/videos/video-1.mp4" type="video/mp4" />
-      <source src="/assets/videos/video-2.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-
-    <div class="container hero-content">
-      <div class="hero-eyebrow">
-        <span>&#9670;</span>
-        <span>Kolkata &middot; Destination Weddings &middot; Visual Production Studio</span>
-        <span>&#9670;</span>
-      </div>
-
-      <h1 class="hero-headline">
-        Films and photographs for the moments you <span class="gold-italic">only get once.</span>
-      </h1>
-
-      <p class="hero-subhead">
-        A premier cinematic film and photography studio for weddings, brand stories, and life's work, with one vision behind every frame.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="/contact" class="btn-primary">
-          <span>Start a Project</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <a href="/work" class="btn-secondary">
-          <span>Explore Selected Works &rarr;</span>
-        </a>
-      </div>
+    <div class="mobile-drawer-footer">
+      <a href="/contact" class="mobile-drawer-cta">Start a Project</a>
     </div>
+  </div>
   </section>
 
   <!-- ========================================================

@@ -250,6 +250,47 @@
       font-size: 11px;
       cursor: pointer;
     }
+      @media (max-width: 640px) {
+      .admin-panel {
+        padding: 20px 14px;
+      }
+      .login-card {
+        padding: 28px 18px;
+      }
+      .admin-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 8px;
+        margin: 0 -14px 20px;
+        padding-left: 14px;
+      }
+      .admin-tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .admin-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 8px 16px;
+        font-size: 11px;
+      }
+      .admin-header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .stats-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      th, td {
+        padding: 10px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+    }
+
   </style>
 </head>
 <body>

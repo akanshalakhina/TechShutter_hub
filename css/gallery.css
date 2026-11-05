@@ -212,6 +212,12 @@
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .tsh-nav-right a.nav-btn {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .gallery-container {
     padding: 95px 16px 60px;
@@ -219,5 +225,25 @@
   .grid-cards {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .gallery-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 4px 16px 12px;
+    margin: 0 -16px 28px;
+    justify-content: flex-start;
+  }
+  .gallery-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 11px;
   }
 }
