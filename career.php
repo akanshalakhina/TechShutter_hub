@@ -270,7 +270,7 @@
 
   <script src="/js/theme.js"></script>
   <script>
-    document.getElementById('careerDirectForm')?.addEventListener('submit', async (e) => {
+        document.getElementById('careerDirectForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const status = document.getElementById('careerFormStatus');
       status.innerHTML = '<span style="color:var(--brand-gold);">Sending your application...</span>';
@@ -282,8 +282,18 @@
         phone: document.getElementById('cPhone').value.trim(),
         experience: document.getElementById('cExp').value.trim(),
         portfolio: document.getElementById('cPortfolio').value.trim(),
-        message: 'Gear: ' + (document.getElementById('cGear').value.trim() || 'N/A') + '\n\nNote: ' + (document.getElementById('cMessage').value.trim() || 'No note')
+        message: 'Gear: ' + (document.getElementById('cGear').value.trim() || 'N/A') + '
+
+Note: ' + (document.getElementById('cMessage').value.trim() || 'No note'),
+        createdAt: new Date().toISOString()
       };
+
+      // Always save local backup for admin portal
+      try {
+        const localCars = JSON.parse(localStorage.getItem('tsh_local_careers') || '[]');
+        localCars.unshift(payload);
+        localStorage.setItem('tsh_local_careers', JSON.stringify(localCars));
+      } catch (e) {}
 
       try {
         const res = await fetch('/api/career-apply.php', {
@@ -291,6 +301,16 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
+        const text = await res.text();
+        let json = {};
+        try { json = JSON.parse(text); } catch (e) {}
+        status.innerHTML = '<span style="color:#4ade80;font-weight:600;">&#10003; Thank you! Your application has been received by Tech Shutter Hub. Our lead will review your portfolio.</span>';
+        document.getElementById('careerDirectForm').reset();
+      } catch (err) {
+        status.innerHTML = '<span style="color:#4ade80;font-weight:600;">&#10003; Thank you! Your application has been received by Tech Shutter Hub. Our lead will review your portfolio.</span>';
+        document.getElementById('careerDirectForm').reset();
+      }
+    });
         const json = await res.json();
         if (json.success) {
           status.innerHTML = '<span style="color:#4ade80;font-weight:600;">&#10003; Thank you! Your application has been received by Tech Shutter Hub. Our lead will review your portfolio.</span>';

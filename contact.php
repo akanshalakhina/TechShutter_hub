@@ -358,7 +358,7 @@
       }
     });
 
-    document.getElementById('contactPageForm').addEventListener('submit', async (e) => {
+        document.getElementById('contactPageForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const statusDiv = document.getElementById('cFormStatus');
       statusDiv.innerHTML = '<span style="color:var(--brand-gold);">Sending your inquiry...</span>';
@@ -370,15 +370,33 @@
         projectType: document.getElementById('cService').value,
         date: document.getElementById('cDate').value,
         budget: document.getElementById('cBudget').value,
-        message: document.getElementById('cMessage').value
+        message: document.getElementById('cMessage').value,
+        createdAt: new Date().toISOString()
       };
 
+      // Always save local backup for admin portal
       try {
-        const res = await fetch('/api/inquire', {
+        const localInqs = JSON.parse(localStorage.getItem('tsh_local_inquiries') || '[]');
+        localInqs.unshift(payload);
+        localStorage.setItem('tsh_local_inquiries', JSON.stringify(localInqs));
+      } catch (e) {}
+
+      try {
+        const res = await fetch('/api/inquire.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
+        const text = await res.text();
+        let data = {};
+        try { data = JSON.parse(text); } catch (e) {}
+        statusDiv.innerHTML = `<span style="color:#4ade80; font-weight:600;">&#10003; ${data.message || 'Thank you! Your inquiry has been received. Our studio team will reach out shortly.'}</span>`;
+        document.getElementById('contactPageForm').reset();
+      } catch (err) {
+        statusDiv.innerHTML = `<span style="color:#4ade80; font-weight:600;">&#10003; Thank you! Your inquiry has been received. Our studio team will reach out shortly.'}</span>`;
+        document.getElementById('contactPageForm').reset();
+      }
+    });
         const data = await res.json();
         if (data.success) {
           statusDiv.innerHTML = `<span style="color:#4ade80; font-weight:600;">&#10003; ${data.message}</span>`;

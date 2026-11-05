@@ -254,6 +254,9 @@
         } catch (e) {}
       }
 
+      const localProjects = JSON.parse(localStorage.getItem('tsh_local_projects') || '[]');
+      const deletedIds = JSON.parse(localStorage.getItem('tsh_deleted_project_ids') || '[]');
+      items = [...localProjects, ...items].filter(p => !deletedIds.includes(p.id));
       allProjects = items;
       window.TSH_PROJECTS = allProjects;
       renderFilters();

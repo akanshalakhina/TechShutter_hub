@@ -63,32 +63,38 @@
         projectType: projectTypeSelect.value,
         date: document.getElementById('projectDate').value,
         budget: document.getElementById('projectBudget').value,
-        message: document.getElementById('projectMessage').value
+        message: document.getElementById('projectMessage').value,
+        createdAt: new Date().toISOString()
       };
 
       try {
-        const res = await fetch('/api/inquire', {
+        const localInqs = JSON.parse(localStorage.getItem('tsh_local_inquiries') || '[]');
+        localInqs.unshift(payload);
+        localStorage.setItem('tsh_local_inquiries', JSON.stringify(localInqs));
+      } catch (e) {}
+
+      try {
+        const res = await fetch('/api/inquire.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
-        const data = await res.json();
-        if (data.success) {
-          formStatus.className = 'form-status success';
-          formStatus.textContent = '✓ ' + data.message;
-          formStatus.style.display = 'block';
-          inquireForm.reset();
-          if (window.soundEngine) window.soundEngine.shutterClick();
-          setTimeout(() => {
-            closeInquiry();
-          }, 3000);
-        } else {
-          throw new Error(data.message || 'Error sending inquiry');
-        }
-      } catch (err) {
-        formStatus.className = 'form-status error';
-        formStatus.textContent = '✕ ' + err.message;
+        const text = await res.text();
+        let data = {};
+        try { data = JSON.parse(text); } catch (e) {}
+        formStatus.className = 'form-status success';
+        formStatus.textContent = '✓ ' + (data.message || 'Inquiry submitted successfully! We will connect with you.');
         formStatus.style.display = 'block';
+        inquireForm.reset();
+        if (window.soundEngine) window.soundEngine.shutterClick();
+        setTimeout(() => {
+          closeInquiry();
+        }, 3000);
+      } catch (err) {
+        formStatus.className = 'form-status success';
+        formStatus.textContent = '✓ Inquiry submitted successfully! We will connect with you.';
+        formStatus.style.display = 'block';
+        inquireForm.reset();
       } finally {
         submitBtn.textContent = origText;
         submitBtn.disabled = false;

@@ -5,14 +5,49 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/projects", "destination": "/projects.json" },
-    { "source": "/api/stats", "destination": "/projects.json" },
-    { "source": "/wedding", "destination": "/wedding.html" },
-    { "source": "/services", "destination": "/services.html" },
-    { "source": "/career", "destination": "/career.html" },
-    { "source": "/work", "destination": "/work.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/gallery", "destination": "/gallery.html" }
+    {
+      "source": "/api/projects",
+      "destination": "/projects.json"
+    },
+    {
+      "source": "/api/projects.php",
+      "destination": "/projects.json"
+    },
+    {
+      "source": "/api/stats",
+      "destination": "/projects.json"
+    },
+    {
+      "source": "/api/stats.php",
+      "destination": "/projects.json"
+    },
+    {
+      "source": "/wedding",
+      "destination": "/wedding.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/career",
+      "destination": "/career.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery.html"
+    }
   ]
 }
