@@ -294,30 +294,6 @@
     ]
   },
   {
-    "id": "prod-01",
-    "title": "Artisan Gold & Polki Jewellery Catalog",
-    "category": "Product & E-commerce",
-    "weddingRitual": "",
-    "client": "Swarna Heritage Jewellers",
-    "year": "2026",
-    "description": "High-resolution, well-lit imagery of goods (ethnic wear, bridal jewellery, etc.) intended for luxury catalogues, e-commerce stores, and digital advertising.",
-    "video": "",
-    "image": "/assets/images/brand-feature-1.jpg",
-    "thumbImage": "/assets/images/brand-feature-1.jpg",
-    "photos": [
-      "/assets/images/brand-feature-1.jpg",
-      "/assets/images/brand-feature-2.jpg"
-    ],
-    "orientation": "landscape",
-    "tags": [
-      "Jewellery",
-      "E-Commerce",
-      "Macro",
-      "Studio Lighting",
-      "Catalog"
-    ]
-  },
-  {
     "id": "prod-02",
     "title": "Handwoven Baluchari & Tussar Silk Campaign",
     "category": "Product & E-commerce",

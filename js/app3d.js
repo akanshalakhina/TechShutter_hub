@@ -25,7 +25,11 @@ async function loadProjects() {
     const res = await fetch('/projects.json');
     if (res.ok) {
       const data = await res.json();
-      if (Array.isArray(data) && data.length) return data;
+      if (Array.isArray(data) && data.length) {
+        const clean = data.filter(p => p.id !== 'prod-01' && !JSON.stringify(p).includes('brand-feature'));
+        localStorage.setItem('tsh_portfolio', JSON.stringify(clean));
+        return clean;
+      }
     }
   } catch (e) {}
 

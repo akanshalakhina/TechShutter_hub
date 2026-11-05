@@ -499,7 +499,6 @@
 
       <div class="footer-bottom">
         <div>&copy; 2026 Tech Shutter Hub. All rights reserved.</div>
-        <div>Engineered with 8K Cinema Optics &middot; Clean Editorial Platform</div>
       </div>
     </div>
   </footer>

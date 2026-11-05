@@ -46,6 +46,7 @@
         const list = Array.isArray(json) ? json : (json && Array.isArray(json.data) ? json.data : []);
         if (list.length) {
           currentProjectList = list;
+          currentProjectList = currentProjectList.filter(p => p.id !== 'prod-01' && !JSON.stringify(p).includes('brand-feature'));
           window.TSH_PROJECTS = currentProjectList;
           return currentProjectList;
         }
@@ -58,6 +59,7 @@
         const data = await res.json();
         if (Array.isArray(data) && data.length) {
           currentProjectList = data;
+          currentProjectList = currentProjectList.filter(p => p.id !== 'prod-01' && !JSON.stringify(p).includes('brand-feature'));
           window.TSH_PROJECTS = currentProjectList;
           return currentProjectList;
         }
