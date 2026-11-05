@@ -60,6 +60,60 @@ if ($method === 'POST') {
     requireAdmin();
     $body = getJsonBody();
 
+    if ($method === 'PUT' || ($method === 'POST' && !empty($body['action']) && $body['action'] === 'update')) {
+    requireAdmin();
+    $id = trim($body['id'] ?? '');
+
+    if (empty($id)) {
+        jsonResponse(['success' => false, 'message' => 'Project ID required.'], 400);
+    }
+
+    $foundIndex = -1;
+    foreach ($projects as $idx => $p) {
+        if ($p['id'] === $id) {
+            $foundIndex = $idx;
+            break;
+        }
+    }
+
+    if ($foundIndex === -1) {
+        jsonResponse(['success' => false, 'message' => 'Project not found.'], 404);
+    }
+
+    if (isset($body['title'])) $projects[$foundIndex]['title'] = trim($body['title']);
+    if (isset($body['category'])) $projects[$foundIndex]['category'] = trim($body['category']);
+    if (array_key_exists('weddingRitual', $body)) $projects[$foundIndex]['weddingRitual'] = $body['weddingRitual'];
+    if (isset($body['client'])) $projects[$foundIndex]['client'] = trim($body['client']);
+    if (isset($body['year'])) $projects[$foundIndex]['year'] = trim($body['year']);
+    if (isset($body['description'])) $projects[$foundIndex]['description'] = trim($body['description']);
+    if (!empty($body['image'])) {
+        $projects[$foundIndex]['image'] = $body['image'];
+        $projects[$foundIndex]['thumbImage'] = $body['image'];
+        if (empty($projects[$foundIndex]['photos'])) {
+            $projects[$foundIndex]['photos'] = [$body['image']];
+        } else {
+            $projects[$foundIndex]['photos'][0] = $body['image'];
+        }
+    }
+    if (array_key_exists('video', $body)) $projects[$foundIndex]['video'] = $body['video'];
+    if (isset($body['tags'])) {
+        $projects[$foundIndex]['tags'] = is_array($body['tags']) ? $body['tags'] : array_map('trim', explode(',', $body['tags']));
+    }
+    $projects[$foundIndex]['updatedAt'] = date('c');
+
+    writeDataFile(PROJECTS_FILE, $projects);
+    if (file_exists(dirname(__DIR__) . '/projects.json')) {
+        writeDataFile(dirname(__DIR__) . '/projects.json', $projects);
+    }
+
+    jsonResponse([
+        'success' => true,
+        'message' => 'Project updated successfully.',
+        'data' => $projects[$foundIndex]
+    ]);
+}
+
+
     if (empty($body['title'])) {
         jsonResponse(['success' => false, 'message' => 'Project title is required.'], 400);
     }
@@ -111,6 +165,60 @@ if ($method === 'DELETE') {
     }
     if (empty($id)) {
         $body = getJsonBody();
+
+    if ($method === 'PUT' || ($method === 'POST' && !empty($body['action']) && $body['action'] === 'update')) {
+    requireAdmin();
+    $id = trim($body['id'] ?? '');
+
+    if (empty($id)) {
+        jsonResponse(['success' => false, 'message' => 'Project ID required.'], 400);
+    }
+
+    $foundIndex = -1;
+    foreach ($projects as $idx => $p) {
+        if ($p['id'] === $id) {
+            $foundIndex = $idx;
+            break;
+        }
+    }
+
+    if ($foundIndex === -1) {
+        jsonResponse(['success' => false, 'message' => 'Project not found.'], 404);
+    }
+
+    if (isset($body['title'])) $projects[$foundIndex]['title'] = trim($body['title']);
+    if (isset($body['category'])) $projects[$foundIndex]['category'] = trim($body['category']);
+    if (array_key_exists('weddingRitual', $body)) $projects[$foundIndex]['weddingRitual'] = $body['weddingRitual'];
+    if (isset($body['client'])) $projects[$foundIndex]['client'] = trim($body['client']);
+    if (isset($body['year'])) $projects[$foundIndex]['year'] = trim($body['year']);
+    if (isset($body['description'])) $projects[$foundIndex]['description'] = trim($body['description']);
+    if (!empty($body['image'])) {
+        $projects[$foundIndex]['image'] = $body['image'];
+        $projects[$foundIndex]['thumbImage'] = $body['image'];
+        if (empty($projects[$foundIndex]['photos'])) {
+            $projects[$foundIndex]['photos'] = [$body['image']];
+        } else {
+            $projects[$foundIndex]['photos'][0] = $body['image'];
+        }
+    }
+    if (array_key_exists('video', $body)) $projects[$foundIndex]['video'] = $body['video'];
+    if (isset($body['tags'])) {
+        $projects[$foundIndex]['tags'] = is_array($body['tags']) ? $body['tags'] : array_map('trim', explode(',', $body['tags']));
+    }
+    $projects[$foundIndex]['updatedAt'] = date('c');
+
+    writeDataFile(PROJECTS_FILE, $projects);
+    if (file_exists(dirname(__DIR__) . '/projects.json')) {
+        writeDataFile(dirname(__DIR__) . '/projects.json', $projects);
+    }
+
+    jsonResponse([
+        'success' => true,
+        'message' => 'Project updated successfully.',
+        'data' => $projects[$foundIndex]
+    ]);
+}
+
         $id = $body['id'] ?? '';
     }
 

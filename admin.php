@@ -295,6 +295,66 @@
       }
     }
 
+  
+    /* Edit Modal Overlay */
+    .admin-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 7, 10, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .admin-modal-card {
+      background: var(--bg-surface, #0e131b);
+      border: 1px solid rgba(229, 192, 88, 0.35);
+      border-radius: var(--radius-md, 14px);
+      width: 100%;
+      max-width: 720px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(229, 192, 88, 0.12);
+      position: relative;
+    }
+    .admin-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .admin-modal-close:hover {
+      background: #ef4444;
+      border-color: #ef4444;
+      color: #fff;
+    }
+    .btn-action.edit {
+      border-color: rgba(229, 192, 88, 0.4);
+      color: var(--brand-gold);
+      background: rgba(229, 192, 88, 0.08);
+      font-weight: 600;
+    }
+    .btn-action.edit:hover {
+      background: var(--brand-gold);
+      border-color: var(--brand-gold-bright);
+      color: #000;
+    }
+
   </style>
 </head>
 <body class="admin-page">
@@ -668,7 +728,105 @@
 
   </div>
 
-      <script src="/js/theme.js"></script>
+      <!-- Edit Project Modal -->
+  <div class="admin-modal-overlay" id="editProjectModal">
+    <div class="admin-modal-card">
+      <button class="admin-modal-close" onclick="closeEditModal()" aria-label="Close Edit">&times;</button>
+      <div style="margin-bottom: 24px;">
+        <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--brand-gold); font-weight: 700;">Studio Curator</span>
+        <h2 style="font-family: var(--font-serif); font-size: 24px; color: #fff; margin: 4px 0 6px;">Edit Project Details</h2>
+        <p style="font-size: 13px; color: var(--text-muted); margin: 0;">Update media title, ceremony ritual tag, client attribution, or upload a replacement photo.</p>
+      </div>
+
+      <form id="editProjectForm">
+        <input type="hidden" id="editProjId" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Project Title *</label>
+            <input type="text" id="editTitle" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Primary Category *</label>
+            <select id="editCategory" class="form-control" required>
+              <option value="Full-Spectrum Wedding">Full-Spectrum Wedding</option>
+              <option value="Pre-Wedding Escapes">Pre-Wedding Escapes</option>
+              <option value="Cinematic Reels &amp; Teasers">Cinematic Reels &amp; Teasers</option>
+              <option value="Product &amp; E-commerce">Product &amp; E-commerce</option>
+              <option value="F&amp;B / Restaurant">F&amp;B / Restaurant</option>
+              <option value="Corporate Photography">Corporate Photography</option>
+              <option value="Annaprashan &amp; Maternity">Annaprashan &amp; Maternity</option>
+              <option value="Durga Puja &amp; Festive">Durga Puja &amp; Festive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Wedding Ritual (If Wedding)</label>
+            <select id="editWeddingRitual" class="form-control">
+              <option value="">None (Non-ceremonial)</option>
+              <option value="Gaye Holud">Gaye Holud (Turmeric Ceremony)</option>
+              <option value="Ashirbad">Ashirbad (Blessings Ceremony)</option>
+              <option value="Main Wedding">Main Wedding (Vivaha / Saat Paake Ghaura)</option>
+              <option value="Boubhat">Boubhat &amp; Grand Reception</option>
+              <option value="Pre-Wedding">Pre-Wedding Couple Escapes</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Client / Couple Names</label>
+            <input type="text" id="editClient" class="form-control" placeholder="e.g. Rahul &amp; Priya" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Production Year</label>
+            <input type="text" id="editYear" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Video Embed Link (Optional)</label>
+            <input type="text" id="editVideo" class="form-control" placeholder="/assets/videos/video-1.mp4 or YouTube URL" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Image URL / Source *</label>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <input type="text" id="editImage" class="form-control" required style="flex: 1;" />
+            <button type="button" class="btn-action" onclick="document.getElementById('editFilePicker').click()" style="white-space: nowrap; padding: 10px 14px; border-color: var(--brand-gold); color: var(--brand-gold);">
+              Upload New &uarr;
+            </button>
+            <input type="file" id="editFilePicker" accept="image/*" style="display: none;" />
+          </div>
+          <div style="margin-top: 10px; display: flex; align-items: center; gap: 14px;">
+            <img id="editImagePreview" src="" alt="Current preview" style="width: 80px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(229,192,88,0.4);" />
+            <span style="font-size: 12px; color: var(--text-muted);">Current project thumbnail preview</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tags (Comma separated)</label>
+          <input type="text" id="editTags" class="form-control" placeholder="Saat Paake Ghaura, Sindoor Daan, Banarasi" />
+        </div>
+
+        <div class="form-group">
+          <label>Story Description &amp; Notes</label>
+          <textarea id="editDesc" class="form-control" placeholder="Ceremonial story context, prime lens notes, emotional significance..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+          <button type="button" class="btn-action" onclick="closeEditModal()" style="padding: 12px 24px;">Cancel</button>
+          <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, var(--brand-gold-bright), var(--brand-gold)); color: #000; font-weight: 700; padding: 12px 30px; border-radius: 9999px; border:none; cursor:pointer;">
+            Save Changes &rarr;
+          </button>
+        </div>
+        <div id="editStatus" style="margin-top: 12px;"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/theme.js"></script>
   <script>
     let uploadedUrls = [];
     let currentProjects = [];
@@ -1098,7 +1256,10 @@
           <td>${p.client || '-'}</td>
           <td>${p.year || '2026'}</td>
           <td>
-            <button class="btn-action delete" onclick="deleteProject('${p.id}')">Delete</button>
+            <div style="display:inline-flex; gap:6px; align-items:center;">
+              <button class="btn-action edit" onclick="editProject('${p.id}')">Edit</button>
+              <button class="btn-action delete" onclick="deleteProject('${p.id}')">Delete</button>
+            </div>
           </td>
         `;
         tbody.appendChild(tr);
@@ -1174,6 +1335,119 @@
       previewStrip.innerHTML = '';
       renderProjectsTable();
       loadAdminData();
+    });
+
+    
+    // Edit Modal Open & Populate
+    function editProject(id) {
+      const proj = currentProjects.find(p => p.id === id);
+      if (!proj) return;
+
+      document.getElementById('editProjId').value = proj.id;
+      document.getElementById('editTitle').value = proj.title || '';
+      document.getElementById('editCategory').value = proj.category || 'Full-Spectrum Wedding';
+      document.getElementById('editWeddingRitual').value = proj.weddingRitual || '';
+      document.getElementById('editClient').value = proj.client || '';
+      document.getElementById('editYear').value = proj.year || '2026';
+      document.getElementById('editVideo').value = proj.video || '';
+      
+      const imgVal = proj.image || (proj.photos && proj.photos[0]) || proj.thumbImage || '';
+      document.getElementById('editImage').value = imgVal;
+      document.getElementById('editImagePreview').src = imgVal || '/assets/logos/logo-dark-bg.jpg';
+      
+      const tagsVal = Array.isArray(proj.tags) ? proj.tags.join(', ') : (proj.tags || '');
+      document.getElementById('editTags').value = tagsVal;
+      document.getElementById('editDesc').value = proj.description || '';
+      document.getElementById('editStatus').innerHTML = '';
+
+      document.getElementById('editProjectModal').style.display = 'flex';
+    }
+
+    function closeEditModal() {
+      document.getElementById('editProjectModal').style.display = 'none';
+    }
+
+    // Replacement file picker in edit modal
+    document.getElementById('editFilePicker')?.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64Data = reader.result;
+        document.getElementById('editImagePreview').src = base64Data;
+        document.getElementById('editImage').value = base64Data;
+
+        // Try server upload if PHP is running
+        const upRes = await safeFetchJson('/api/upload.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + authToken
+          },
+          body: JSON.stringify({ filename: file.name, data: base64Data })
+        });
+        if (upRes.ok && upRes.json && upRes.json.success) {
+          document.getElementById('editImage').value = upRes.json.url;
+          document.getElementById('editImagePreview').src = upRes.json.url;
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Edit form submission
+    document.getElementById('editProjectForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('editStatus');
+      status.innerHTML = '<span style="color:var(--brand-gold);">Saving changes...</span>';
+
+      const id = document.getElementById('editProjId').value;
+      const updatedData = {
+        id,
+        action: 'update',
+        title: document.getElementById('editTitle').value.trim(),
+        category: document.getElementById('editCategory').value,
+        weddingRitual: document.getElementById('editWeddingRitual').value || null,
+        client: document.getElementById('editClient').value.trim(),
+        year: document.getElementById('editYear').value.trim(),
+        image: document.getElementById('editImage').value.trim(),
+        thumbImage: document.getElementById('editImage').value.trim(),
+        photos: [document.getElementById('editImage').value.trim()],
+        video: document.getElementById('editVideo').value.trim() || null,
+        tags: document.getElementById('editTags').value.split(',').map(t => t.trim()).filter(Boolean),
+        description: document.getElementById('editDesc').value.trim(),
+        updatedAt: new Date().toISOString()
+      };
+
+      // 1. Try server update
+      await safeFetchJson('/api/projects.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + authToken
+        },
+        body: JSON.stringify(updatedData)
+      });
+
+      // 2. Update local storage & currentProjects
+      const projIdx = currentProjects.findIndex(p => p.id === id);
+      if (projIdx !== -1) {
+        currentProjects[projIdx] = { ...currentProjects[projIdx], ...updatedData };
+      }
+
+      let localProjects = JSON.parse(localStorage.getItem('tsh_local_projects') || '[]');
+      const localIdx = localProjects.findIndex(p => p.id === id);
+      if (localIdx !== -1) {
+        localProjects[localIdx] = { ...localProjects[localIdx], ...updatedData };
+      } else {
+        localProjects.unshift(updatedData);
+      }
+      localStorage.setItem('tsh_local_projects', JSON.stringify(localProjects));
+
+      renderProjectsTable();
+      status.innerHTML = '<span style="color:#4ade80; font-weight:600;">&#10003; Changes saved successfully!</span>';
+      setTimeout(() => {
+        closeEditModal();
+      }, 700);
     });
 
     document.addEventListener('DOMContentLoaded', checkAuth);
