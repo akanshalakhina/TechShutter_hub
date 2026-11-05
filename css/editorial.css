@@ -1879,3 +1879,433 @@ textarea.form-control {
 }
 
 
+
+/* ========================================================
+   14. LIGHT THEME (Alabaster Luxury Editorial) OVERRIDES
+   Ensures WCAG AAA contrast, crisp typography, and luminous cards
+   ======================================================== */
+[data-theme="light"] {
+  --header-bg: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="light"] .tsh-header {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .tsh-header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom-color: rgba(197, 155, 39, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .tsh-brand-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .tsh-brand-tag {
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .tsh-nav-link {
+  color: #334155;
+}
+
+[data-theme="light"] .tsh-nav-link:hover,
+[data-theme="light"] .tsh-nav-link.active {
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .tsh-dropdown-menu {
+  background: #ffffff;
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .dropdown-item:hover {
+  background: rgba(197, 155, 39, 0.08);
+}
+
+[data-theme="light"] .dropdown-item-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .dropdown-item-desc {
+  color: #4e5867;
+}
+
+[data-theme="light"] .theme-toggle-btn,
+[data-theme="light"] .sound-toggle-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #1e293b;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover,
+[data-theme="light"] .sound-toggle-btn:hover {
+  background: rgba(197, 155, 39, 0.14);
+  border-color: var(--brand-gold, #c59b27);
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .mobile-nav-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+[data-theme="light"] .mobile-drawer-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .mobile-drawer {
+  background: #ffffff;
+  border-left: 1px solid rgba(197, 155, 39, 0.3);
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .mobile-drawer-link {
+  color: #1e293b;
+}
+
+[data-theme="light"] .mobile-drawer-link:hover,
+[data-theme="light"] .mobile-drawer-link.active {
+  background: rgba(197, 155, 39, 0.12);
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .mobile-drawer-close {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+[data-theme="light"] .mobile-drawer-close:hover {
+  background: var(--brand-gold, #c59b27);
+  color: #ffffff;
+}
+
+[data-theme="light"] .mobile-drawer-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .mobile-drawer-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .btn-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  color: #0f172a;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: rgba(197, 155, 39, 0.12);
+  border-color: var(--brand-gold, #c59b27);
+  color: var(--brand-gold, #c59b27);
+}
+
+/* Signature Pillars */
+[data-theme="light"] .pillars-section {
+  background: #f8f8f5;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .pillar-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .pillar-card:hover {
+  border-color: rgba(197, 155, 39, 0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 0 24px rgba(197, 155, 39, 0.12);
+}
+
+[data-theme="light"] .pillar-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .pillar-desc {
+  color: #4e5867;
+}
+
+[data-theme="light"] .pillar-link {
+  color: var(--brand-gold, #c59b27);
+}
+
+/* Ritual Tabs & Wedding Grid */
+[data-theme="light"] .ritual-tab-btn {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #334155;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .ritual-tab-btn:hover {
+  border-color: var(--brand-gold, #c59b27);
+  color: #0f172a;
+  background: rgba(197, 155, 39, 0.1);
+}
+
+[data-theme="light"] .ritual-tab-btn.active {
+  background: linear-gradient(135deg, #dbb035, #c59b27);
+  color: #ffffff;
+  border-color: #dbb035;
+  box-shadow: 0 4px 16px rgba(197, 155, 39, 0.35);
+}
+
+[data-theme="light"] .wedding-photo-card {
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Reels & Teasers */
+[data-theme="light"] .reels-section {
+  background: #f0eee7;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .reel-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* All 8 Services */
+[data-theme="light"] .service-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .service-card:hover {
+  border-color: rgba(197, 155, 39, 0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 0 24px rgba(197, 155, 39, 0.12);
+}
+
+[data-theme="light"] .service-short-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .service-full-desc {
+  color: #4e5867;
+}
+
+[data-theme="light"] .service-icon-box {
+  background: rgba(197, 155, 39, 0.12);
+  border-color: rgba(197, 155, 39, 0.35);
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .service-book-btn {
+  border-color: rgba(197, 155, 39, 0.45);
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .service-book-btn:hover {
+  background: var(--brand-gold, #c59b27);
+  color: #ffffff;
+}
+
+/* Work Showcase (Homepage) */
+[data-theme="light"] .work-section {
+  background: #f8f8f5;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .work-view-toggle {
+  background: #e5e7eb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .view-btn {
+  color: #4e5867;
+}
+
+[data-theme="light"] .view-btn.active {
+  background: var(--brand-gold, #c59b27);
+  color: #ffffff;
+}
+
+[data-theme="light"] .work-filter-btn {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #4e5867;
+}
+
+[data-theme="light"] .work-filter-btn:hover {
+  border-color: var(--brand-gold, #c59b27);
+  color: #0f172a;
+}
+
+[data-theme="light"] .work-filter-btn.active {
+  background: linear-gradient(135deg, #dbb035, #c59b27);
+  color: #ffffff;
+  border-color: #dbb035;
+}
+
+/* Career Section */
+[data-theme="light"] .career-section {
+  background: #ffffff;
+}
+
+[data-theme="light"] .career-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .career-card:hover {
+  border-color: rgba(197, 155, 39, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .career-role-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .career-role-desc {
+  color: #4e5867;
+}
+
+[data-theme="light"] .career-apply-btn {
+  border-color: var(--brand-gold, #c59b27);
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .career-apply-btn:hover {
+  background: var(--brand-gold, #c59b27);
+  color: #ffffff;
+}
+
+/* Start a Project / Contact Section */
+[data-theme="light"] .contact-section {
+  background: #f8f8f5;
+}
+
+[data-theme="light"] .contact-info-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .contact-method-val {
+  color: #0f172a;
+}
+
+[data-theme="light"] .contact-form-card {
+  background: #ffffff;
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .form-control {
+  background: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #0f172a;
+}
+
+[data-theme="light"] .form-control:focus {
+  background: #ffffff;
+  border-color: var(--brand-gold, #c59b27);
+  box-shadow: 0 0 12px rgba(197, 155, 39, 0.25);
+}
+
+/* Editorial Reviews & Testimonials */
+[data-theme="light"] .rx-reviews-section {
+  background: #f8f8f5;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .rx-review-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .rx-review-card:hover {
+  border-color: rgba(197, 155, 39, 0.4);
+  background: #ffffff;
+}
+
+[data-theme="light"] .rx-review-quote {
+  color: #1e293b;
+}
+
+[data-theme="light"] .rx-review-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .rx-review-meta {
+  color: #4e5867;
+}
+
+/* Studio FAQ Accordion */
+[data-theme="light"] .rx-faq-section {
+  background: #f0eee7;
+}
+
+[data-theme="light"] .rx-faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .rx-faq-item.active {
+  border-color: rgba(197, 155, 39, 0.45);
+}
+
+[data-theme="light"] .rx-faq-question {
+  color: #0f172a;
+}
+
+[data-theme="light"] .rx-faq-question:hover {
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .rx-faq-answer {
+  color: #4e5867;
+}
+
+/* Closing CTA Banner */
+[data-theme="light"] .rx-banner-section {
+  background: radial-gradient(circle at 50% 50%, rgba(197, 155, 39, 0.12) 0%, #f0eee7 70%);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .rx-banner-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .rx-banner-sub {
+  color: #4e5867;
+}
+
+/* Editorial Footer */
+[data-theme="light"] .tsh-footer {
+  background: #ebe9e0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #334155;
+}
+
+[data-theme="light"] .footer-col-desc {
+  color: #4e5867;
+}
+
+[data-theme="light"] .footer-col-links a {
+  color: #4e5867;
+}
+
+[data-theme="light"] .footer-col-links a:hover {
+  color: var(--brand-gold, #c59b27);
+}
+
+[data-theme="light"] .footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #64748b;
+}

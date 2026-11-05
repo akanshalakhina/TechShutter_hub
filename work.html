@@ -44,6 +44,13 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    [data-theme="light"] .work-header {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
     /* Floating Category Chips */
@@ -77,6 +84,7 @@
       border-radius: 40px;
       border: 1px solid rgba(229, 192, 88, 0.25);
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .work-cats .cat {
@@ -85,7 +93,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-muted, #A3AFBF);
+      color: #CBD5E1;
       background: transparent;
       border: 1px solid transparent;
       padding: 6px 14px;
@@ -109,6 +117,32 @@
       box-shadow: 0 2px 10px rgba(229, 192, 88, 0.4);
     }
 
+    /* Light Mode Overrides for Category Filter Bar */
+    [data-theme="light"] .work-cats {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(197, 155, 39, 0.45);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="light"] .work-cats .cat {
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .work-cats .cat:hover {
+      color: #0f172a;
+      background: rgba(197, 155, 39, 0.16);
+      border-color: rgba(197, 155, 39, 0.4);
+    }
+
+    [data-theme="light"] .work-cats .cat.on {
+      color: #ffffff;
+      background: linear-gradient(135deg, #dbb035, #c59b27);
+      border-color: #dbb035;
+      font-weight: 700;
+      box-shadow: 0 3px 12px rgba(197, 155, 39, 0.35);
+    }
+
     /* Floating Bottom Dock */
     .work-dock {
       position: fixed;
@@ -127,7 +161,8 @@
       border-radius: 30px;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
       font-size: 12px;
-      color: var(--text-muted, #A3AFBF);
+      color: #CBD5E1;
+      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .work-dock-btn {
@@ -149,6 +184,27 @@
       background: rgba(229, 192, 88, 0.2);
       border-color: var(--brand-gold, #E5C058);
       color: var(--brand-gold, #E5C058);
+    }
+
+    /* Light Mode Overrides for Bottom Dock */
+    [data-theme="light"] .work-dock {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      color: #1e293b;
+      font-weight: 600;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="light"] .work-dock-btn {
+      background: #f1f5f9;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .work-dock-btn:hover {
+      background: rgba(197, 155, 39, 0.16);
+      border-color: #c59b27;
+      color: #c59b27;
     }
 
     /* 2D Grid Modal Overlay */
@@ -190,6 +246,22 @@
     .grid-modal-close:hover {
       background: rgba(229, 192, 88, 0.3);
       color: var(--brand-gold);
+    }
+
+    /* Light Mode Overrides for Grid Modal */
+    [data-theme="light"] .grid-modal-overlay {
+      background: rgba(248, 248, 245, 0.97);
+    }
+
+    [data-theme="light"] .grid-modal-close {
+      background: rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      color: #0f172a;
+    }
+
+    [data-theme="light"] .grid-modal-close:hover {
+      background: rgba(197, 155, 39, 0.2);
+      color: #b8860b;
     }
   </style>
 </head>
